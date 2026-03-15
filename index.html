@@ -526,100 +526,154 @@ The core problem: students summarize plot rather than analyzing how language, fo
 <!-- ==========================================
      SLIDE 20 — THE FIVE COMPONENTS
      ========================================== -->
-<div class="slide layout-grid">
+<div class="slide layout-content" style="justify-content: center; align-items: center; text-align: center;">
   <span class="label label-cyan">Structure</span>
-
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2em; max-width: 1000px; margin: 0 auto;">
-    <div>
-      <h2 style="margin-bottom: 0.6em;">Drafting a System Prompt</h2>
-      <p style="line-height: 1.6;">Each system prompt is built from modular components. We&rsquo;ll draft yours one piece at a time.</p>
-    </div>
-
-    <div>
-      <h3 style="margin-bottom: 1em;">Five Dimensions</h3>
-      <ol style="line-height: 1.8; padding-left: 1.5em;">
-        <li><strong>Context &amp; Problem</strong> - What course, what students, and what specific learning challenge does this tool address?</li>
-        <li><strong>Procedure</strong> - What steps should the tool follow when a student engages with it?</li>
-        <li><strong>Constraints</strong> - What should the tool refuse to do, and how should it redirect?</li>
-        <li><strong>Tone</strong> - What register and affect should the tool use with your students?</li>
-        <li><strong>Output Format</strong> - How should the tool structure its responses?</li>
-      </ol>
-    </div>
-  </div>
+  <h2 style="margin-bottom: 0.4em;">Drafting a System Prompt</h2>
+  <p style="margin-bottom: 1.4em; max-width: 600px; margin-left: auto; margin-right: auto;">Each system prompt is built from modular components. We&rsquo;ll draft yours one piece at a time.</p>
+  <ol class="stream-list" style="text-align: left; max-width: 580px; margin: 0 auto; line-height: 1.9; padding-left: 1.4em;">
+    <li><strong>Context &amp; Problem</strong> — What course, what students, what learning challenge?</li>
+    <li><strong>Procedure</strong> — What steps should the tool follow?</li>
+    <li><strong>Constraints</strong> — What should it refuse to do, and how should it redirect?</li>
+    <li><strong>Tone</strong> — What register and affect should it use with your students?</li>
+    <li><strong>Output Format</strong> — How should it structure its responses?</li>
+  </ol>
 </div>
 
 <!-- ==========================================
      SLIDE 21 — CONTEXT & PROBLEM (drafting)
      ========================================== -->
-<div class="slide layout-content">
-  <span class="label label-cyan">Draft: Component 1</span>
-  <h2>Context &amp; Problem</h2>
-  <p style="margin-bottom: 0.8em; max-width: 800px;">The opening of your system prompt names the tool, the course, the students, and the specific learning challenge it addresses. This is the most important part &mdash; everything else follows from it.</p>
-  <div class="prompt-block prompt-mid" style="max-width: 800px; margin-bottom: 1.2em;"><span class="prompt-label">Example</span>You are a [tool type] for [course name] at [institution]. Students are [relevant context]. The core problem: [specific learning challenge the tool addresses].</div>
-  <div class="tip-box" style="max-width: 800px;">
-    <p><strong>Your turn:</strong> Pick one assignment or activity from your course. Write 2&ndash;3 sentences that name what the tool does, who the students are, and what problem it solves. Open the Sandbox and start typing.</p>
+<div class="slide layout-split">
+  <div class="content">
+    <span class="label label-cyan">Component 1</span>
+    <h2>Context &amp; Problem</h2>
+    <p>Name the tool, the course, the students, and the specific learning challenge. Everything else follows from this.</p>
+    <ul style="margin-top: 1em; line-height: 1.9;">
+      <li>What kind of tool is this?</li>
+      <li>Who are your students?</li>
+      <li>What learning problem does it solve?</li>
+    </ul>
+  </div>
+  <div class="stage" style="flex-direction: column; justify-content: center; padding: clamp(16px, 2.5vw, 40px);">
+    <div style="position: relative;">
+      <button class="copy-btn" onclick="copyTemplate('tpl-context')" title="Copy template">&#128203;</button>
+      <pre id="tpl-context" class="prompt-block prompt-mid" style="white-space: pre-wrap; font-family: inherit; margin: 0;">You are a [tool type] for [course name].
+Students are [relevant context].
+
+The core problem: [specific learning challenge].</pre>
+    </div>
+    <div class="tip-box" style="margin-top: 1.2em;">
+      <p><strong>Your turn:</strong> Open the Sandbox. Write 2-3 sentences naming what the tool does, who the students are, and what problem it solves.</p>
+    </div>
   </div>
 </div>
 
 <!-- ==========================================
      SLIDE 22 — PROCEDURE (drafting)
      ========================================== -->
-<div class="slide layout-content">
-  <span class="label label-cyan">Draft: Component 2</span>
-  <h2>Procedure</h2>
-  <p style="margin-bottom: 0.8em; max-width: 800px;">Tell the tool what to do, step by step. Numbered steps give the model a clear sequence to follow rather than a loose set of suggestions.</p>
-  <div class="prompt-block prompt-mid" style="max-width: 800px; margin-bottom: 1.2em;"><span class="prompt-label">Example</span>Procedure:
+<div class="slide layout-split">
+  <div class="content">
+    <span class="label label-cyan">Component 2</span>
+    <h2>Procedure</h2>
+    <p>Tell the tool what to do, step by step. Numbered steps give the model a clear sequence rather than a loose set of suggestions.</p>
+    <ul style="margin-top: 1em; line-height: 1.9;">
+      <li>What should the tool ask for first?</li>
+      <li>What should it prioritize?</li>
+      <li>How should it respond to each student input?</li>
+    </ul>
+  </div>
+  <div class="stage" style="flex-direction: column; justify-content: center; padding: clamp(16px, 2.5vw, 40px);">
+    <div style="position: relative;">
+      <button class="copy-btn" onclick="copyTemplate('tpl-procedure')" title="Copy template">&#128203;</button>
+      <pre id="tpl-procedure" class="prompt-block prompt-mid" style="white-space: pre-wrap; font-family: inherit; margin: 0;">Procedure:
 1. Ask the student for [specific input] before responding.
-2. Identify [what to focus on first] before addressing [secondary concerns].
-3. For each issue, [specific action &mdash; e.g., ask a question rather than providing a fix].</div>
-  <div class="tip-box" style="max-width: 800px;">
-    <p><strong>Your turn:</strong> Write 2&ndash;4 numbered steps the tool should follow when a student engages with it. Think about the order that matters for your discipline.</p>
+2. Identify [priority concern] before addressing [secondary concerns].
+3. For each issue, [specific action, e.g. ask a question rather than fix it].</pre>
+    </div>
+    <div class="tip-box" style="margin-top: 1.2em;">
+      <p><strong>Your turn:</strong> Write 2-4 numbered steps. Think about the sequence that matters for your discipline.</p>
+    </div>
   </div>
 </div>
 
 <!-- ==========================================
      SLIDE 23 — CONSTRAINTS (drafting)
      ========================================== -->
-<div class="slide layout-content">
-  <span class="label label-cyan">Draft: Component 3</span>
-  <h2>Constraints</h2>
-  <p style="margin-bottom: 0.8em; max-width: 800px;">Constraints define what the tool should not do and how it should redirect when students push against those limits. Be precise &mdash; &ldquo;don&rsquo;t help with homework&rdquo; is not the same as &ldquo;don&rsquo;t <em>do</em> the homework.&rdquo;</p>
-  <div class="prompt-block prompt-mid" style="max-width: 800px; margin-bottom: 1.2em;"><span class="prompt-label">Example</span>Constraints:
-- Do not produce [specific outputs &mdash; e.g., full paragraphs, thesis statements].
-- If asked to [common student request], redirect by [specific alternative action].
-- If uncertain about [domain-specific content], state that uncertainty explicitly.</div>
-  <div class="tip-box" style="max-width: 800px;">
-    <p><strong>Your turn:</strong> Write 2&ndash;3 constraints. Think about what your students are most likely to ask the tool to do <em>for</em> them, and how the tool should respond instead.</p>
+<div class="slide layout-split">
+  <div class="content">
+    <span class="label label-cyan">Component 3</span>
+    <h2>Constraints</h2>
+    <p>Define what the tool should not do and how it redirects when students push against those limits.</p>
+    <ul style="margin-top: 1em; line-height: 1.9;">
+      <li>What will students ask it to do <em>for</em> them?</li>
+      <li>How should it redirect instead?</li>
+      <li>What uncertainty should it name explicitly?</li>
+    </ul>
+  </div>
+  <div class="stage" style="flex-direction: column; justify-content: center; padding: clamp(16px, 2.5vw, 40px);">
+    <div style="position: relative;">
+      <button class="copy-btn" onclick="copyTemplate('tpl-constraints')" title="Copy template">&#128203;</button>
+      <pre id="tpl-constraints" class="prompt-block prompt-mid" style="white-space: pre-wrap; font-family: inherit; margin: 0;">Constraints:
+- Never [specific output to avoid].
+- If asked to [common student request], redirect by [specific alternative].
+- If uncertain about [domain content], say so explicitly.</pre>
+    </div>
+    <div class="tip-box" style="margin-top: 1.2em;">
+      <p><strong>Your turn:</strong> Write 2-3 constraints that keep the tool from doing work students should do themselves.</p>
+    </div>
   </div>
 </div>
 
 <!-- ==========================================
      SLIDE 24 — TONE (drafting)
      ========================================== -->
-<div class="slide layout-content">
-  <span class="label label-cyan">Draft: Component 4</span>
-  <h2>Tone</h2>
-  <p style="margin-bottom: 0.8em; max-width: 800px;">A single sentence on tone shapes how the tool communicates. Consider what register your students need &mdash; especially multilingual learners, first-generation students, or students with writing anxiety.</p>
-  <div class="prompt-block prompt-mid" style="max-width: 800px; margin-bottom: 1.2em;"><span class="prompt-label">Example</span>Tone: Warm and direct. Use &ldquo;I notice...&rdquo; and &ldquo;What if you tried...&rdquo;</div>
-  <div class="tip-box" style="max-width: 800px;">
-    <p><strong>Your turn:</strong> Add one sentence to your draft that describes the tone. Think about what language would make your students feel supported rather than evaluated.</p>
+<div class="slide layout-split">
+  <div class="content">
+    <span class="label label-cyan">Component 4</span>
+    <h2>Tone</h2>
+    <p>One sentence on tone shapes how the tool communicates with every student it encounters.</p>
+    <ul style="margin-top: 1em; line-height: 1.9;">
+      <li>What register fits your students?</li>
+      <li>Should it feel supportive, neutral, rigorous?</li>
+      <li>Are there phrases that model the right affect?</li>
+    </ul>
+  </div>
+  <div class="stage" style="flex-direction: column; justify-content: center; padding: clamp(16px, 2.5vw, 40px);">
+    <div style="position: relative;">
+      <button class="copy-btn" onclick="copyTemplate('tpl-tone')" title="Copy template">&#128203;</button>
+      <pre id="tpl-tone" class="prompt-block prompt-mid" style="white-space: pre-wrap; font-family: inherit; margin: 0;">Tone: [Adjective and adjective]. Use phrases like "[example phrase]" and "[example phrase]."</pre>
+    </div>
+    <div class="tip-box" style="margin-top: 1.2em;">
+      <p><strong>Your turn:</strong> Add one sentence describing the tone. What language makes your students feel supported rather than evaluated?</p>
+    </div>
   </div>
 </div>
 
 <!-- ==========================================
      SLIDE 25 — OUTPUT FORMAT (drafting)
      ========================================== -->
-<div class="slide layout-content">
-  <span class="label label-cyan">Draft: Component 5</span>
-  <h2>Output Format</h2>
-  <p style="margin-bottom: 0.8em; max-width: 800px;">If your tool should structure its responses in a consistent way, specify that here. This is optional &mdash; not every prompt needs it.</p>
-  <div class="prompt-block prompt-mid" style="max-width: 800px; margin-bottom: 1.2em;"><span class="prompt-label">Example</span>Format each response as:
-Strength: [one thing the student did well]
-Focus area: [one thing to work on]
+<div class="slide layout-split">
+  <div class="content">
+    <span class="label label-cyan">Component 5</span>
+    <h2>Output Format</h2>
+    <p>Optional, but useful when consistent structure helps students know what to expect from each response.</p>
+    <ul style="margin-top: 1em; line-height: 1.9;">
+      <li>Should each response end with a question?</li>
+      <li>Should it follow a fixed structure?</li>
+      <li>What length is appropriate?</li>
+    </ul>
+  </div>
+  <div class="stage" style="flex-direction: column; justify-content: center; padding: clamp(16px, 2.5vw, 40px);">
+    <div style="position: relative;">
+      <button class="copy-btn" onclick="copyTemplate('tpl-format')" title="Copy template">&#128203;</button>
+      <pre id="tpl-format" class="prompt-block prompt-mid" style="white-space: pre-wrap; font-family: inherit; margin: 0;">Format each response as:
+Observation: [what you notice]
+Focus: [one thing to work on]
 Next step: [a specific, actionable suggestion]
-Question: [something for the student to think about]</div>
-  <div class="tip-box" style="max-width: 800px;">
-    <p><strong>Your turn:</strong> If it fits your tool, add a short format specification. Consider: response length, structure, citation style, or whether each response should end with a question.</p>
+Question: [something for the student to consider]</pre>
+    </div>
+    <div class="tip-box" style="margin-top: 1.2em;">
+      <p><strong>Your turn:</strong> If it fits your tool, add a short format spec. Not every prompt needs one.</p>
+    </div>
   </div>
 </div>
 
@@ -742,21 +796,20 @@ Question: [something for the student to think about]</div>
   </div>
 </div>
 
-<!-- Scrubber Timeline -->
-<div id="scrubber-container" class="scrubber-container">
-  <div class="scrubber-track">
-    <div id="scrubber-progress" class="scrubber-progress"></div>
-    <div class="scrubber-thumb">
-      <div class="scrubber-tooltip" id="scrubber-tooltip">Slide 1</div>
-    </div>
-  </div>
-</div>
 </div><!-- /deck -->
 
 <!-- Navigation Bar -->
 <div id="nav-bar">
   <button id="arrow-prev" class="arrow-btn" aria-label="Previous slide" title="Previous slide (←)">&#8592;</button>
   <span class="nav-info"><strong id="nav-current">1</strong> / <span id="nav-total"></span></span>
+  <div id="scrubber-container" class="scrubber-container">
+    <div class="scrubber-track">
+      <div id="scrubber-progress" class="scrubber-progress"></div>
+      <div class="scrubber-thumb">
+        <div class="scrubber-tooltip" id="scrubber-tooltip">Slide 1</div>
+      </div>
+    </div>
+  </div>
   <span class="nav-keys"><kbd>&#8592;</kbd> <kbd>&#8594;</kbd> navigate &nbsp; <kbd>Esc</kbd> overview</span>
   <button id="arrow-next" class="arrow-btn" aria-label="Next slide" title="Next slide (→)">&#8594;</button>
 </div>

@@ -26,18 +26,6 @@
     document.addEventListener('touchmove', onDrag, { passive: false });
     document.addEventListener('mouseup', stopDrag);
     document.addEventListener('touchend', stopDrag);
-
-    var navBar = document.getElementById('nav-bar');
-    if (navBar) {
-      var observer = new MutationObserver(function() {
-        if (navBar.classList.contains('visible')) {
-          scrubberContainer.classList.add('visible');
-        } else {
-          scrubberContainer.classList.remove('visible');
-        }
-      });
-      observer.observe(navBar, { attributes: true, attributeFilter: ['class'] });
-    }
   }
 
   function startDrag(e) { isDragging = true; e.stopPropagation(); }
