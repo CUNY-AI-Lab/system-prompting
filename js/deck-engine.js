@@ -29,7 +29,6 @@
 
     // Update nav
     document.getElementById('nav-current').textContent = current + 1;
-    document.getElementById('progress-bar').style.width = ((current / (total - 1)) * 100) + '%';
 
     // Update hash
     history.replaceState(null, '', '#' + (current + 1));

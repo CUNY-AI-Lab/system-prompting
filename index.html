@@ -529,20 +529,15 @@ The core problem: students summarize plot rather than analyzing how language, fo
 <div class="slide layout-grid">
   <span class="label label-cyan">Structure</span>
 
-  <div class="tab-container">
-    <div class="tab-buttons">
-      <button class="tab-button active" onclick="switchTab(event, 'overview')">Overview</button>
-      <button class="tab-button" onclick="switchTab(event, 'dimensions')">Dimensions</button>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2em; max-width: 1000px; margin: 0 auto;">
+    <div>
+      <h2 style="margin-bottom: 0.6em;">Drafting a System Prompt</h2>
+      <p style="line-height: 1.6;">Each system prompt is built from modular components. We&rsquo;ll draft yours one piece at a time.</p>
     </div>
 
-    <div id="overview" class="tab-content active">
-      <h2 style="text-align: center; margin-bottom: 0.6em;">Drafting a System Prompt</h2>
-      <p style="text-align: center; max-width: 700px; margin: 0 auto 1em;">Each system prompt is built from modular components. We&rsquo;ll draft yours one piece at a time.</p>
-    </div>
-
-    <div id="dimensions" class="tab-content">
+    <div>
       <h3 style="margin-bottom: 1em;">Five Dimensions</h3>
-      <ol style="max-width: 700px; margin: 0 auto; line-height: 1.8;">
+      <ol style="line-height: 1.8; padding-left: 1.5em;">
         <li><strong>Context &amp; Problem</strong> - What course, what students, and what specific learning challenge does this tool address?</li>
         <li><strong>Procedure</strong> - What steps should the tool follow when a student engages with it?</li>
         <li><strong>Constraints</strong> - What should the tool refuse to do, and how should it redirect?</li>
@@ -762,7 +757,6 @@ Question: [something for the student to think about]</div>
 <div id="nav-bar">
   <button id="arrow-prev" class="arrow-btn" aria-label="Previous slide" title="Previous slide (←)">&#8592;</button>
   <span class="nav-info"><strong id="nav-current">1</strong> / <span id="nav-total"></span></span>
-  <div id="progress-track"><div id="progress-bar"></div></div>
   <span class="nav-keys"><kbd>&#8592;</kbd> <kbd>&#8594;</kbd> navigate &nbsp; <kbd>Esc</kbd> overview</span>
   <button id="arrow-next" class="arrow-btn" aria-label="Next slide" title="Next slide (→)">&#8594;</button>
 </div>
