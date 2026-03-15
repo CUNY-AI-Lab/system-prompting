@@ -744,6 +744,127 @@ blockquote {
   100% { top: 100%; opacity: 0; }
 }
 
+/* ============================================
+   THEATER DIAGRAM (Slide 3)
+   ============================================ */
+.theater-diagram {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  gap: 0;
+}
+
+.theater-backstage {
+  background: rgba(11, 29, 58, 0.04);
+  border: 1px dashed rgba(11, 29, 58, 0.12);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  padding: clamp(10px, 1.5vh, 16px) clamp(12px, 1.5vw, 18px);
+}
+
+.theater-backstage-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(4px, 0.8vw, 10px);
+}
+
+.theater-arrow-h {
+  flex-shrink: 0;
+}
+
+.theater-zone-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(0.55rem, 0.75vw, 0.65rem);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  text-align: center;
+  margin-bottom: clamp(4px, 0.6vh, 8px);
+}
+
+.theater-curtain {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: clamp(6px, 1vh, 10px) 0;
+}
+
+.theater-curtain-line {
+  flex: 1;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg, var(--accent-amber), var(--accent-amber) 6px, transparent 6px, transparent 12px
+  );
+  opacity: 0.5;
+}
+
+.theater-curtain-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(0.52rem, 0.7vw, 0.6rem);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-amber);
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.theater-frontstage {
+  background: rgba(59, 111, 181, 0.04);
+  border: 1px solid rgba(59, 111, 181, 0.1);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  padding: clamp(10px, 1.5vh, 16px) clamp(12px, 1.5vw, 18px);
+}
+
+.theater-conversation {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 1vh, 10px);
+}
+
+.theater-msg {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: clamp(6px, 1vh, 10px) clamp(10px, 1.2vw, 14px);
+  border-radius: 8px;
+  font-size: clamp(0.7rem, 0.95vw, 0.82rem);
+  line-height: 1.4;
+}
+
+.theater-msg-who {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.6rem, 0.8vw, 0.7rem);
+}
+
+.theater-msg-text {
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.theater-msg-user {
+  background: white;
+  border: 1px solid rgba(59, 111, 181, 0.15);
+  align-self: flex-end;
+  max-width: 85%;
+}
+
+.theater-msg-user .theater-msg-who { color: var(--accent-blue); }
+
+.theater-msg-ai {
+  background: var(--dark-bg);
+  border: 1px solid rgba(78, 205, 196, 0.2);
+  align-self: flex-start;
+  max-width: 85%;
+}
+
+.theater-msg-ai .theater-msg-who { color: var(--accent-cyan); }
+.theater-msg-ai .theater-msg-text { color: var(--light-text-50); }
+
 /* Step labels for flow diagram */
 .flow-step-label {
   font-family: 'DM Sans', sans-serif;
@@ -1263,43 +1384,51 @@ body.overview-mode #nav-bar { display: none; }
       <p><strong>Key distinction:</strong> The <em>user prompt</em> is what someone types in the chat. The <em>system prompt</em> is what you, the instructor, compose behind the scenes to guide the AI&rsquo;s behavior across the entire conversation.</p>
     </div>
   </div>
-  <div class="stage" style="background: var(--bg-light); flex-direction: column; padding: clamp(12px, 2vh, 28px) clamp(12px, 1.5vw, 24px);">
-    <div class="flow-diagram">
-      <!-- Step 1: Instructor writes system prompt -->
-      <div class="flow-step-label">Before the conversation</div>
-      <div class="flow-node flow-instructor" style="width: 100%;">
-        <div class="flow-node-icon">&#9997;&#65039;</div>
-        <div class="flow-node-label">You (Instructor)</div>
-        <div class="flow-node-desc">Write the system prompt</div>
+  <div class="stage" style="background: var(--bg-light); flex-direction: column; padding: clamp(12px, 2vh, 28px) clamp(10px, 1.2vw, 20px); justify-content: center;">
+    <div class="theater-diagram">
+      <!-- Behind the curtain: instructor + system prompt -->
+      <div class="theater-backstage">
+        <div class="theater-zone-label">Behind the curtain</div>
+        <div class="theater-backstage-row">
+          <div class="flow-node flow-instructor" style="width: auto; flex: 1;">
+            <div class="flow-node-icon" style="font-size: 1.4rem;">&#9997;&#65039;</div>
+            <div class="flow-node-label" style="font-size: 0.8rem;">Instructor</div>
+          </div>
+          <div class="theater-arrow-h">
+            <svg width="28" height="12" viewBox="0 0 28 12"><path d="M0 6 L20 6 M14 1 L22 6 L14 11" stroke="var(--accent-cyan)" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          <div class="flow-node flow-prompt" style="width: auto; flex: 2;">
+            <span class="flow-hidden-badge">Hidden</span>
+            <div class="flow-node-code" style="font-size: 0.75rem;">System Prompt</div>
+            <div class="flow-node-desc" style="font-family: 'JetBrains Mono', monospace; color: var(--accent-cyan); margin-top: 2px; font-size: 0.65rem;">&ldquo;You are a tutor&hellip;&rdquo;</div>
+          </div>
+        </div>
       </div>
-      <div class="flow-connector">
-        <div class="flow-connector-line"></div>
-        <div class="flow-connector-arrow"></div>
+      <!-- The curtain line -->
+      <div class="theater-curtain">
+        <div class="theater-curtain-line"></div>
+        <span class="theater-curtain-label">student never sees above</span>
+        <div class="theater-curtain-line"></div>
       </div>
-      <div class="flow-node flow-prompt" style="width: 100%;">
-        <span class="flow-hidden-badge">Hidden</span>
-        <div class="flow-node-code">System Prompt</div>
-        <div class="flow-node-desc" style="font-family: 'JetBrains Mono', monospace; color: var(--accent-cyan); margin-top: 3px;">&ldquo;You are a tutor&hellip;&rdquo;</div>
+      <!-- The AI model sits on the curtain line -->
+      <div class="flow-node flow-model" style="width: clamp(160px, 22vw, 200px); margin: 0 auto;">
+        <div class="flow-node-icon" style="font-size: 1.3rem;">&#129302;</div>
+        <div class="flow-node-label" style="font-size: 0.82rem;">AI Model</div>
+        <div class="flow-node-desc" style="font-size: 0.68rem;">Follows hidden instructions</div>
       </div>
-      <div class="flow-connector connector-hidden">
-        <div class="flow-connector-line"></div>
-        <div class="flow-connector-arrow"></div>
-      </div>
-      <!-- Step 2: Student sends user prompt, model responds -->
-      <div class="flow-step-label" style="color: var(--accent-blue);">During the conversation</div>
-      <div class="flow-node flow-student" style="width: 100%;">
-        <div class="flow-node-icon">&#128100;</div>
-        <div class="flow-node-label">Student</div>
-        <div class="flow-node-desc">&ldquo;I&rsquo;m stuck on my intro&hellip;&rdquo;</div>
-      </div>
-      <div class="flow-connector connector-shaped">
-        <div class="flow-connector-line"></div>
-        <div class="flow-connector-arrow"></div>
-      </div>
-      <div class="flow-node flow-model" style="width: 100%;">
-        <div class="flow-node-icon" style="font-size: 1.4rem;">&#129302;</div>
-        <div class="flow-node-label">AI Model</div>
-        <div class="flow-node-desc">Shaped by system prompt</div>
+      <!-- Front of house: student interaction -->
+      <div class="theater-frontstage">
+        <div class="theater-conversation">
+          <div class="theater-msg theater-msg-user">
+            <span class="theater-msg-who">&#128100; Student</span>
+            <span class="theater-msg-text">&ldquo;I&rsquo;m stuck on my intro&hellip;&rdquo;</span>
+          </div>
+          <div class="theater-msg theater-msg-ai">
+            <span class="theater-msg-who">&#129302; AI</span>
+            <span class="theater-msg-text">&ldquo;What&rsquo;s the main argument you want your reader to encounter first?&rdquo;</span>
+          </div>
+        </div>
+        <div class="theater-zone-label" style="color: var(--accent-blue); margin-top: 6px;">What the student sees</div>
       </div>
     </div>
   </div>
