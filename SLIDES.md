@@ -116,7 +116,7 @@ All open-weight models. No data retained on external servers. Each has different
 ```
 You are a writing scaffold for an English 101 composition course at a public urban university. Students are multilingual, first-generation, and balancing work alongside coursework.
 
-The core problem: students treat revision as proofreading—fixing grammar and word choice—rather than rethinking argument, structure, and evidence. They lack a process for examining whether their ideas are clear, well-organized, and sufficiently supported. This tool scaffolds the move from surface-level fixes to substantive revision.
+The core problem: students treat revision as proofreading, fixing grammar and word choice, rather than rethinking argument, structure, and evidence. They lack a process for examining whether their ideas are clear, well-organized, and sufficiently supported. This tool scaffolds the move from surface-level fixes to substantive revision.
 
 Procedure:
 1. Request the assignment prompt and student draft before responding.
@@ -127,7 +127,7 @@ Constraints:
 - Never generate text that could substitute for the student's own writing. Focus on higher-order concerns like argument, structure, and evidence.
 - If asked to "just fix it," redirect toward a specific revision step.
 - Do not grade or evaluate.
-- Tone: Warm and direct. Use "I notice..." and "What if you tried..." Language accessible to multilingual and first-generation students.
+- Tone: Warm and direct. Use "I notice..." and "What if you tried..."
 ```
 
 ---
@@ -233,9 +233,9 @@ Constraints:
 ## Slide 18 - Literature: A Prompt That Fosters Close Reading
 
 ```
-You are a close-reading tool for an undergraduate literature and cultural studies course.
+You are a close-reading tool designed for an introductory English course that focuses on cultural studies and interpretive methods of literary analysis. Students recently practiced close reading and must now select a brief literary artifact to analyze using techniques associated with New Criticism.
 
-The core problem: students summarize plot rather than analyzing how language, form, and perspective shape meaning.
+The core problem: students default to summarizing content or importing biographical and historical context rather than attending closely to how the text works: how language, form, imagery, and internal tension generate meaning within the artifact itself.
 
 Procedure:
 1. Ask what the student notices about the language in their chosen passage.
@@ -243,15 +243,14 @@ Procedure:
 3. Ask how the passage connects to the work's larger themes and cultural moment.
 4. Guide them toward an interpretive claim grounded in textual evidence.
 
-Critical framework:
-- Who is speaking? Who is silenced? What power structures are visible?
-- Treat texts as cultural artifacts, not just aesthetic objects.
+Framework:
+- Treat the text as a self-contained object. Bracket authorial intent and historical context; attend to what the language itself does.
+- Look for tension, irony, paradox, and ambiguity as sites of meaning, not problems to resolve. Ask how formal elements (diction, imagery, syntax, tone) work together as an organic whole.
 
 Constraints:
-- Facilitate multiple interpretations grounded in textual evidence rather than prescribing a correct reading.
-- Redirect plot summary toward analysis: "What stood out to you about how the author crafted this?"
-- Encourage grounding claims in textual evidence as analysis develops.
-- Tone: Encouraging and accessible. Affirm the student's observations while pushing deeper into textual detail and cultural context.
+- Facilitate multiple interpretations grounded in textual evidence. Do not prescribe a correct reading.
+- If a student reaches for biographical or historical context, redirect them back to the text: "What in the language itself supports that reading?"
+- Tone: Encouraging and accessible. Affirm observations, then push deeper.
 ```
 
 ---
@@ -262,65 +261,113 @@ Constraints:
 
 ---
 
-## Slide 20 - Five Things Every System Prompt Needs
+## Slide 20 - Drafting a System Prompt
 
-1. **Role & Persona** - What is the tool? A writing scaffold, a source-analysis instrument, a research tool, a debate simulator?
-2. **Scope & Boundaries** - What should it do and what should it refuse to do? Topic limits, ethical guardrails.
-3. **Pedagogical Approach** - How should it guide? Scaffolding, structured steps, modeling, direct instruction?
-4. **Tone & Audience** - Register, formality, warmth. Are students multilingual? First-gen? Graduate-level?
-5. **Output Format** - Bullet points or prose? Citation style? Response length? Structured templates?
+Each system prompt is built from modular components. We'll draft yours one piece at a time.
 
----
-
-## Slide 21 - Building Block 1: Role & Persona
-
-The first sentence of your system prompt is the most important. It tells the AI *what it does* and immediately shapes everything that follows.
-
-- **Writing Scaffold:** "You are a writing scaffold that guides through structured steps, never writes for students."
-- **Research Tool:** "You are a research tool that helps locate, organize, and evaluate secondary sources."
-- **Argumentation Tool:** "You are an argumentation tool that challenges the student's claims with counterarguments and asks them to defend their position."
+1. **Context & Problem** - What course, what students, what learning challenge?
+2. **Procedure** - What steps should the tool follow?
+3. **Constraints** - What should it refuse to do, and how should it redirect?
+4. **Tone** - What register and affect should it use with your students?
+5. **Output Format** - How should it structure its responses?
 
 ---
 
-## Slide 22 - Building Block 2: Scope & Boundaries
+## Slide 21 - Component 1: Context & Problem
 
-Boundaries aren't about restricting the AI. They're about protecting the learning process.
+Name the tool, the course, the students, and the specific learning challenge. Everything else follows from this.
 
-- **Topic scope** - "Only discuss texts assigned in this course"
-- **What not to produce** - "Never write full paragraphs for the student"
-- **Academic integrity** - "If the student asks you to write their assignment, redirect them"
-- **Epistemic honesty** - "If you're unsure about a fact, say so"
+- What kind of tool is this?
+- Who are your students?
+- What learning challenge does it address?
 
----
-
-## Slide 23 - Building Block 3: Pedagogical Approach
-
-This is where disciplinary expertise shapes the system prompt. You're encoding specific pedagogical strategies into the tool's behavior.
-
-- **Question-Driven Guidance** - "When a student makes a claim, respond with a question that pushes them to examine their reasoning."
-- **Scaffolding** - "Break complex tasks into smaller steps. Only move to the next step when the student has completed the current one."
-- **Modeling** - "Show one example of how to analyze a passage, then ask the student to try the same approach with a different passage."
-- **Metacognitive Thinking** - "Periodically ask: 'What strategy are you using here?' or 'How did you decide to approach it this way?'"
-
----
-
-## Slide 24 - Building Block 4: Tone & Audience
-
-**Cold & Clinical:** "Your thesis is weak and lacks specificity. Revise it."
-
-**Warm & Constructive:** "I can see what you're going for here. What if you narrowed your focus to make it more specific?"
-
----
-
-## Slide 25 - Building Block 5: Output Format
-
-**Structured Feedback Template:**
+**Template:**
 ```
-Strength: [one thing the student did well]
-Focus area: [one thing to improve]
+You are a [tool type] for [course name].
+Students are [relevant context].
+
+The core problem: [specific learning challenge].
+```
+
+**Your turn:** Open the Sandbox. Write 2-3 sentences naming what the tool does, who the students are, and what learning challenge it addresses.
+
+---
+
+## Slide 22 - Component 2: Procedure
+
+Tell the tool what to do, step by step. Numbered steps give the model a clear sequence rather than a loose set of suggestions.
+
+- What should the tool request before responding?
+- What should it prioritize?
+- How should it respond to each student input?
+
+**Template:**
+```
+Procedure:
+1. Ask the student for [specific input] before responding.
+2. Identify [priority concern] before addressing [secondary concerns].
+3. For each issue, [specific action, e.g. ask a question rather than fix it].
+```
+
+**Your turn:** Write 2-4 numbered steps. Think about the sequence that matters for your discipline.
+
+---
+
+## Slide 23 - Component 3: Constraints
+
+Define what the tool should not do and how it redirects when students push against those limits.
+
+- What will students ask it to do *for* them?
+- How should it redirect instead?
+- What uncertainty should it name explicitly?
+
+**Template:**
+```
+Constraints:
+- Never [specific output to avoid].
+- If asked to [common student request], redirect by [specific alternative].
+- If uncertain about [domain content], say so explicitly.
+```
+
+**Your turn:** Write 2-3 constraints that keep the tool from doing work students should do themselves.
+
+---
+
+## Slide 24 - Component 4: Tone
+
+One sentence on tone shapes how the tool communicates with every student it encounters.
+
+- What register fits your students?
+- Should it feel warm, direct, encouraging?
+- Are there phrases that model the right affect?
+
+**Template:**
+```
+Tone: [Adjective and adjective]. Use phrases like "[example phrase]" and "[example phrase]."
+```
+
+**Your turn:** Add one sentence describing the tone. What language makes your students feel supported rather than evaluated?
+
+---
+
+## Slide 25 - Component 5: Output Format
+
+Optional, but useful when consistent structure helps students know what to expect from each response.
+
+- Should each response end with a question?
+- Should it follow a fixed structure?
+- What length is appropriate?
+
+**Template:**
+```
+Format each response as:
+Observation: [what you notice]
+Focus: [one thing to work on]
 Next step: [a specific, actionable suggestion]
-Question: [something for the student to think about]
+Question: [something for the student to consider]
 ```
+
+**Your turn:** If it fits your tool, add a short format spec. Not every prompt needs one.
 
 ---
 

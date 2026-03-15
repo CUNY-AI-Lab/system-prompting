@@ -35,7 +35,7 @@
      ========================================== -->
 <div class="slide layout-full-dark">
   <span class="label label-cyan">Workshop Series</span>
-  <h2 style="margin-bottom: 0.8em;">Three Weeks, Three Skills</h2>
+  <h2>Three Weeks, Three Skills</h2>
   <div class="roadmap">
     <div class="roadmap-item active">
       <div class="week-label">March 16 &mdash; This Week</div>
@@ -182,7 +182,7 @@
      ========================================== -->
 <div class="slide layout-full-dark">
   <span class="label label-cyan">Your Toolkit</span>
-  <h2 style="margin-bottom: 0.8em;">Models in the CUNY AI Lab Sandbox</h2>
+  <h2>Models in the CUNY AI Lab Sandbox</h2>
   <p style="color: var(--light-text-50); max-width: 700px; margin-bottom: 1.2em;">All open-weight models. No data retained on external servers. Each has different constraints and affordances.</p>
   <div class="model-grid">
     <div class="model-card">
@@ -296,7 +296,7 @@
   <h2>A Prompt That Fosters Revision</h2>
   <div class="prompt-block prompt-good" style="font-size: clamp(0.75rem, 1.05vw, 0.9rem);"><span class="prompt-label">Strong</span>You are a writing scaffold for an English 101 composition course at a public urban university. Students are multilingual, first-generation, and balancing work alongside coursework.
 
-The core problem: students treat revision as proofreading—fixing grammar and word choice—rather than rethinking argument, structure, and evidence. They lack a process for examining whether their ideas are clear, well-organized, and sufficiently supported. This tool scaffolds the move from surface-level fixes to substantive revision.
+The core problem: students treat revision as proofreading, fixing grammar and word choice, rather than rethinking argument, structure, and evidence. They lack a process for examining whether their ideas are clear, well-organized, and sufficiently supported. This tool scaffolds the move from surface-level fixes to substantive revision.
 
 <strong style="color: var(--accent-cyan);">Procedure:</strong>
 1. Request the assignment prompt and student draft before responding.
@@ -307,7 +307,7 @@ The core problem: students treat revision as proofreading—fixing grammar and w
 - Never generate text that could substitute for the student&rsquo;s own writing. Focus on higher-order concerns like argument, structure, and evidence.
 - If asked to &ldquo;just fix it,&rdquo; redirect toward a specific revision step.
 - Do not grade or evaluate.
-- Tone: Warm and direct. Use &ldquo;I notice...&rdquo; and &ldquo;What if you tried...&rdquo; Language accessible to multilingual and first-generation students.</div>
+- Tone: Warm and direct. Use &ldquo;I notice...&rdquo; and &ldquo;What if you tried...&rdquo;</div>
 </div>
 
 <!-- ==========================================
@@ -412,7 +412,8 @@ The core problem: students extract facts from sources rather than analyzing them
 - Encourage grounding interpretations in specific passages as analysis develops.
 - If unsure about a historical fact, say so. Never invent dates, names, or events.
 - Do not provide a complete analysis. Model the questions historians ask.
-- Tone: Patient and curious. Demonstrate genuine interest in the student's thinking without being condescending.</div>
+
+<strong style="color: var(--accent-cyan);">Tone:</strong> Patient and curious. Demonstrate genuine interest in the student&rsquo;s thinking without being condescending.</div>
 </div>
 
 <!-- ==========================================
@@ -493,9 +494,9 @@ The core problem: students extract facts from sources rather than analyzing them
     </div>
   </div>
   <h2>A Prompt That Fosters Close Reading</h2>
-  <div class="prompt-block prompt-good" style="font-size: clamp(0.75rem, 1.05vw, 0.9rem);"><span class="prompt-label">Strong</span>You are a close-reading tool for an undergraduate literature and cultural studies course.
+  <div class="prompt-block prompt-good" style="font-size: clamp(0.75rem, 1.05vw, 0.9rem);"><span class="prompt-label">Strong</span>You are a close-reading tool designed for an introductory English course that focuses on cultural studies and interpretive methods of literary analysis. Students recently practiced close reading and must now select a brief literary artifact to analyze using techniques associated with New Criticism.
 
-The core problem: students summarize plot rather than analyzing how language, form, and perspective shape meaning.
+The core problem: students default to summarizing content or importing biographical and historical context rather than attending closely to how the text works: how language, form, imagery, and internal tension generate meaning within the artifact itself.
 
 <strong style="color: var(--accent-cyan);">Procedure:</strong>
 1. Ask what the student notices about the language in their chosen passage.
@@ -503,15 +504,15 @@ The core problem: students summarize plot rather than analyzing how language, fo
 3. Ask how the passage connects to the work&rsquo;s larger themes and cultural moment.
 4. Guide them toward an interpretive claim grounded in textual evidence.
 
-<strong style="color: var(--accent-cyan);">Critical framework:</strong>
-- Who is speaking? Who is silenced? What power structures are visible?
-- Treat texts as cultural artifacts, not just aesthetic objects.
+<strong style="color: var(--accent-cyan);">Framework:</strong>
+- Treat the text as a self-contained object. Bracket authorial intent and historical context; attend to what the language itself does.
+- Look for tension, irony, paradox, and ambiguity as sites of meaning, not problems to resolve. Ask how formal elements (diction, imagery, syntax, tone) work together as an organic whole.
 
 <strong style="color: var(--accent-cyan);">Constraints:</strong>
-- Facilitate multiple interpretations grounded in textual evidence rather than prescribing a correct reading.
-- Redirect plot summary toward analysis: &ldquo;What stood out to you about how the author crafted this?&rdquo;
-- Encourage grounding claims in textual evidence as analysis develops.
-- Tone: Encouraging and accessible. Affirm the student's observations while pushing deeper into textual detail and cultural context.</div>
+- Facilitate multiple interpretations grounded in textual evidence. Do not prescribe a correct reading.
+- If a student reaches for biographical or historical context, redirect them back to the text: &ldquo;What in the language itself supports that reading?&rdquo;
+
+<strong style="color: var(--accent-cyan);">Tone:</strong> Encouraging and accessible. Affirm observations, then push deeper.</div>
 </div>
 
 <!-- ==========================================
@@ -528,7 +529,7 @@ The core problem: students summarize plot rather than analyzing how language, fo
      ========================================== -->
 <div class="slide layout-content" style="justify-content: center; align-items: center; text-align: center;">
   <span class="label label-cyan">Structure</span>
-  <h2 style="margin-bottom: 0.4em;">Drafting a System Prompt</h2>
+  <h2>Drafting a System Prompt</h2>
   <p style="margin-bottom: 1.4em; max-width: 600px; margin-left: auto; margin-right: auto;">Each system prompt is built from modular components. We&rsquo;ll draft yours one piece at a time.</p>
   <ol class="stream-list" style="text-align: left; max-width: 580px; margin: 0 auto; line-height: 1.9; padding-left: 1.4em;">
     <li><strong>Context &amp; Problem</strong> — What course, what students, what learning challenge?</li>
@@ -554,15 +555,15 @@ The core problem: students summarize plot rather than analyzing how language, fo
     </ul>
   </div>
   <div class="stage" style="flex-direction: column; justify-content: center; padding: clamp(16px, 2.5vw, 40px);">
-    <div style="position: relative;">
+    <div class="tip-box" style="margin-bottom: 1.2em;">
+      <p><strong>Your turn:</strong> Open the Sandbox. Write 2-3 sentences naming what the tool does, who the students are, and what learning challenge it addresses.</p>
+    </div>
+    <div style="position: relative; width: 100%;">
       <button class="copy-btn" onclick="copyTemplate('tpl-context')" title="Copy template">Copy</button>
       <pre id="tpl-context" class="prompt-block prompt-mid" style="white-space: pre-wrap; font-family: inherit; margin: 0;">You are a [tool type] for [course name].
 Students are [relevant context].
 
 The core problem: [specific learning challenge].</pre>
-    </div>
-    <div class="tip-box" style="margin-top: 1.2em;">
-      <p><strong>Your turn:</strong> Open the Sandbox. Write 2-3 sentences naming what the tool does, who the students are, and what learning challenge it addresses.</p>
     </div>
   </div>
 </div>
@@ -582,15 +583,15 @@ The core problem: [specific learning challenge].</pre>
     </ul>
   </div>
   <div class="stage" style="flex-direction: column; justify-content: center; padding: clamp(16px, 2.5vw, 40px);">
-    <div style="position: relative;">
+    <div class="tip-box" style="margin-bottom: 1.2em;">
+      <p><strong>Your turn:</strong> Write 2-4 numbered steps. Think about the sequence that matters for your discipline.</p>
+    </div>
+    <div style="position: relative; width: 100%;">
       <button class="copy-btn" onclick="copyTemplate('tpl-procedure')" title="Copy template">Copy</button>
       <pre id="tpl-procedure" class="prompt-block prompt-mid" style="white-space: pre-wrap; font-family: inherit; margin: 0;">Procedure:
 1. Ask the student for [specific input] before responding.
 2. Identify [priority concern] before addressing [secondary concerns].
 3. For each issue, [specific action, e.g. ask a question rather than fix it].</pre>
-    </div>
-    <div class="tip-box" style="margin-top: 1.2em;">
-      <p><strong>Your turn:</strong> Write 2-4 numbered steps. Think about the sequence that matters for your discipline.</p>
     </div>
   </div>
 </div>
@@ -610,15 +611,15 @@ The core problem: [specific learning challenge].</pre>
     </ul>
   </div>
   <div class="stage" style="flex-direction: column; justify-content: center; padding: clamp(16px, 2.5vw, 40px);">
-    <div style="position: relative;">
+    <div class="tip-box" style="margin-bottom: 1.2em;">
+      <p><strong>Your turn:</strong> Write 2-3 constraints that keep the tool from doing work students should do themselves.</p>
+    </div>
+    <div style="position: relative; width: 100%;">
       <button class="copy-btn" onclick="copyTemplate('tpl-constraints')" title="Copy template">Copy</button>
       <pre id="tpl-constraints" class="prompt-block prompt-mid" style="white-space: pre-wrap; font-family: inherit; margin: 0;">Constraints:
 - Never [specific output to avoid].
 - If asked to [common student request], redirect by [specific alternative].
 - If uncertain about [domain content], say so explicitly.</pre>
-    </div>
-    <div class="tip-box" style="margin-top: 1.2em;">
-      <p><strong>Your turn:</strong> Write 2-3 constraints that keep the tool from doing work students should do themselves.</p>
     </div>
   </div>
 </div>
@@ -638,12 +639,12 @@ The core problem: [specific learning challenge].</pre>
     </ul>
   </div>
   <div class="stage" style="flex-direction: column; justify-content: center; padding: clamp(16px, 2.5vw, 40px);">
-    <div style="position: relative;">
+    <div class="tip-box" style="margin-bottom: 1.2em;">
+      <p><strong>Your turn:</strong> Add one sentence describing the tone. What language makes your students feel supported rather than evaluated?</p>
+    </div>
+    <div style="position: relative; width: 100%;">
       <button class="copy-btn" onclick="copyTemplate('tpl-tone')" title="Copy template">Copy</button>
       <pre id="tpl-tone" class="prompt-block prompt-mid" style="white-space: pre-wrap; font-family: inherit; margin: 0;">Tone: [Adjective and adjective]. Use phrases like "[example phrase]" and "[example phrase]."</pre>
-    </div>
-    <div class="tip-box" style="margin-top: 1.2em;">
-      <p><strong>Your turn:</strong> Add one sentence describing the tone. What language makes your students feel supported rather than evaluated?</p>
     </div>
   </div>
 </div>
@@ -663,16 +664,16 @@ The core problem: [specific learning challenge].</pre>
     </ul>
   </div>
   <div class="stage" style="flex-direction: column; justify-content: center; padding: clamp(16px, 2.5vw, 40px);">
-    <div style="position: relative;">
+    <div class="tip-box" style="margin-bottom: 1.2em;">
+      <p><strong>Your turn:</strong> If it fits your tool, add a short output format section. Not every prompt needs one.</p>
+    </div>
+    <div style="position: relative; width: 100%;">
       <button class="copy-btn" onclick="copyTemplate('tpl-format')" title="Copy template">Copy</button>
       <pre id="tpl-format" class="prompt-block prompt-mid" style="white-space: pre-wrap; font-family: inherit; margin: 0;">Format each response as:
 Observation: [what you notice]
 Focus: [one thing to work on]
 Next step: [a specific, actionable suggestion]
 Question: [something for the student to consider]</pre>
-    </div>
-    <div class="tip-box" style="margin-top: 1.2em;">
-      <p><strong>Your turn:</strong> If it fits your tool, add a short format spec. Not every prompt needs one.</p>
     </div>
   </div>
 </div>
@@ -690,16 +691,15 @@ Question: [something for the student to consider]</pre>
      SLIDE 27 — ADVANCED TECHNIQUES
      ========================================== -->
 <div class="slide layout-grid">
-  <span class="label label-cyan">Going Further</span>
-  <h2 style="text-align: center; margin-bottom: 0.6em;">Advanced Prompting Strategies</h2>
+  <h2>Going Further</h2>
   <div class="grid-2">
     <div class="card card-cyan">
       <h4>Conditional Behavior</h4>
-      <p>&ldquo;If the student submits a draft, give feedback. If they ask a conceptual question, respond with a guiding question. If they seem frustrated, acknowledge it before continuing.&rdquo;</p>
+      <p>&ldquo;If the student submits a draft, focus on structure before style. If they ask a yes/no question, reframe it as an open one. If they ask you to just give them the answer, ask what they&rsquo;ve tried first.&rdquo;</p>
     </div>
     <div class="card">
-      <h4>Procedural Instructions</h4>
-      <p>&ldquo;Step 1: Request the assignment prompt and draft. Step 2: Identify one focus area. Step 3: Ask the student a question about that area before offering guidance.&rdquo;</p>
+      <h4>Conversational Brevity</h4>
+      <p>&ldquo;Respond to one thing at a time. Do not front-load your full analysis. Ask one question, wait for the student&rsquo;s response, then proceed.&rdquo;</p>
     </div>
     <div class="card card-navy">
       <h4>Epistemic Guardrails</h4>
@@ -707,11 +707,8 @@ Question: [something for the student to consider]</pre>
     </div>
     <div class="card card-cyan">
       <h4>Multilingual Support</h4>
-      <p>&ldquo;If a student writes in a language other than English, respond in that language. Offer to discuss concepts in both languages to support comprehension.&rdquo;</p>
+      <p>&ldquo;If a student writes in a language other than English, respond in that language. Offer to discuss concepts in both languages.&rdquo; All seven models in the Sandbox support multilingual input and output.</p>
     </div>
-  </div>
-  <div class="tip-box" style="max-width: 800px; margin: 0.8em auto 0;">
-    <p><strong>Remember:</strong> All seven models in the CUNY AI Lab Sandbox support multilingual input and output &mdash; a major asset for CUNY&rsquo;s student population.</p>
   </div>
 </div>
 
@@ -746,7 +743,7 @@ Question: [something for the student to consider]</pre>
      ========================================== -->
 <div class="slide layout-full-dark">
   <span class="label label-cyan">Coming Up</span>
-  <h2 style="margin-bottom: 0.8em;">The Road Ahead</h2>
+  <h2>The Road Ahead</h2>
   <div class="roadmap">
     <div class="roadmap-item" style="opacity: 0.5;">
       <div class="week-label">March 16 &mdash; Today</div>
@@ -810,8 +807,8 @@ Question: [something for the student to consider]</pre>
       </div>
     </div>
   </div>
-  <span class="nav-keys"><kbd>&#8592;</kbd> <kbd>&#8594;</kbd> navigate &nbsp; <kbd>Esc</kbd> overview</span>
   <button id="arrow-next" class="arrow-btn" aria-label="Next slide" title="Next slide (→)">&#8594;</button>
+  <span class="nav-keys"><kbd>Esc</kbd> overview</span>
 </div>
 
 
