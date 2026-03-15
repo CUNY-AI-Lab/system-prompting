@@ -1410,12 +1410,6 @@ body.overview-mode #nav-bar { display: none; }
         <span class="theater-curtain-label">student never sees above</span>
         <div class="theater-curtain-line"></div>
       </div>
-      <!-- The AI model sits on the curtain line -->
-      <div class="flow-node flow-model" style="width: clamp(160px, 22vw, 200px); margin: 0 auto;">
-        <div class="flow-node-icon" style="font-size: 1.3rem;">&#129302;</div>
-        <div class="flow-node-label" style="font-size: 0.82rem;">AI Model</div>
-        <div class="flow-node-desc" style="font-size: 0.68rem;">Follows hidden instructions</div>
-      </div>
       <!-- Front of house: student interaction -->
       <div class="theater-frontstage">
         <div class="theater-conversation">
@@ -1423,8 +1417,16 @@ body.overview-mode #nav-bar { display: none; }
             <span class="theater-msg-who">&#128100; Student</span>
             <span class="theater-msg-text">&ldquo;I&rsquo;m stuck on my intro&hellip;&rdquo;</span>
           </div>
+        </div>
+        <!-- AI Model sits between user prompt and response -->
+        <div class="flow-node flow-model" style="width: 100%; margin: clamp(6px, 1vh, 10px) 0;">
+          <div class="flow-node-icon" style="font-size: 1.3rem;">&#129302;</div>
+          <div class="flow-node-label" style="font-size: 0.82rem;">AI Model</div>
+          <div class="flow-node-desc" style="font-size: 0.68rem;">Shaped by hidden system prompt</div>
+        </div>
+        <div class="theater-conversation">
           <div class="theater-msg theater-msg-ai">
-            <span class="theater-msg-who">&#129302; AI</span>
+            <span class="theater-msg-who">&#129302; Response</span>
             <span class="theater-msg-text">&ldquo;What&rsquo;s the main argument you want your reader to encounter first?&rdquo;</span>
           </div>
         </div>
