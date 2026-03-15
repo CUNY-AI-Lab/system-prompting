@@ -895,13 +895,14 @@ body.overview-mode #nav-bar { display: none; }
 
 /* Title slide */
 .title-slide {
-  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg-lighter) 100%);
+  background: var(--dark-bg);
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: clamp(30px, 5vh, 80px) clamp(30px, 5vw, 100px);
   position: relative;
+  overflow: hidden;
 }
 
 .title-slide::before {
@@ -909,10 +910,21 @@ body.overview-mode #nav-bar { display: none; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 20% 80%, rgba(78, 205, 196, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(59, 111, 181, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 50%, rgba(111, 168, 220, 0.05) 0%, transparent 70%);
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(59, 111, 181, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 20% 70%, rgba(78, 205, 196, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 30%, rgba(111, 168, 220, 0.06) 0%, transparent 60%);
   pointer-events: none;
+}
+
+.title-slide::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent-cyan) 30%, var(--accent-blue) 70%, transparent 100%);
+  opacity: 0.5;
 }
 
 .title-slide .title-logo {
@@ -1036,7 +1048,7 @@ body.overview-mode #nav-bar { display: none; }
   <img src="logo-horizontal.png" alt="CUNY AI Lab" class="title-logo">
   <h1>Composing System Prompts</h1>
   <p class="subtitle">A Workshop for the CUNY AI Lab Sandbox</p>
-  <p class="meta">Workshop 1 of 3 &nbsp;&bull;&nbsp; March 16, 2026</p>
+  <p class="meta">March 16, 2026</p>
 </div>
 
 <!-- ==========================================
