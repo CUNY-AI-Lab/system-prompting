@@ -2,15 +2,20 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Important Rules
+
+- **Always use the frontend-design skill when making changes that impact aesthetics.** This applies to any visual/styling modifications — typography, spacing, backgrounds, component styling, layout adjustments.
+- **Never use Co-Authored-By lines in commits.**
+
 ## Project Overview
 
-A single-page HTML slide deck for a CUNY AI Lab Sandbox professional development workshop on composing AI system prompts. No build system, no dependencies — open `index.html` directly in a browser.
+Workshop 1 of a 3-part CUNY AI Lab faculty series (system prompts → knowledge collections → agentic tools). Single-page HTML slide deck, no build system, no dependencies — open `index.html` directly in a browser or visit https://cuny-ai-lab.github.io/system-prompting/
 
 ## Architecture
 
-The presentation is a custom Reveal.js-style deck built without any framework.
+The presentation is a custom deck engine built without any framework.
 
-**Entry point:** `index.html` — all 30 slides live here as `.slide` divs inside `#deck`. Slide content is the source of truth; `SLIDES.md` is a markdown mirror kept in sync manually after edits.
+**Entry point:** `index.html` — all slides live here as `.slide` divs inside `#deck`. Slide content is the source of truth; `SLIDES.md` is a markdown mirror kept in sync manually after edits.
 
 **JS modules** (loaded at bottom of `index.html` in this order):
 - `js/tabs.js` — tab component (unused in current slides but loaded)
@@ -47,7 +52,9 @@ To hide content until clicked: add `step-hidden data-step` to the element (typic
 
 - No em dashes (`—`) anywhere in slide content
 - Tone lines belong as the last bullet under `Constraints:`, not as a separate section
-- All three "good prompt" slides (10, 14, 18) follow: role/audience → blank line → core problem → Procedure → Framework → Constraints (tone as last bullet)
-- Drafting station slides (21–25): template first, "Your turn" tip-box after
+- All three "good prompt" slides follow: role/audience → blank line → core problem → Procedure → Framework → Constraints (tone as last bullet)
+- History example uses Wineburg's historical thinking heuristics (sourcing, contextualization, close reading, corroboration) — not SOAPS/SOAPSTone
+- Drafting station slides: template first, "Your turn" tip-box after
 - `SLIDES.md` must be kept in sync with `index.html` after every content edit
 - Commit messages: short, lowercase, no sign-off
+- System prompt examples must frame AI as a tool the instructor builds, not as something students use to do homework. The student interacts with the tool; the instructor designs the pedagogy behind it.
