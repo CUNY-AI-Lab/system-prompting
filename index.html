@@ -18,6 +18,13 @@
 <!-- Announcer for screen readers -->
 <div id="slide-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 
+<!-- Lightbox overlay -->
+<div class="lightbox-overlay" id="lightbox" aria-hidden="true" role="dialog" aria-label="Expanded screenshot">
+  <button class="lightbox-close" aria-label="Close expanded view">&times;</button>
+  <img src="" alt="">
+  <div class="lightbox-caption"></div>
+</div>
+
 <!-- Logo Watermark -->
 <img src="images/logo-horizontal.png" alt="" class="logo-watermark" id="logoWatermark" aria-hidden="true">
 
@@ -814,5 +821,6 @@ function copyTemplate(id) {
 <script src="js/carousel.js"></script>
 <script src="js/scrubber.js"></script>
 <script src="js/deck-engine.js"></script>
+<script src="js/lightbox.js"></script>
 </body>
 </html>

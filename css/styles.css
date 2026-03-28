@@ -477,6 +477,7 @@ blockquote {
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  cursor: zoom-in;
 }
 
 /* Dark screenshot placeholder */
@@ -1035,6 +1036,7 @@ blockquote {
   object-fit: contain;
   border-radius: 6px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  cursor: zoom-in;
 }
 
 .carousel-caption {
@@ -1582,4 +1584,82 @@ body.overview-mode #nav-bar { display: none; }
 @media (max-width: 480px) {
   .scrubber-container { margin: 0 8px; }
   .arrow-btn { min-width: 36px; min-height: 36px; padding: 4px 8px; }
+}
+
+/* ── Lightbox ─────────────────────────────────────────── */
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(5, 12, 28, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  cursor: zoom-out;
+}
+
+.lightbox-overlay[aria-hidden="false"] {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-overlay img {
+  max-width: 92vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 12px 60px rgba(0, 0, 0, 0.5),
+              0 0 0 1px rgba(78, 205, 196, 0.15);
+  transform: scale(0.92);
+  transition: transform 0.25s ease;
+}
+
+.lightbox-overlay[aria-hidden="false"] img {
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: clamp(12px, 2vh, 24px);
+  right: clamp(12px, 2vw, 24px);
+  background: rgba(226, 232, 240, 0.1);
+  border: 1px solid rgba(226, 232, 240, 0.2);
+  color: var(--light-text);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  line-height: 1;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus-visible {
+  background: rgba(226, 232, 240, 0.2);
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
+
+.lightbox-caption {
+  position: absolute;
+  bottom: clamp(16px, 3vh, 32px);
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--light-text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(0.8rem, 1.1vw, 0.95rem);
+  text-align: center;
+  max-width: 70vw;
+  line-height: 1.5;
+  opacity: 0.85;
 }
