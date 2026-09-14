@@ -1,75 +1,31 @@
-# CLAUDE.md
+# Workshop editing guidance
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Use the frontend-design skill for changes to typography, layout, or visual treatment. Keep the neutral dark design and restrained heading scale. Do not add Co-Authored-By commit lines.
 
-## Important Rules
+## Source and architecture
 
-- **Always use the frontend-design skill when making changes that impact aesthetics.** This applies to any visual/styling modifications — typography, spacing, backgrounds, component styling, layout adjustments.
-- **Never use Co-Authored-By lines in commits.**
+This is Workshop 1 of the CUNY AI Lab Sandbox series: system prompts → knowledge collections → skills and tools. It is a static HTML presentation with no runtime dependencies.
 
-## Project Overview
+- `index.html` contains all 45 `.slide` elements and is the copy source of truth.
+- `SLIDES.md` is generated from HTML by `python3 scripts/check_workshop.py --write`.
+- `WORKSHOP.md` contains the facilitation plan, sample setup, and evaluation worksheet.
+- `js/deck-engine.js` handles keyboard, buttons, range navigation, outline, notes, and clipboard behavior.
+- `js/lightbox.js` expands real screenshots in a native dialog.
+- `css/styles.css`, `css/responsive.css`, and `css/animations.css` contain the visual system, responsive and print rules, and reduced-motion treatment.
+- The old `tabs.js`, `carousel.js`, and `scrubber.js` are retained as historical files but are not loaded.
 
-Workshop 1 of a 3-part CUNY AI Lab faculty series (system prompts → knowledge collections → agentic tools). Single-page HTML slide deck, no build system, no dependencies — open `index.html` directly in a browser or visit https://cuny-ai-lab.github.io/system-prompting/
+## Copy and evidence
 
-## Architecture
+Preserve the original instructional examples and exact sample files. `review/preserved-prompts.json` stores the original prompt blocks. The checker allows only the documented Literature correction that removes the cultural-moment requirement from the close-reading procedure. History uses Wineburg’s sourcing, contextualization, close reading, and corroboration, not SOAPS.
 
-The presentation is a custom deck engine built without any framework.
+For revisions, keep complete before/after text and a direct diff. `review/before.md` records the original HTML copy, and `review/copy.diff` compares it with the current generated mirror. Do not replace the baseline with the stale original Markdown file.
 
-**Entry point:** `index.html` — all slides live here as `.slide` divs inside `#deck`. Slide content is the source of truth; `SLIDES.md` is a markdown mirror kept in sync manually after edits.
+Use the published `https://ailab.gc.cuny.edu/sandbox-docs/` as the documentation source. Inspect live controls when updating interface labels. Keep screenshots authentic and record origins, crops, and hashes in `review/screenshot-sources.json`; never substitute generated UI for a source capture.
 
-**JS modules** (loaded at bottom of `index.html` in this order):
-- `js/tabs.js` — tab component (unused in current slides but loaded)
-- `js/carousel.js` — auto-advancing image carousel (Slide 4)
-- `js/scrubber.js` — scrubber timeline in the nav bar; exposes `updateScrubber(current, total)`
-- `js/deck-engine.js` — core navigation engine; exposes `window.deckEngine`, `window.goTo`, `window.next`, `window.prev`
+Frame the instructor as the designer of an instructional tool. Do not promise that system prompts guarantee behavior or securely hide information. Keep individual access, course enrollment, Workspace authoring, shared-card use, and base-model availability distinct.
 
-**CSS files:**
-- `css/styles.css` — all layout, components, typography, design tokens, and accessibility utilities
-- `css/responsive.css` — breakpoint overrides
-- `css/animations.css` — transition/animation definitions + `prefers-reduced-motion` overrides
+The facilitator enables the arranged Workspace permission at the midpoint and prepares the live sample before the session. Editing or viewing this deck does not perform those production actions.
 
-**Inline script** in `index.html` (before JS tags): `copyTemplate(id)` — clipboard copy for drafting station templates.
+## Verification
 
-## Slide Layouts
-
-Each slide uses one layout class:
-- `layout-split` — two-column: `.content` (left, light) + `.stage` (right, panel)
-- `layout-content` — single-column, light background
-- `layout-full-dark` — centered, dark background (roadmap/model slides)
-- `layout-divider` — section break, dark, centered large heading
-- `layout-grid` — dark background with `.grid-2` card layout
-
-## Progressive Reveal
-
-Two mechanisms, both managed by `deck-engine.js`:
-
-1. **Step reveal** — elements with `class="step-hidden" data-step` are revealed one at a time on each forward advance. Reset when leaving the slide.
-2. **Stream bullets** — `<ul class="stream-list">` items animate in with staggered delay (200ms + 250ms per item) when the slide becomes active.
-
-To hide content until clicked: add `step-hidden data-step` to the element (typically a `<ul>`). The heading above it should have no hidden classes — it stays visible.
-
-## Accessibility Layer
-
-Every slide has `role="group" aria-roledescription="slide" aria-label="Slide N: Title"`. These labels are sequential (Slide 1 through Slide 30) and must be updated when slides are added, removed, or reordered.
-
-Key accessibility infrastructure:
-- `#slide-announcer` — `aria-live="polite"` div, updated by `deck-engine.js` on every slide change
-- `aria-current="step"` — set/removed on the active slide by JS
-- Nav bar is a `<nav aria-label="Slide navigation">` element (not a div)
-- Scrubber has `role="slider"` with full ARIA value attributes, updated by JS
-- Decorative emoji use `aria-hidden="true"`; adjacent text labels carry the meaning
-- `.sr-only` and `.skip-link` utility classes live in `css/styles.css`
-- `prefers-reduced-motion` in `css/animations.css` disables all transitions and animations
-
-When adding a new slide: add the `role="group" aria-roledescription="slide" aria-label="Slide N: Title"` attributes and renumber all subsequent slides.
-
-## Conventions
-
-- No em dashes anywhere in slide content
-- Tone lines belong as the last bullet under `Constraints:`, not as a separate section
-- All three "good prompt" slides follow: role/audience, blank line, core problem, Procedure, Framework, Constraints (tone as last bullet)
-- History example uses Wineburg's historical thinking heuristics (sourcing, contextualization, close reading, corroboration) — not SOAPS/SOAPSTone
-- Drafting station slides: template first, "Your turn" tip-box after
-- `SLIDES.md` must be kept in sync with `index.html` after every content edit
-- Commit messages: short, lowercase, no sign-off
-- System prompt examples must frame AI as a tool the instructor builds, not as something students use to do homework. The student interacts with the tool; the instructor designs the pedagogy behind it.
+Run the content checker, JavaScript syntax checks, and browser checks after changes. Confirm sequential slide labels, exact clipboard text, outline navigation, keyboard focus, image dialogs, and mobile scrolling. Preserve full original prompts rather than shrinking them to unreadable text. On desktop those prompts scroll within the slide; on mobile and in print they expand.

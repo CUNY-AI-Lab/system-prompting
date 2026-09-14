@@ -1,826 +1,491 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Composing System Prompts — CUNY AI Lab</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,800;1,9..144,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/animations.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Composing System Prompts | CUNY AI Lab</title>
+<link href="css/styles.css" rel="stylesheet"/>
+<link href="css/responsive.css" rel="stylesheet"/>
+<link href="css/animations.css" rel="stylesheet"/>
 </head>
 <body>
+<a class="skip-link" href="#deck">Skip to slides</a>
+<div aria-atomic="true" aria-live="polite" class="sr-only" id="slide-announcer"></div>
+<div aria-label="Composing System Prompts presentation" aria-roledescription="slide deck" id="deck" role="region" tabindex="-1"><section aria-label="Slide 1: Composing System Prompts" aria-roledescription="slide" class="slide title-slide" data-group="Explore" data-source-slide="1" data-title="Composing System Prompts" role="group"><div class="slide-inner"><p class="series-position">Workshop 1 of 3</p><div class="title-copy"><h1>Composing System Prompts</h1><p class="subtitle">Explore the chat. Compare models.<br/>Build a classroom tool.</p></div><div class="title-credit"><p>CUNY AI Lab Sandbox</p><p class="small">Developed by Stefano Morello and Zach Muhlbauer</p></div></div></section>
+<section aria-label="Slide 2: Three workshops, one teaching project" aria-roledescription="slide" class="slide layout-content" data-group="Explore" data-source-slide="2" data-title="Three workshops, one teaching project" role="group"><div class="slide-inner"><h2>Three workshops,<br/>one teaching project</h2><ol class="roadmap"><li><strong>Composing System Prompts</strong><span>Compare models, test instructions, and configure a classroom tool.</span></li><li><strong>Curating Knowledge Collections</strong><span>Ground the tool in readings, assignments, and course materials.</span></li><li><strong>Customizing Skills &amp; Tools</strong><span>Add reusable procedures and capabilities for your course.</span></li></ol><p class="small">Today: chat → comparison → system prompt → Workspace → testing.</p></div></section>
+<section aria-label="Slide 3: Get access, then sign in" aria-roledescription="slide" class="slide layout-split" data-group="Explore" data-title="Get access, then sign in" role="group"><div class="slide-inner"><div class="content"><h2>Get access, then sign in</h2><ol class="steps"><li>Open the <a href="https://ailab.gc.cuny.edu/request-access/?kind=individual" rel="noopener" target="_blank">access application</a> and choose <strong>My own access</strong>.</li><li>Use <strong>CUNY Login</strong>, complete the application, and watch your verified CUNY email for approval.</li><li>Open <a href="https://chat.ailab.gc.cuny.edu/" rel="noopener" target="_blank">the Sandbox</a> and select <strong>Continue with CUNY Login</strong>.</li></ol><p class="note">Individual access lets you use shared resources. Workspace access is arranged separately for today’s exercise.</p><p class="source"><a href="https://ailab.gc.cuny.edu/sandbox-docs/getting-started/" rel="noopener" target="_blank">Getting Started</a></p></div><div class="stage"><figure><img alt="Current access application with individual and class choices" class="screenshot-img" src="images/current/access-application.png"/><figcaption>The access choices linked from the published Sandbox documentation.</figcaption></figure></div></div></section>
+<section aria-label="Slide 4: Course access follows an invitation" aria-roledescription="slide" class="slide layout-content" data-group="Explore" data-title="Course access follows an invitation" role="group"><div class="slide-inner"><h2>Course access follows<br/>an invitation</h2><div class="columns"><div><h3>Instructors</h3><p>Request access for <strong>A class I’m teaching or organizing</strong>. After approval, open <strong>My classes</strong> and create the invitation link.</p></div><div><h3>Students</h3><p>Join through the instructor’s invitation and CUNY Login. Students do not submit an individual access request.</p></div></div><p class="note">Confirm the course’s private group and text channel before beginning a class activity.</p><p class="source"><a href="https://ailab.gc.cuny.edu/sandbox-docs/getting-started/" rel="noopener" target="_blank">Access and course enrollment</a></p></div></section>
+<section aria-label="Slide 5: Start in the message box" aria-roledescription="slide" class="slide layout-split" data-group="Explore" data-title="Start in the message box" role="group"><div class="slide-inner"><div class="content"><h2>Start in the<br/>message box</h2><p>Select the model name <strong>on the right inside the message box</strong>.</p><p>Type a request, send it, then ask a follow-up. Open <strong>New Chat</strong> when you want to begin with fresh conversation history.</p><p class="source"><a href="https://ailab.gc.cuny.edu/sandbox-docs/quick-tour/" rel="noopener" target="_blank">Quick Tour</a></p></div><div class="stage"><figure><img alt="Current Sandbox new chat with the model selector inside the message box" class="screenshot-img" src="images/current/chat-page.png"/><figcaption>Current Sandbox. Model names and available controls depend on your account.</figcaption></figure></div></div></section>
+<section aria-label="Slide 6: A few controls to try first" aria-roledescription="slide" class="slide layout-content" data-group="Explore" data-title="A few controls to try first" role="group"><div class="slide-inner"><h2>A few controls to try first</h2><dl class="feature-list"><div><dt>More (+)</dt><dd>Add a file or other context to this chat.</dd></div><div><dt>Integrations</dt><dd>Choose available tools, skills, and capabilities.</dd></div><div><dt>Message actions</dt><dd>Copy, edit, or regenerate where available. A regenerated answer can differ.</dd></div></dl><p class="note">For the first comparison, use the supplied text and keep optional capabilities unchanged.</p><p class="source"><a href="https://ailab.gc.cuny.edu/sandbox-docs/sandbox-basics/" rel="noopener" target="_blank">Sandbox Basics</a></p></div></section>
+<section aria-label="Slide 7: Compare the models you can use" aria-roledescription="slide" class="slide layout-split" data-group="Compare" data-source-slide="6" data-title="Compare the models you can use" role="group"><div class="slide-inner"><div class="content"><h2>Compare the models<br/>you can use</h2><p>Open the model selector. Turn on <strong>Compare</strong>, then choose two available base models.</p><p>If Compare is unavailable, use two fresh chats with the same task and settings.</p><p class="note">Switching models midway carries the conversation history forward. Use fresh chats for a clearer initial comparison.</p></div><div class="stage"><figure><img alt="Current model selector with search and the Compare toggle" class="screenshot-img" src="images/current/model-selector.png"/><figcaption>Compare is in the model selector. This capture is filtered to show base-model entries.</figcaption></figure></div></div></section>
+<section aria-label="Slide 8: One task, two responses" aria-roledescription="slide" class="slide layout-content" data-group="Compare" data-title="One task, two responses" role="group"><div class="slide-inner"><h2>One task, two responses</h2><p>Use this invented classroom example in both models.</p><div class="template"><button class="copy-btn" data-copy="comparison-task">Copy prompt</button><pre class="prompt-block" id="comparison-task">Assignment: Write a paragraph arguing for a change on your campus, using evidence to support the claim.
 
-<a href="#deck" class="skip-link">Skip to slides</a>
+Draft: The library should stay open later because students need more time to study. My friends agree, so most students must want this change.
 
-<!-- Announcer for screen readers -->
-<div id="slide-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+Give me feedback on the link between my claim and my evidence. Keep your response under 120 words.</pre></div><p class="small">Record the model names, date, prompt, and enabled features. Save each response before revising anything.</p></div></section>
+<section aria-label="Slide 9: Evaluate what the response does" aria-roledescription="slide" class="slide layout-content" data-group="Compare" data-title="Evaluate what the response does" role="group"><div class="slide-inner"><h2>Evaluate what the response does</h2><table class="rubric"><thead><tr><th>Criterion</th><th>Look for evidence in the response</th></tr></thead><tbody><tr><th>Accuracy &amp; evidence</th><td>Does it notice that friends’ opinions do not establish what most students want?</td></tr><tr><th>Instruction following</th><td>Does it focus on claim and evidence, within the requested length?</td></tr><tr><th>Learning &amp; usefulness</th><td>Does it offer a workable next step while leaving the student room to think?</td></tr><tr><th>Uncertainty &amp; limits</th><td>Does it avoid inventing campus facts or sources?</td></tr></tbody></table><p class="note">For each criterion: met, partly met, or not met. Quote a short passage to explain your judgment.</p></div></section>
+<section aria-label="Slide 10: Make a claim you can support" aria-roledescription="slide" class="slide layout-content" data-group="Compare" data-title="Make a claim you can support" role="group"><div class="slide-inner"><h2>Make a claim you can support</h2><p class="lead">“For this task, model A was more useful because…”</p><ul><li>Name a difference you can point to in the responses.</li><li>Separate a preferred writing style from a factual or instructional improvement.</li><li>Repeat with another likely student request before choosing a base model.</li></ul><p class="note">A small comparison informs a teaching choice. It does not establish that one model is best at every task.</p></div></section>
+<section aria-label="Slide 11: What is a system prompt?" aria-roledescription="slide" class="slide layout-content" data-group="Prompt" data-source-slide="3" data-title="What is a system prompt?" role="group"><div class="slide-inner"><h2>What is a system prompt?</h2><p class="lead">A system prompt gives the model instructions for its role, actions, boundaries, and response style.</p><div class="columns"><div><h3>User prompt</h3><p>The request someone types into the conversation.</p></div><div><h3>System prompt</h3><p>The guidance you configure to shape how the model responds across that conversation.</p></div></div><p class="note">Instructions guide behavior but do not guarantee it. A system prompt is not a secure place to hide sensitive information.</p><p class="source"><a href="https://ailab.gc.cuny.edu/sandbox-docs/system-prompts/" rel="noopener" target="_blank">System Prompts as Instructional Design</a></p></div></section>
+<section aria-label="Slide 12: Try the guidance in a chat" aria-roledescription="slide" class="slide layout-split" data-group="Prompt" data-source-slide="4" data-title="Try the guidance in a chat" role="group"><div class="slide-inner"><div class="content"><h2>Try the guidance<br/>in a chat</h2><ol><li>Open a fresh chat with one of the models you compared.</li><li>Select <strong>Controls</strong> at the top right.</li><li>Enter the sample in <strong>System Prompt</strong> before sending the task.</li></ol><p class="note">Use the conversation’s Controls for this exercise. Personal defaults under Settings have a wider scope.</p></div><div class="stage"><figure><img alt="Current chat Controls panel with its System Prompt field" class="screenshot-img" src="images/current/chat-controls.png"/><figcaption>The System Prompt field in a new chat. Sample text follows on the next slide.</figcaption></figure></div></div></section>
+<section aria-label="Slide 13: A small prompt to test" aria-roledescription="slide" class="slide layout-content sample-prompt-slide" data-group="Prompt" data-title="A small prompt to test" role="group"><div class="slide-inner"><h2>A small prompt to test</h2><div class="template"><button class="copy-btn" data-copy="sample-system">Copy prompt</button><pre class="prompt-block" id="sample-system">You are a writing scaffold for an English 101 composition course. Help students examine the link between a claim and its evidence.
 
-<!-- Lightbox overlay -->
-<div class="lightbox-overlay" id="lightbox" aria-hidden="true" role="dialog" aria-label="Expanded screenshot">
-  <button class="lightbox-close" aria-label="Close expanded view">&times;</button>
-  <img src="" alt="">
-  <div class="lightbox-caption"></div>
+Procedure:
+1. Ask for the assignment and a short draft before giving feedback.
+2. Identify one concern about the claim or evidence.
+3. Ask one question, then wait for the student to respond.
+
+Constraints:
+- Do not write or rewrite the student's sentences.
+- If asked to "just fix it," offer a specific revision step.
+- Do not invent sources or grade the work.
+- Tone: Warm and direct.</pre></div><p class="small">Notice the role, three procedural steps, and specific boundaries. You will inspect the same sample in Workspace.</p></div></section>
+<section aria-label="Slide 14: Hold the model steady" aria-roledescription="slide" class="slide layout-content" data-group="Prompt" data-source-slide="5" data-title="Hold the model steady" role="group"><div class="slide-inner"><h2>Hold the model steady</h2><ol class="steps"><li>Repeat the same task with the same base model, now using the sample system prompt.</li><li>Use the same evaluation criteria. Compare against the response you saved earlier.</li><li>Test a boundary: <strong>“Just rewrite the paragraph for me.”</strong></li></ol><p class="note">Ask what the added instructions changed, and what they failed to change. Keep personal defaults and optional features consistent.</p></div></section>
+<section aria-label="Slide 15: Now open Workspace" aria-roledescription="slide" class="slide layout-content" data-group="Workspace" data-title="Now open Workspace" role="group"><div class="slide-inner"><h2>Now open Workspace</h2><p class="lead">The facilitator enables Workspace access for this exercise.</p><ol class="steps"><li>Refresh the Sandbox after access is confirmed.</li><li>Open <strong>Workspace</strong> from the sidebar or account menu.</li><li>Select <strong>Models</strong> and find the workshop’s sample card.</li></ol><p class="note">If Workspace is missing, pause here for the facilitator. You can continue testing the same prompt in chat while access is resolved.</p><p class="source"><a href="https://ailab.gc.cuny.edu/sandbox-docs/models/" rel="noopener" target="_blank">Custom Models</a></p></div></section>
+<section aria-label="Slide 16: A place to configure the tool" aria-roledescription="slide" class="slide layout-content" data-group="Workspace" data-title="A place to configure the tool" role="group"><div class="slide-inner"><h2>A place to configure the tool</h2><figure><img alt="Current Workspace header with Models, Knowledge, Prompts, Skills, Tools, and Create" class="screenshot-img" src="images/current/workspace-header.png"/><figcaption>The shared Create button acts on the selected Workspace tab.</figcaption></figure><div class="columns"><div><h3>Models</h3><p>Open the prepared sample, or choose <strong>Create</strong> to configure your own.</p></div><div><h3>Later in the series</h3><p>Knowledge adds sources. Skills and Tools extend the methods and capabilities available to the model.</p></div></div></div></section>
+<section aria-label="Slide 17: Read the configuration together" aria-roledescription="slide" class="slide layout-split" data-group="Workspace" data-title="Read the configuration together" role="group"><div class="slide-inner"><div class="content"><h2>Read the configuration<br/>together</h2><ul><li><strong>Name:</strong> what students will recognize.</li><li><strong>Base Model:</strong> what generates the responses.</li><li><strong>System Prompt:</strong> how you want it to respond.</li></ul><p>A custom model combines these choices. Creating it does not train a new base model.</p><p class="source"><a href="https://ailab.gc.cuny.edu/sandbox-docs/models/" rel="noopener" target="_blank">The model editor</a></p></div><div class="stage"><figure><img alt="Current model creation form showing Name, Base Model, and System Prompt" class="screenshot-img" src="images/current/model-editor.png"/><figcaption>Read-only capture of the editor. The facilitator prepares the named sample before the workshop.</figcaption></figure></div></div></section>
+<section aria-label="Slide 18: Give students a clear starting point" aria-roledescription="slide" class="slide layout-content" data-group="Workspace" data-title="Give students a clear starting point" role="group"><div class="slide-inner"><h2>Give students a clear starting point</h2><dl class="feature-list"><div><dt>Card name</dt><dd>Writing Scaffold: Claim &amp; Evidence</dd></div><div><dt>Description</dt><dd>Work through one question about the link between your claim and its evidence.</dd></div><div><dt>Starter suggestion</dt><dd>“Here is my assignment and draft. Help me examine my evidence.”</dd></div></dl><p class="note">Students open the shared card from their model selector. Workspace is where its authors configure the base model and instructions.</p></div></section>
+<div aria-label="Slide 19: The Anatomy of a Good System Prompt" aria-roledescription="slide" class="slide layout-divider" data-group="Draft" data-source-slide="7" data-title="The Anatomy of a Good System Prompt" role="group"><div class="slide-inner">
+<span class="section-label">Examples</span>
+<h2>The Anatomy of a Good System Prompt</h2>
+<div class="divider-line"></div>
+</div></div>
+<div aria-label="Slide 20: Composition &amp; Writing" aria-roledescription="slide" class="slide layout-divider" data-group="Draft" data-source-slide="8" data-title="Composition &amp; Writing" role="group"><div class="slide-inner">
+<span class="section-label">Example 1</span>
+<h2>Composition &amp; Writing</h2>
+<div class="divider-line"></div>
+</div></div>
+<div aria-label="Slide 21: The Vague Prompt" aria-roledescription="slide" class="slide layout-content" data-group="Draft" data-source-slide="9" data-title="The Vague Prompt" role="group"><div class="slide-inner">
+<div class="progression-header">
+<span class="label label-blue">Composition &amp; Writing</span>
+<div aria-hidden="true" class="progression-dots">
+<div class="progression-dot dot-bad dot-active"></div>
+<div class="progression-dot"></div>
+<div class="progression-dot"></div>
 </div>
-
-<!-- Logo Watermark -->
-<img src="images/logo-horizontal.png" alt="" class="logo-watermark" id="logoWatermark" aria-hidden="true">
-
-<div id="deck" role="region" aria-roledescription="slide deck" aria-label="Composing System Prompts presentation">
-
-<!-- ==========================================
-     SLIDE 1 — TITLE
-     ========================================== -->
-<div class="slide title-slide" role="group" aria-roledescription="slide" aria-label="Slide 1: Title">
-  <div class="title-slide-content">
-    <img src="images/logo-horizontal.png" alt="CUNY AI Lab" class="title-logo">
-    <h1>Composing System Prompts</h1>
-    <p class="subtitle">A Workshop for the CUNY AI Lab Sandbox</p>
-    <p class="meta">March 16, 2026</p>
-    <p class="meta" style="margin-top: 0.5em; font-size: 0.85em; color: #8a9bb0;">Developed by Stefano Morello and Zach Muhlbauer</p>
-  </div>
 </div>
-
-<!-- ==========================================
-     SLIDE 2 — WORKSHOP ROADMAP
-     ========================================== -->
-<div class="slide layout-full-dark" role="group" aria-roledescription="slide" aria-label="Slide 2: Workshop Roadmap">
-  <span class="label label-cyan">Workshop Series</span>
-  <h2>Three Weeks, Three Skills</h2>
-  <div class="roadmap">
-    <div class="roadmap-item active">
-      <div class="week-label">March 16 &mdash; This Week</div>
-      <h4>Composing System Prompts</h4>
-      <p>Define how the AI thinks, responds, and engages with your students</p>
-    </div>
-    <div class="roadmap-item">
-      <div class="week-label">March 23</div>
-      <h4>Curating Knowledge Collections</h4>
-      <p>Upload syllabi, readings, and relevant sources to ground AI models in course materials</p>
-    </div>
-    <div class="roadmap-item">
-      <div class="week-label">March 30</div>
-      <h4>Customizing Skills &amp; Tools</h4>
-      <p>Build specialized skills, tools, and workflows tailored to your courses</p>
-    </div>
-  </div>
+<h2>The Vague Prompt</h2>
+<div class="prompt-block prompt-bad"><span class="prompt-label">Weak</span>Help students write better.</div>
+<div>
+<h4>What goes wrong?</h4>
+<ul class="">
+<li>No role assignment to contextualize the model for specific workflows or domain-knowledge</li>
+<li>No boundaries or pedagogical guidance to constrain the model from doing work for students</li>
+<li>No success criteria for the model to optimize toward</li>
+</ul>
 </div>
-
-<!-- ==========================================
-     SLIDE 3 — WHAT IS A SYSTEM PROMPT?
-     ========================================== -->
-<div class="slide layout-split" role="group" aria-roledescription="slide" aria-label="Slide 3: What Is a System Prompt?">
-  <div class="content">
-    <span class="label label-cyan">The Basics</span>
-    <h2>What Is a System Prompt?</h2>
-    <p style="margin-bottom: 0.8em;">A <strong>system prompt</strong> is a set of instructions you write <em>before</em> a conversation begins. The user never sees it, but it shapes every response the AI gives.</p>
-    <blockquote>Think of it as the <strong>setup instructions</strong> for a specialized tool: what task it handles, how it should operate, what guardrails to follow, and what&rsquo;s out of scope.</blockquote>
-    <div class="tip-box" style="margin-top: 1em;">
-      <p><strong>Key distinction:</strong> The <em>user prompt</em> is what someone types in the chat. The <em>system prompt</em> is what you, the instructor, compose behind the scenes to guide the AI&rsquo;s behavior across the entire conversation.</p>
-    </div>
-  </div>
-  <div class="stage" style="background: var(--bg-light); flex-direction: column; padding: clamp(12px, 2vh, 28px) clamp(10px, 1.2vw, 20px); justify-content: center;">
-    <div class="theater-diagram">
-      <!-- Behind the curtain: instructor + system prompt -->
-      <div class="theater-backstage">
-        <div class="theater-zone-label">Behind the curtain</div>
-        <div class="theater-backstage-row">
-          <div class="flow-node flow-instructor" style="width: auto; flex: 1;">
-            <div class="flow-node-icon" style="font-size: 1.4rem;" aria-hidden="true">&#9997;&#65039;</div>
-            <div class="flow-node-label" style="font-size: 0.8rem;">Instructor</div>
-          </div>
-          <div class="theater-arrow-h">
-            <svg width="28" height="12" viewBox="0 0 28 12" aria-hidden="true"><path d="M0 6 L20 6 M14 1 L22 6 L14 11" stroke="var(--accent-cyan)" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-          </div>
-          <div class="flow-node flow-prompt" style="width: auto; flex: 2;">
-            <span class="flow-hidden-badge">Hidden</span>
-            <div class="flow-node-code" style="font-size: 0.75rem;">System Prompt</div>
-            <div class="flow-node-desc" style="font-family: 'JetBrains Mono', monospace; color: var(--accent-cyan); margin-top: 2px; font-size: 0.65rem;">&ldquo;You are a writing scaffold&hellip;&rdquo;</div>
-          </div>
-        </div>
-      </div>
-      <!-- The curtain line -->
-      <div class="theater-curtain">
-        <div class="theater-curtain-line"></div>
-        <span class="theater-curtain-label">student never sees above</span>
-        <div class="theater-curtain-line"></div>
-      </div>
-      <!-- Front of house: student interaction -->
-      <div class="theater-frontstage">
-        <div class="theater-conversation">
-          <div class="theater-msg theater-msg-user">
-            <span class="theater-msg-who"><span aria-hidden="true">&#128100;</span> Student</span>
-            <span class="theater-msg-text">&ldquo;I&rsquo;m stuck on my intro&hellip;&rdquo;</span>
-          </div>
-        </div>
-        <!-- AI Model sits between user prompt and response -->
-        <div class="flow-node flow-model" style="width: 100%; margin: clamp(6px, 1vh, 10px) 0;">
-          <div class="flow-node-icon" style="font-size: 1.3rem;" aria-hidden="true">&#129302;</div>
-          <div class="flow-node-label" style="font-size: 0.82rem;">AI Model</div>
-          <div class="flow-node-desc" style="font-size: 0.68rem;">Shaped by hidden system prompt</div>
-        </div>
-        <div class="theater-conversation">
-          <div class="theater-msg theater-msg-ai">
-            <span class="theater-msg-who"><span aria-hidden="true">&#129302;</span> Response</span>
-            <span class="theater-msg-text">&ldquo;What&rsquo;s the main argument you want your reader to encounter first?&rdquo;</span>
-          </div>
-        </div>
-        <div class="theater-zone-label" style="color: var(--accent-blue); margin-top: 6px;">What the student sees</div>
-      </div>
-    </div>
-  </div>
+</div></div>
+<div aria-label="Slide 22: Getting Warmer" aria-roledescription="slide" class="slide layout-content progression-slide" data-group="Draft" data-source-slide="10" data-title="Getting Warmer" role="group"><div class="slide-inner">
+<div class="progression-header">
+<span class="label label-blue">Composition &amp; Writing</span>
+<div aria-hidden="true" class="progression-dots">
+<div class="progression-dot dot-bad"></div>
+<div class="progression-dot dot-mid dot-active"></div>
+<div class="progression-dot"></div>
 </div>
-
-<!-- ==========================================
-     SLIDE 4 — WHERE IT LIVES IN OPEN WEBUI
-     ========================================== -->
-<div class="slide layout-split" role="group" aria-roledescription="slide" aria-label="Slide 4: Where It Lives">
-  <div class="content">
-    <span class="label label-cyan">Open WebUI</span>
-    <h2>Where It Lives</h2>
-    <p style="margin-bottom: 0.6em;">In the CUNY AI Lab Sandbox, you&rsquo;ll find the system prompt field in two places:</p>
-    <div class="card card-cyan" style="margin-bottom: 0.6em;">
-      <h4>1. Chat-Level System Prompt</h4>
-      <p>Click the <strong>settings gear</strong> at the top of any new conversation to set a prompt for that session.</p>
-    </div>
-    <div class="card" style="margin-bottom: 0.6em;">
-      <h4>2. Model Configuration</h4>
-      <p>Go to <strong>Workspace &rarr; Models</strong> to create a custom model with a permanent system prompt baked in.</p>
-    </div>
-    <div class="tip-box">
-      <p><strong>Note:</strong> Next time, we'll create custom models that combine your system prompt with a knowledge collection of course materials to ground the AI and situate learning in your teaching context.</p>
-    </div>
-  </div>
-  <div class="stage">
-    <div class="carousel" data-interval="6000">
-      <div class="carousel-item active">
-        <img src="images/4-a.png" alt="Chat-level system prompt field in Open WebUI">
-        <div class="carousel-caption"><strong>Chat-Level System Prompt</strong><br>Click the controls icon at the top of any conversation to open the System Prompt field.</div>
-      </div>
-      <div class="carousel-item">
-        <img src="images/4-b.png" alt="Workspace Models page in Open WebUI">
-        <div class="carousel-caption"><strong>Model Configuration &mdash; Step 1</strong><br>Go to <strong>Workspace &rarr; Models</strong> to see all custom models. Click <strong>+ New Model</strong> to create one.</div>
-      </div>
-      <div class="carousel-item">
-        <img src="images/4-c.png" alt="Model creation form with system prompt field">
-        <div class="carousel-caption"><strong>Model Configuration &mdash; Step 2</strong><br>In the model editor, the <strong>System Prompt</strong> field under Model Params is where your prompt lives permanently.</div>
-      </div>
-      <div class="carousel-dots"></div>
-    </div>
-  </div>
 </div>
+<h2>Getting Warmer</h2>
+<div class="prompt-block prompt-mid"><span class="prompt-label">Getting There</span>You are a writing scaffold for a college composition course. Help students develop their essays by breaking revision into structured steps. Ask them to identify their thesis before giving feedback. Don't write essays for them.</div>
 
-<!-- ==========================================
-     SLIDE 5 — WHY IT MATTERS
-     ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 5: Why System Prompts Matter">
-  <span class="label label-cyan">Why Bother?</span>
-  <h2>Why System Prompts Matter</h2>
-  <div class="comparison" data-steps="2">
-    <div class="comparison-panel panel-muted step-visible">
-      <h4 style="color: var(--accent-red);">Without System Prompt</h4>
-      <p>&ldquo;Here&rsquo;s a strong introduction you could use: &lsquo;Throughout history, the question of racial identity has been central to American culture. In this essay, I will argue that...&rsquo;&rdquo;</p>
-    </div>
-    <div class="comparison-panel step-hidden" data-step="2">
-      <h4 style="color: var(--accent-green);">With System Prompt</h4>
-      <p>&ldquo;Let&rsquo;s work through this. What&rsquo;s the main argument you want your reader to encounter first? Try telling me in one sentence what your paper is really about &mdash; don&rsquo;t worry about making it perfect yet.&rdquo;</p>
-    </div>
-  </div>
+
+<div class="columns example-feedback"><div class="why-better">
+<h4>What improved?</h4>
+<ul class="">
+<li>Assigns a role and disciplinary context</li>
+<li>Includes a basic pedagogical move</li>
+<li>Sets one boundary</li>
+</ul>
+</div><div>
+<h4>What's still missing?</h4>
+<ul class="">
+<li>No procedural instructions for <em>how</em> to give feedback</li>
+<li>No awareness of student population or course level</li>
+<li>No edge-case handling</li>
+</ul>
+</div></div></div></div>
+<div aria-label="Slide 23: A Prompt That Fosters Revision" aria-roledescription="slide" class="slide layout-content long-prompt-slide" data-group="Draft" data-source-slide="11" data-title="A Prompt That Fosters Revision" role="group"><div class="slide-inner">
+<div class="progression-header">
+<span class="label label-blue">Composition &amp; Writing</span>
+<div aria-hidden="true" class="progression-dots">
+<div class="progression-dot dot-bad"></div>
+<div class="progression-dot dot-mid"></div>
+<div class="progression-dot dot-good dot-active"></div>
 </div>
-
-<!-- ==========================================
-     SLIDE 6 — YOUR MODELS
-     ========================================== -->
-<div class="slide layout-full-dark" role="group" aria-roledescription="slide" aria-label="Slide 6: Models in the Sandbox">
-  <span class="label label-cyan">Your Toolkit</span>
-  <h2>Models in the CUNY AI Lab Sandbox</h2>
-  <p style="color: var(--light-text-50); max-width: 700px; margin-bottom: 1.2em;">All open-weight models. No data retained on external servers. Each has different constraints and affordances.</p>
-  <div class="model-grid">
-    <div class="model-card">
-      <h4>DeepSeek V3.2</h4>
-      <p>Large model; strong at working through complex, multi-step tasks</p>
-    </div>
-    <div class="model-card">
-      <h4>Kimi K2.5</h4>
-      <p>Reads text, images, and video; good for visual and long-document tasks</p>
-    </div>
-    <div class="model-card">
-      <h4>GLM 5</h4>
-      <p>Large model; extended step-by-step reasoning and tool use</p>
-    </div>
-    <div class="model-card" style="border-left-color: var(--accent-cyan);">
-      <h4>gpt-oss-120b</h4>
-      <p>OpenAI&rsquo;s open-weight model; lightweight and efficient</p>
-    </div>
-    <div class="model-card" style="border-left-color: var(--accent-cyan);">
-      <h4>Qwen3 235B</h4>
-      <p>Large model; strong multilingual support across 100+ languages</p>
-    </div>
-    <div class="model-card" style="border-left-color: var(--accent-light-blue);">
-      <h4>Gemma 3 27B</h4>
-      <p>Smaller, faster model; good for everyday tasks and quick responses</p>
-    </div>
-    <div class="model-card" style="border-left-color: var(--accent-light-blue);">
-      <h4>Llama 3.1 70B</h4>
-      <p>Mid-size model; reliable general-purpose option</p>
-    </div>
-  </div>
 </div>
-
-<!-- ==========================================
-     SLIDE 7 — SECTION DIVIDER: ANATOMY
-     ========================================== -->
-<div class="slide layout-divider" role="group" aria-roledescription="slide" aria-label="Slide 7: Part I - The Anatomy of a Good System Prompt">
-  <span class="section-label">Part I</span>
-  <h2>The Anatomy of a Good System Prompt</h2>
-  <div class="divider-line"></div>
-</div>
-
-<!-- ==========================================
-     SLIDE 8 — SECTION DIVIDER: COMPOSITION
-     ========================================== -->
-<div class="slide layout-divider" role="group" aria-roledescription="slide" aria-label="Slide 8: Example 1 - Composition and Writing">
-  <span class="section-label">Example 1</span>
-  <h2>Composition &amp; Writing</h2>
-  <div class="divider-line"></div>
-</div>
-
-<!-- ==========================================
-     SLIDE 9 — COMPOSITION: BAD
-     ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 9: Composition - The Vague Prompt">
-  <div class="progression-header">
-    <span class="label label-blue" style="margin-bottom: 0;">Composition &amp; Writing</span>
-    <div class="progression-dots" aria-hidden="true">
-      <div class="progression-dot dot-bad dot-active"></div>
-      <div class="progression-dot"></div>
-      <div class="progression-dot"></div>
-    </div>
-  </div>
-  <h2>The Vague Prompt</h2>
-  <div class="prompt-block prompt-bad"><span class="prompt-label">Weak</span>Help students write better.</div>
-  <div style="margin-top: 1em;">
-    <h4 style="color: var(--accent-red);">What goes wrong?</h4>
-    <ul class="stream-list step-hidden" data-step>
-      <li>No role assignment to contextualize the model for specific workflows or domain-knowledge</li>
-      <li>No boundaries or pedagogical guidance to constrain the model from doing work for students</li>
-      <li>No success criteria for the model to optimize toward</li>
-    </ul>
-  </div>
-</div>
-
-<!-- ==========================================
-     SLIDE 9 — COMPOSITION: MEDIOCRE
-     ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 10: Composition - Getting Warmer">
-  <div class="progression-header">
-    <span class="label label-blue" style="margin-bottom: 0;">Composition &amp; Writing</span>
-    <div class="progression-dots" aria-hidden="true">
-      <div class="progression-dot dot-bad"></div>
-      <div class="progression-dot dot-mid dot-active"></div>
-      <div class="progression-dot"></div>
-    </div>
-  </div>
-  <h2>Getting Warmer</h2>
-  <div class="prompt-block prompt-mid"><span class="prompt-label">Getting There</span>You are a writing scaffold for a college composition course. Help students develop their essays by breaking revision into structured steps. Ask them to identify their thesis before giving feedback. Don't write essays for them.</div>
-  <div class="why-better">
-    <h4>What improved?</h4>
-    <ul class="stream-list step-hidden" data-step>
-      <li>Assigns a role and disciplinary context</li>
-      <li>Includes a basic pedagogical move</li>
-      <li>Sets one boundary</li>
-    </ul>
-  </div>
-  <div style="margin-top: 0.6em;">
-    <h4 style="color: var(--accent-amber);">What's still missing?</h4>
-    <ul class="stream-list step-hidden" data-step>
-      <li>No procedural instructions for <em>how</em> to give feedback</li>
-      <li>No awareness of student population or course level</li>
-      <li>No edge-case handling</li>
-    </ul>
-  </div>
-</div>
-
-<!-- ==========================================
-     SLIDE 10 — COMPOSITION: GREAT
-     ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 11: Composition - A Prompt That Fosters Revision">
-  <div class="progression-header">
-    <span class="label label-blue" style="margin-bottom: 0;">Composition &amp; Writing</span>
-    <div class="progression-dots" aria-hidden="true">
-      <div class="progression-dot dot-bad"></div>
-      <div class="progression-dot dot-mid"></div>
-      <div class="progression-dot dot-good dot-active"></div>
-    </div>
-  </div>
-  <h2>A Prompt That Fosters Revision</h2>
-  <div class="prompt-block prompt-good" style="font-size: clamp(0.75rem, 1.05vw, 0.9rem);"><span class="prompt-label">Strong</span>You are a writing scaffold for an English 101 composition course at a public urban university. Students are drafting a position paper on rhetoric in popular media and must revise their first draft in preparation for their final submission.
+<h2>A Prompt That Fosters Revision</h2>
+<div aria-label="Full system prompt; scroll to read" class="prompt-block prompt-good" tabindex="0"><span class="prompt-label">Strong</span>You are a writing scaffold for an English 101 composition course at a public urban university. Students are drafting a position paper on rhetoric in popular media and must revise their first draft in preparation for their final submission.
 
 The core problem: students treat revision as proofreading, fixing grammar and word choice, rather than rethinking argument, structure, and evidence. They lack a process for examining whether their ideas are clear, well-organized, and sufficiently supported. This tool scaffolds the move from surface-level fixes to substantive revision.
 
-<strong style="color: var(--accent-cyan);">Procedure:</strong>
+<strong>Procedure:</strong>
 1. Request the assignment prompt and student draft before responding.
 2. Identify the highest-priority concerns (thesis clarity, structure, evidence) before surface-level issues.
 3. For each concern, ask the student a question rather than providing a fix.
 
-<strong style="color: var(--accent-cyan);">Constraints:</strong>
-- Never generate text that could substitute for the student&rsquo;s own writing. Focus on higher-order concerns like argument, structure, and evidence.
-- If asked to &ldquo;just fix it,&rdquo; redirect toward a specific revision step.
+<strong>Constraints:</strong>
+- Never generate text that could substitute for the student’s own writing. Focus on higher-order concerns like argument, structure, and evidence.
+- If asked to “just fix it,” redirect toward a specific revision step.
 - Do not grade or evaluate.
-- Tone: Warm and direct. Use &ldquo;I notice...&rdquo; and &ldquo;What if you tried...&rdquo;</div>
+- Tone: Warm and direct. Use “I notice...” and “What if you tried...”</div><p class="small">Full prompt: scroll to read. The complete text is also in the workshop handout.</p>
+</div></div>
+<div aria-label="Slide 24: Primary Source Analysis" aria-roledescription="slide" class="slide layout-divider" data-group="Draft" data-source-slide="12" data-title="Primary Source Analysis" role="group"><div class="slide-inner">
+<span class="section-label">Example 2</span>
+<h2>Primary Source Analysis</h2>
+<div class="divider-line"></div>
+</div></div>
+<div aria-label="Slide 25: The Vague Prompt" aria-roledescription="slide" class="slide layout-content" data-group="Draft" data-source-slide="13" data-title="The Vague Prompt" role="group"><div class="slide-inner">
+<div class="progression-header">
+<span class="label label-blue">History</span>
+<div aria-hidden="true" class="progression-dots">
+<div class="progression-dot dot-bad dot-active"></div>
+<div class="progression-dot"></div>
+<div class="progression-dot"></div>
 </div>
-
-<!-- ==========================================
-     SLIDE 11 — SECTION DIVIDER: HISTORY
-     ========================================== -->
-<div class="slide layout-divider" role="group" aria-roledescription="slide" aria-label="Slide 12: Example 2 - Primary Source Analysis">
-  <span class="section-label">Example 2</span>
-  <h2>Primary Source Analysis</h2>
-  <div class="divider-line"></div>
 </div>
-
-<!-- ==========================================
-     SLIDE 12 — HISTORY: BAD
-     ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 13: History - The Vague Prompt">
-  <div class="progression-header">
-    <span class="label label-blue" style="margin-bottom: 0;">History</span>
-    <div class="progression-dots" aria-hidden="true">
-      <div class="progression-dot dot-bad dot-active"></div>
-      <div class="progression-dot"></div>
-      <div class="progression-dot"></div>
-    </div>
-  </div>
-  <h2>The Vague Prompt</h2>
-  <div class="prompt-block prompt-bad"><span class="prompt-label">Weak</span>Analyze historical documents.</div>
-  <div style="margin-top: 1em;">
-    <h4 style="color: var(--accent-red);">What goes wrong?</h4>
-    <ul class="stream-list step-hidden" data-step>
-      <li>No methodological framework</li>
-      <li>No period or geographic focus</li>
-      <li>No guidance on handling hallucinated facts or invented sources</li>
-    </ul>
-  </div>
+<h2>The Vague Prompt</h2>
+<div class="prompt-block prompt-bad"><span class="prompt-label">Weak</span>Analyze historical documents.</div>
+<div>
+<h4>What goes wrong?</h4>
+<ul class="">
+<li>No methodological framework</li>
+<li>No period or geographic focus</li>
+<li>No guidance on handling hallucinated facts or invented sources</li>
+</ul>
 </div>
-
-<!-- ==========================================
-     SLIDE 13 — HISTORY: MEDIOCRE
-     ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 14: History - Getting Warmer">
-  <div class="progression-header">
-    <span class="label label-blue" style="margin-bottom: 0;">History</span>
-    <div class="progression-dots" aria-hidden="true">
-      <div class="progression-dot dot-bad"></div>
-      <div class="progression-dot dot-mid dot-active"></div>
-      <div class="progression-dot"></div>
-    </div>
-  </div>
-  <h2>Getting Warmer</h2>
-  <div class="prompt-block prompt-mid"><span class="prompt-label">Getting There</span>You are a history source-analysis tool. Help students analyze primary sources from American history. Ask them to consider the author, audience, and context of each document. Don't just summarize the document for them.</div>
-  <div class="why-better">
-    <h4>What improved?</h4>
-    <ul class="stream-list step-hidden" data-step>
-      <li>Assigns a role and disciplinary scope</li>
-      <li>References a real methodology</li>
-      <li>Sets a boundary against summarization</li>
-    </ul>
-  </div>
-  <div style="margin-top: 0.6em;">
-    <h4 style="color: var(--accent-amber);">What's still missing?</h4>
-    <ul class="stream-list step-hidden" data-step>
-      <li>No procedural steps for guiding analysis</li>
-      <li>No handling of uncertainty or AI limitations</li>
-      <li>No attention to historiographical perspective</li>
-    </ul>
-  </div>
+</div></div>
+<div aria-label="Slide 26: Getting Warmer" aria-roledescription="slide" class="slide layout-content progression-slide" data-group="Draft" data-source-slide="14" data-title="Getting Warmer" role="group"><div class="slide-inner">
+<div class="progression-header">
+<span class="label label-blue">History</span>
+<div aria-hidden="true" class="progression-dots">
+<div class="progression-dot dot-bad"></div>
+<div class="progression-dot dot-mid dot-active"></div>
+<div class="progression-dot"></div>
 </div>
+</div>
+<h2>Getting Warmer</h2>
+<div class="prompt-block prompt-mid"><span class="prompt-label">Getting There</span>You are a history source-analysis tool. Help students analyze primary sources from American history. Ask them to consider the author, audience, and context of each document. Don't just summarize the document for them.</div>
 
-<!-- ==========================================
-     SLIDE 14 — HISTORY: GREAT
-     ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 15: History - A Prompt That Fosters Historical Thinking">
-  <div class="progression-header">
-    <span class="label label-blue" style="margin-bottom: 0;">History</span>
-    <div class="progression-dots" aria-hidden="true">
-      <div class="progression-dot dot-bad"></div>
-      <div class="progression-dot dot-mid"></div>
-      <div class="progression-dot dot-good dot-active"></div>
-    </div>
-  </div>
-  <h2>A Prompt That Fosters Historical Thinking</h2>
-  <div class="prompt-block prompt-good" style="font-size: clamp(0.75rem, 1.05vw, 0.9rem);"><span class="prompt-label">Strong</span>You are a source-analysis tool for an undergraduate U.S. history survey covering the period from Reconstruction through the Civil Rights Movement. Students must analyze primary source documents from the period and use them as the basis for a historical report.
+
+<div class="columns example-feedback"><div class="why-better">
+<h4>What improved?</h4>
+<ul class="">
+<li>Assigns a role and disciplinary scope</li>
+<li>References a real methodology</li>
+<li>Sets a boundary against summarization</li>
+</ul>
+</div><div>
+<h4>What's still missing?</h4>
+<ul class="">
+<li>No procedural steps for guiding analysis</li>
+<li>No handling of uncertainty or AI limitations</li>
+<li>No attention to historiographical perspective</li>
+</ul>
+</div></div></div></div>
+<div aria-label="Slide 27: A Prompt That Fosters Historical Thinking" aria-roledescription="slide" class="slide layout-content long-prompt-slide" data-group="Draft" data-source-slide="15" data-title="A Prompt That Fosters Historical Thinking" role="group"><div class="slide-inner">
+<div class="progression-header">
+<span class="label label-blue">History</span>
+<div aria-hidden="true" class="progression-dots">
+<div class="progression-dot dot-bad"></div>
+<div class="progression-dot dot-mid"></div>
+<div class="progression-dot dot-good dot-active"></div>
+</div>
+</div>
+<h2>A Prompt That Fosters Historical Thinking</h2>
+<div aria-label="Full system prompt; scroll to read" class="prompt-block prompt-good" tabindex="0"><span class="prompt-label">Strong</span>You are a source-analysis tool for an undergraduate U.S. history survey covering the period from Reconstruction through the Civil Rights Movement. Students must analyze primary source documents from the period and use them as the basis for a historical report.
 
 The core problem: students extract facts from sources rather than analyzing them as constructed arguments shaped by author, audience, and context.
 
-<strong style="color: var(--accent-cyan);">Procedure (based on Wineburg&rsquo;s historical thinking heuristics):</strong>
+<strong>Procedure (based on Wineburg’s historical thinking heuristics):</strong>
 1. Ask the student to identify the source (title, date, creator, document type) before proceeding.
 2. Guide them through the four moves below, one at a time. Never jump ahead.
 3. After each move, ask why that detail matters and prompt them to ground their response in specific passages.
 4. After all four moves, ask the student to synthesize: what does the full picture reveal about this historical moment?
 
-<strong style="color: var(--accent-cyan);">Four Moves:</strong>
-- Sourcing &mdash; Before reading: who created this, when, and why? What can we infer about reliability and perspective?
-- Contextualization &mdash; What was happening at the time and place this was produced? How does that shape its meaning?
-- Close Reading &mdash; What does the text actually say &mdash; and what does it leave out, downplay, or assume?
-- Corroboration &mdash; How does this source compare to others from the period? Where do accounts agree or conflict?
+<strong>Four Moves:</strong>
+- Sourcing — Before reading: who created this, when, and why? What can we infer about reliability and perspective?
+- Contextualization — What was happening at the time and place this was produced? How does that shape its meaning?
+- Close Reading — What does the text actually say — and what does it leave out, downplay, or assume?
+- Corroboration — How does this source compare to others from the period? Where do accounts agree or conflict?
 
-<strong style="color: var(--accent-cyan);">Constraints:</strong>
+<strong>Constraints:</strong>
 - Never offer guidance before the student has attempted an answer.
 - Encourage grounding interpretations in specific passages as analysis develops.
 - If unsure about a historical fact, say so. Never invent dates, names, or events.
 - Never provide a complete analysis. Ask the next question a historian would ask.
-- Tone: Patient and curious.</div>
+- Tone: Patient and curious.</div><p class="small">Full prompt: scroll to read. The complete text is also in the workshop handout.</p>
+</div></div>
+<div aria-label="Slide 28: Close Reading &amp; Literary Analysis" aria-roledescription="slide" class="slide layout-divider" data-group="Draft" data-source-slide="16" data-title="Close Reading &amp; Literary Analysis" role="group"><div class="slide-inner">
+<span class="section-label">Example 3</span>
+<h2>Close Reading &amp; Literary Analysis</h2>
+<div class="divider-line"></div>
+</div></div>
+<div aria-label="Slide 29: The Vague Prompt" aria-roledescription="slide" class="slide layout-content" data-group="Draft" data-source-slide="17" data-title="The Vague Prompt" role="group"><div class="slide-inner">
+<div class="progression-header">
+<span class="label label-blue">Literature &amp; Cultural Studies</span>
+<div aria-hidden="true" class="progression-dots">
+<div class="progression-dot dot-bad dot-active"></div>
+<div class="progression-dot"></div>
+<div class="progression-dot"></div>
 </div>
-
-<!-- ==========================================
-     SLIDE 15 — SECTION DIVIDER: LITERATURE
-     ========================================== -->
-<div class="slide layout-divider" role="group" aria-roledescription="slide" aria-label="Slide 16: Example 3 - Close Reading and Literary Analysis">
-  <span class="section-label">Example 3</span>
-  <h2>Close Reading &amp; Literary Analysis</h2>
-  <div class="divider-line"></div>
 </div>
-
-<!-- ==========================================
-     SLIDE 16 — LITERATURE: BAD
-     ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 17: Literature - The Vague Prompt">
-  <div class="progression-header">
-    <span class="label label-blue" style="margin-bottom: 0;">Literature &amp; Cultural Studies</span>
-    <div class="progression-dots" aria-hidden="true">
-      <div class="progression-dot dot-bad dot-active"></div>
-      <div class="progression-dot"></div>
-      <div class="progression-dot"></div>
-    </div>
-  </div>
-  <h2>The Vague Prompt</h2>
-  <div class="prompt-block prompt-bad"><span class="prompt-label">Weak</span>Help with literary analysis.</div>
-  <div style="margin-top: 1em;">
-    <h4 style="color: var(--accent-red);">What goes wrong?</h4>
-    <ul class="stream-list step-hidden" data-step>
-      <li>Defaults to plot summary</li>
-      <li>No theoretical or critical framework</li>
-      <li>No requirement for textual evidence</li>
-    </ul>
-  </div>
+<h2>The Vague Prompt</h2>
+<div class="prompt-block prompt-bad"><span class="prompt-label">Weak</span>Help with literary analysis.</div>
+<div>
+<h4>What goes wrong?</h4>
+<ul class="">
+<li>Defaults to plot summary</li>
+<li>No theoretical or critical framework</li>
+<li>No requirement for textual evidence</li>
+</ul>
 </div>
-
-<!-- ==========================================
-     SLIDE 17 — LITERATURE: MEDIOCRE
-     ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 18: Literature - Getting Warmer">
-  <div class="progression-header">
-    <span class="label label-blue" style="margin-bottom: 0;">Literature &amp; Cultural Studies</span>
-    <div class="progression-dots" aria-hidden="true">
-      <div class="progression-dot dot-bad"></div>
-      <div class="progression-dot dot-mid dot-active"></div>
-      <div class="progression-dot"></div>
-    </div>
-  </div>
-  <h2>Getting Warmer</h2>
-  <div class="prompt-block prompt-mid"><span class="prompt-label">Getting There</span>You are a close-reading scaffold. Help students analyze literary texts by focusing on themes, symbolism, and narrative techniques. Don't just summarize the plot. Ask students to point to specific passages.</div>
-  <div class="why-better">
-    <h4>What improved?</h4>
-    <ul class="stream-list step-hidden" data-step>
-      <li>Names specific analytical categories</li>
-      <li>Addresses the plot-summary problem</li>
-      <li>Requires textual evidence</li>
-    </ul>
-  </div>
-  <div style="margin-top: 0.6em;">
-    <h4 style="color: var(--accent-amber);">What's still missing?</h4>
-    <ul class="stream-list step-hidden" data-step>
-      <li>No procedural steps for scaffolding analysis</li>
-      <li>No critical or theoretical framework</li>
-      <li>No attention to cultural context</li>
-    </ul>
-  </div>
+</div></div>
+<div aria-label="Slide 30: Getting Warmer" aria-roledescription="slide" class="slide layout-content progression-slide" data-group="Draft" data-source-slide="18" data-title="Getting Warmer" role="group"><div class="slide-inner">
+<div class="progression-header">
+<span class="label label-blue">Literature &amp; Cultural Studies</span>
+<div aria-hidden="true" class="progression-dots">
+<div class="progression-dot dot-bad"></div>
+<div class="progression-dot dot-mid dot-active"></div>
+<div class="progression-dot"></div>
 </div>
+</div>
+<h2>Getting Warmer</h2>
+<div class="prompt-block prompt-mid"><span class="prompt-label">Getting There</span>You are a close-reading scaffold. Help students analyze literary texts by focusing on themes, symbolism, and narrative techniques. Don't just summarize the plot. Ask students to point to specific passages.</div>
 
-<!-- ==========================================
-     SLIDE 18 — LITERATURE: GREAT
-     ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 19: Literature - A Prompt That Fosters Close Reading">
-  <div class="progression-header">
-    <span class="label label-blue" style="margin-bottom: 0;">Literature &amp; Cultural Studies</span>
-    <div class="progression-dots" aria-hidden="true">
-      <div class="progression-dot dot-bad"></div>
-      <div class="progression-dot dot-mid"></div>
-      <div class="progression-dot dot-good dot-active"></div>
-    </div>
-  </div>
-  <h2>A Prompt That Fosters Close Reading</h2>
-  <div class="prompt-block prompt-good" style="font-size: clamp(0.75rem, 1.05vw, 0.9rem);"><span class="prompt-label">Strong</span>You are a close-reading tool designed for an introductory English course that focuses on cultural studies and literary analysis. Students recently practiced close reading and must now select a brief literary artifact to analyze using techniques associated with New Criticism.
+
+<div class="columns example-feedback"><div class="why-better">
+<h4>What improved?</h4>
+<ul class="">
+<li>Names specific analytical categories</li>
+<li>Addresses the plot-summary problem</li>
+<li>Requires textual evidence</li>
+</ul>
+</div><div>
+<h4>What's still missing?</h4>
+<ul class="">
+<li>No procedural steps for scaffolding analysis</li>
+<li>No critical or theoretical framework</li>
+<li>No attention to cultural context</li>
+</ul>
+</div></div></div></div>
+<div aria-label="Slide 31: A Prompt That Fosters Close Reading" aria-roledescription="slide" class="slide layout-content long-prompt-slide" data-group="Draft" data-source-slide="19" data-title="A Prompt That Fosters Close Reading" role="group"><div class="slide-inner">
+<div class="progression-header">
+<span class="label label-blue">Literature &amp; Cultural Studies</span>
+<div aria-hidden="true" class="progression-dots">
+<div class="progression-dot dot-bad"></div>
+<div class="progression-dot dot-mid"></div>
+<div class="progression-dot dot-good dot-active"></div>
+</div>
+</div>
+<h2>A Prompt That Fosters Close Reading</h2>
+<div aria-label="Full system prompt; scroll to read" class="prompt-block prompt-good" tabindex="0"><span class="prompt-label">Strong</span>You are a close-reading tool designed for an introductory English course that focuses on cultural studies and literary analysis. Students recently practiced close reading and must now select a brief literary artifact to analyze using techniques associated with New Criticism.
 
 The core problem: students default to summarizing content or importing biographical and historical context rather than attending closely to how the text works: how language, form, imagery, and internal tension generate meaning within the artifact itself.
 
-<strong style="color: var(--accent-cyan);">Procedure:</strong>
+<strong>Procedure:</strong>
 1. Ask what the student notices about the language in their chosen passage.
 2. Prompt them to examine specific textual features (word choice, imagery, syntax, point of view) and how they create meaning.
-3. Ask how the passage connects to the work&rsquo;s larger themes and cultural moment.
+3. Ask how the passage connects to the work’s larger themes.
 4. Guide them toward an interpretive claim grounded in textual evidence.
 
-<strong style="color: var(--accent-cyan);">Framework:</strong>
+<strong>Framework:</strong>
 - Treat the text as a self-contained object. Bracket authorial intent and historical context; attend to what the language itself does.
 - Look for tension, irony, paradox, and ambiguity as sites of meaning, not problems to resolve. Ask how formal elements (diction, imagery, syntax, tone) work together as a meaningful cultural artifact.
 - Once a close reading is underway, invite students to reflect on the method itself: what does focusing on the text alone illuminate, and what does it leave out?
 
-<strong style="color: var(--accent-cyan);">Constraints:</strong>
+<strong>Constraints:</strong>
 - Facilitate multiple interpretations grounded in textual evidence. Do not prescribe a correct reading.
-- If a student reaches for biographical or historical context, redirect them back to the text: &ldquo;What in the language itself supports that reading?&rdquo;
+- If a student reaches for biographical or historical context, redirect them back to the text: “What in the language itself supports that reading?”
 
-<strong style="color: var(--accent-cyan);">Tone:</strong> Encouraging and accessible. Affirm observations, then push deeper.</div>
+<strong>Tone:</strong> Encouraging and accessible. Affirm observations, then push deeper.</div><p class="small">Full prompt: scroll to read. The complete text is also in the workshop handout.</p>
+</div></div>
+<div aria-label="Slide 32: Drafting Your System Prompt" aria-roledescription="slide" class="slide layout-divider" data-group="Draft" data-source-slide="20" data-title="Drafting Your System Prompt" role="group"><div class="slide-inner">
+<span class="section-label">Drafting exercise</span>
+<h2>Drafting Your System Prompt</h2>
+<div class="divider-line"></div>
+</div></div>
+<div aria-label="Slide 33: Core Components of a System Prompt" aria-roledescription="slide" class="slide layout-content" data-group="Draft" data-source-slide="21" data-title="Core Components of a System Prompt" role="group"><div class="slide-inner">
+<span class="label label-cyan">Structure</span>
+<h2>Core Components of a System Prompt</h2>
+<p>Each system prompt is built from modular components. We’ll draft yours one piece at a time.</p>
+<ol class="">
+<li><strong>Context &amp; Problem</strong> — What course, what students, what learning challenge?</li>
+<li><strong>Procedure</strong> — What steps should the tool follow?</li>
+<li><strong>Constraints</strong> — What should it refuse to do, and how should it redirect?</li>
+<li><strong>Tone</strong> — What register and affect should it use with your students?</li>
+<li><strong>Output Format</strong> — How should it structure its responses?</li>
+</ol>
+</div></div>
+<div aria-label="Slide 34: Context &amp; Problem" aria-roledescription="slide" class="slide layout-split" data-group="Draft" data-source-slide="22" data-title="Context &amp; Problem" role="group"><div class="slide-inner">
+<div class="content">
+<span class="label label-cyan">Component 1</span>
+<h2>Context &amp; Problem</h2>
+<p>Name the tool, the course, the students, and the specific learning challenge. Everything else follows from this.</p>
+<ul>
+<li>What kind of tool is this?</li>
+<li>Who are your students?</li>
+<li>What learning challenge does it address?</li>
+</ul>
 </div>
-
-<!-- ==========================================
-     SLIDE 19 — SECTION DIVIDER: BUILDING BLOCKS
-     ========================================== -->
-<div class="slide layout-divider" role="group" aria-roledescription="slide" aria-label="Slide 20: Part II - Drafting Your System Prompt">
-  <span class="section-label">Part II</span>
-  <h2>Drafting Your System Prompt</h2>
-  <div class="divider-line"></div>
-</div>
-
-<!-- ==========================================
-     SLIDE 20 — THE FIVE COMPONENTS
-     ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 21: Core Components of a System Prompt" style="justify-content: center; align-items: center; text-align: center;">
-  <span class="label label-cyan">Structure</span>
-  <h2>Core Components of a System Prompt</h2>
-  <p style="margin-bottom: 1.4em; max-width: 600px; margin-left: auto; margin-right: auto;">Each system prompt is built from modular components. We&rsquo;ll draft yours one piece at a time.</p>
-  <ol class="stream-list" style="text-align: left; max-width: 580px; margin: 0 auto; line-height: 1.9; padding-left: 1.4em;">
-    <li><strong>Context &amp; Problem</strong> — What course, what students, what learning challenge?</li>
-    <li><strong>Procedure</strong> — What steps should the tool follow?</li>
-    <li><strong>Constraints</strong> — What should it refuse to do, and how should it redirect?</li>
-    <li><strong>Tone</strong> — What register and affect should it use with your students?</li>
-    <li><strong>Output Format</strong> — How should it structure its responses?</li>
-  </ol>
-</div>
-
-<!-- ==========================================
-     SLIDE 21 — CONTEXT & PROBLEM (drafting)
-     ========================================== -->
-<div class="slide layout-split" role="group" aria-roledescription="slide" aria-label="Slide 22: Context and Problem">
-  <div class="content">
-    <span class="label label-cyan">Component 1</span>
-    <h2>Context &amp; Problem</h2>
-    <p>Name the tool, the course, the students, and the specific learning challenge. Everything else follows from this.</p>
-    <ul style="margin-top: 1em; line-height: 1.9;">
-      <li>What kind of tool is this?</li>
-      <li>Who are your students?</li>
-      <li>What learning challenge does it address?</li>
-    </ul>
-  </div>
-  <div class="stage" style="flex-direction: column; justify-content: center; padding: clamp(16px, 2.5vw, 40px);">
-    <div style="position: relative; width: 100%;">
-      <button class="copy-btn" onclick="copyTemplate('tpl-context')" title="Copy template">Copy</button>
-      <pre id="tpl-context" class="prompt-block prompt-mid" style="white-space: pre-wrap; font-family: inherit; margin: 0;">You are a [tool type] for [course name].
+<div class="stage">
+<div>
+<button class="copy-btn" data-copy="tpl-context" title="Copy template">Copy</button>
+<pre class="prompt-block prompt-mid" id="tpl-context">You are a [tool type] for [course name].
 Students are [relevant context].
 
 The core problem: [specific learning challenge].</pre>
-    </div>
-    <div class="tip-box" style="margin-top: 1.2em;">
-      <p><strong>Your turn:</strong> Copy this template and fill in the placeholders. Name what the tool does, who the students are, and what learning challenge it addresses.</p>
-    </div>
-  </div>
 </div>
-
-<!-- ==========================================
-     SLIDE 22 — PROCEDURE (drafting)
-     ========================================== -->
-<div class="slide layout-split" role="group" aria-roledescription="slide" aria-label="Slide 23: Procedure">
-  <div class="content">
-    <span class="label label-cyan">Component 2</span>
-    <h2>Procedure</h2>
-    <p>Tell the tool what to do, step by step. Numbered steps give the model a clear sequence rather than a loose set of suggestions.</p>
-    <ul style="margin-top: 1em; line-height: 1.9;">
-      <li>What should the tool request before responding?</li>
-      <li>What should it prioritize?</li>
-      <li>How should it respond to each student input?</li>
-    </ul>
-  </div>
-  <div class="stage" style="flex-direction: column; justify-content: center; padding: clamp(16px, 2.5vw, 40px);">
-    <div style="position: relative; width: 100%;">
-      <button class="copy-btn" onclick="copyTemplate('tpl-procedure')" title="Copy template">Copy</button>
-      <pre id="tpl-procedure" class="prompt-block prompt-mid" style="white-space: pre-wrap; font-family: inherit; margin: 0;">Procedure:
+<div class="tip-box">
+<p><strong>Your turn:</strong> Copy this template and fill in the placeholders. Name what the tool does, who the students are, and what learning challenge it addresses.</p>
+</div>
+</div>
+</div></div>
+<div aria-label="Slide 35: Procedure" aria-roledescription="slide" class="slide layout-split" data-group="Draft" data-source-slide="23" data-title="Procedure" role="group"><div class="slide-inner">
+<div class="content">
+<span class="label label-cyan">Component 2</span>
+<h2>Procedure</h2>
+<p>Tell the tool what to do, step by step. Numbered steps give the model a clear sequence rather than a loose set of suggestions.</p>
+<ul>
+<li>What should the tool request before responding?</li>
+<li>What should it prioritize?</li>
+<li>How should it respond to each student input?</li>
+</ul>
+</div>
+<div class="stage">
+<div>
+<button class="copy-btn" data-copy="tpl-procedure" title="Copy template">Copy</button>
+<pre class="prompt-block prompt-mid" id="tpl-procedure">Procedure:
 1. Ask the student for [specific input] before responding.
 2. Identify [priority concern] before addressing [secondary concerns].
 3. For each issue, [specific action, e.g. ask a question rather than fix it].</pre>
-    </div>
-    <div class="tip-box" style="margin-top: 1.2em;">
-      <p><strong>Your turn:</strong> Copy this template and fill in the placeholders. Think about the sequence that matters for your discipline.</p>
-    </div>
-  </div>
 </div>
-
-<!-- ==========================================
-     SLIDE 23 — CONSTRAINTS (drafting)
-     ========================================== -->
-<div class="slide layout-split" role="group" aria-roledescription="slide" aria-label="Slide 24: Constraints">
-  <div class="content">
-    <span class="label label-cyan">Component 3</span>
-    <h2>Constraints</h2>
-    <p>Define what the tool should not do and how it redirects when students push against those limits.</p>
-    <ul style="margin-top: 1em; line-height: 1.9;">
-      <li>What will students ask it to do <em>for</em> them?</li>
-      <li>How should it redirect instead?</li>
-      <li>What uncertainty should it name explicitly?</li>
-    </ul>
-  </div>
-  <div class="stage" style="flex-direction: column; justify-content: center; padding: clamp(16px, 2.5vw, 40px);">
-    <div style="position: relative; width: 100%;">
-      <button class="copy-btn" onclick="copyTemplate('tpl-constraints')" title="Copy template">Copy</button>
-      <pre id="tpl-constraints" class="prompt-block prompt-mid" style="white-space: pre-wrap; font-family: inherit; margin: 0;">Constraints:
+<div class="tip-box">
+<p><strong>Your turn:</strong> Copy this template and fill in the placeholders. Think about the sequence that matters for your discipline.</p>
+</div>
+</div>
+</div></div>
+<div aria-label="Slide 36: Constraints" aria-roledescription="slide" class="slide layout-split" data-group="Draft" data-source-slide="24" data-title="Constraints" role="group"><div class="slide-inner">
+<div class="content">
+<span class="label label-cyan">Component 3</span>
+<h2>Constraints</h2>
+<p>Define what the tool should not do and how it redirects when students push against those limits.</p>
+<ul>
+<li>What will students ask it to do <em>for</em> them?</li>
+<li>How should it redirect instead?</li>
+<li>What uncertainty should it name explicitly?</li>
+</ul>
+</div>
+<div class="stage">
+<div>
+<button class="copy-btn" data-copy="tpl-constraints" title="Copy template">Copy</button>
+<pre class="prompt-block prompt-mid" id="tpl-constraints">Constraints:
 - Never [specific output to avoid].
 - If asked to [common student request], redirect by [specific alternative].
 - If uncertain about [domain content], say so explicitly.</pre>
-    </div>
-    <div class="tip-box" style="margin-top: 1.2em;">
-      <p><strong>Your turn:</strong> Copy this template and fill in the placeholders. Keep the tool from doing work students should do themselves.</p>
-    </div>
-  </div>
 </div>
-
-<!-- ==========================================
-     SLIDE 24 — TONE (drafting)
-     ========================================== -->
-<div class="slide layout-split" role="group" aria-roledescription="slide" aria-label="Slide 25: Tone">
-  <div class="content">
-    <span class="label label-cyan">Component 4</span>
-    <h2>Tone</h2>
-    <p>One sentence on tone shapes how the tool communicates with every student it encounters.</p>
-    <ul style="margin-top: 1em; line-height: 1.9;">
-      <li>What register fits your students?</li>
-      <li>Should it feel warm, direct, encouraging?</li>
-      <li>Are there phrases that model the right affect?</li>
-    </ul>
-  </div>
-  <div class="stage" style="flex-direction: column; justify-content: center; padding: clamp(16px, 2.5vw, 40px);">
-    <div style="position: relative; width: 100%;">
-      <button class="copy-btn" onclick="copyTemplate('tpl-tone')" title="Copy template">Copy</button>
-      <pre id="tpl-tone" class="prompt-block prompt-mid" style="white-space: pre-wrap; font-family: inherit; margin: 0;">Tone: [Adjective and adjective]. Use phrases like "[example phrase]" and "[example phrase]."</pre>
-    </div>
-    <div class="tip-box" style="margin-top: 1.2em;">
-      <p><strong>Your turn:</strong> Copy this template and fill in the placeholders. What language makes your students feel supported rather than evaluated?</p>
-    </div>
-  </div>
+<div class="tip-box">
+<p><strong>Your turn:</strong> Copy this template and fill in the placeholders. Keep the tool from doing work students should do themselves.</p>
 </div>
-
-<!-- ==========================================
-     SLIDE 25 — OUTPUT FORMAT (drafting)
-     ========================================== -->
-<div class="slide layout-split" role="group" aria-roledescription="slide" aria-label="Slide 26: Output Format">
-  <div class="content">
-    <span class="label label-cyan">Component 5</span>
-    <h2>Output Format</h2>
-    <p>Optional, but useful when consistent structure helps students know what to expect from each response.</p>
-    <ul style="margin-top: 1em; line-height: 1.9;">
-      <li>Should each response end with a question?</li>
-      <li>Should it follow a fixed structure?</li>
-      <li>What length is appropriate?</li>
-    </ul>
-  </div>
-  <div class="stage" style="flex-direction: column; justify-content: center; padding: clamp(16px, 2.5vw, 40px);">
-    <div style="position: relative; width: 100%;">
-      <button class="copy-btn" onclick="copyTemplate('tpl-format')" title="Copy template">Copy</button>
-      <pre id="tpl-format" class="prompt-block prompt-mid" style="white-space: pre-wrap; font-family: inherit; margin: 0;">Format each response as:
+</div>
+</div></div>
+<div aria-label="Slide 37: Tone" aria-roledescription="slide" class="slide layout-split" data-group="Draft" data-source-slide="25" data-title="Tone" role="group"><div class="slide-inner">
+<div class="content">
+<span class="label label-cyan">Component 4</span>
+<h2>Tone</h2>
+<p>One sentence on tone shapes how the tool communicates with every student it encounters.</p>
+<ul>
+<li>What register fits your students?</li>
+<li>Should it feel warm, direct, encouraging?</li>
+<li>Are there phrases that model the right affect?</li>
+</ul>
+</div>
+<div class="stage">
+<div>
+<button class="copy-btn" data-copy="tpl-tone" title="Copy template">Copy</button>
+<pre class="prompt-block prompt-mid" id="tpl-tone">Tone: [Adjective and adjective]. Use phrases like "[example phrase]" and "[example phrase]."</pre>
+</div>
+<div class="tip-box">
+<p><strong>Your turn:</strong> Copy this template and fill in the placeholders. What language makes your students feel supported rather than evaluated?</p>
+</div>
+</div>
+</div></div>
+<div aria-label="Slide 38: Output Format" aria-roledescription="slide" class="slide layout-split" data-group="Draft" data-source-slide="26" data-title="Output Format" role="group"><div class="slide-inner">
+<div class="content">
+<span class="label label-cyan">Component 5</span>
+<h2>Output Format</h2>
+<p>Optional, but useful when consistent structure helps students know what to expect from each response.</p>
+<ul>
+<li>Should each response end with a question?</li>
+<li>Should it follow a fixed structure?</li>
+<li>What length is appropriate?</li>
+</ul>
+</div>
+<div class="stage">
+<div>
+<button class="copy-btn" data-copy="tpl-format" title="Copy template">Copy</button>
+<pre class="prompt-block prompt-mid" id="tpl-format">Format each response as:
 Observation: [what you notice]
 Focus: [one thing to work on]
 Next step: [a specific, actionable suggestion]
 Question: [something for the student to consider]</pre>
-    </div>
-    <div class="tip-box" style="margin-top: 1.2em;">
-      <p><strong>Your turn:</strong> Copy this template and fill in the placeholders. Not every prompt needs an output format section.</p>
-    </div>
-  </div>
 </div>
-
-<!-- ==========================================
-     SLIDE 26 — SECTION DIVIDER: ADVANCED
-     ========================================== -->
-<div class="slide layout-divider" role="group" aria-roledescription="slide" aria-label="Slide 27: Part III - Advanced Strategies and Tips">
-  <span class="section-label">Part III</span>
-  <h2>Advanced Strategies &amp; Tips</h2>
-  <div class="divider-line"></div>
+<div class="tip-box">
+<p><strong>Your turn:</strong> Copy this template and fill in the placeholders. Not every prompt needs an output format section.</p>
 </div>
-
-<!-- ==========================================
-     SLIDE 27 — ADVANCED TECHNIQUES
-     ========================================== -->
-<div class="slide layout-grid" role="group" aria-roledescription="slide" aria-label="Slide 28: Going Further">
-  <h2>Going Further</h2>
-  <div class="grid-2">
-    <div class="card card-cyan">
-      <h4>Conditional Behavior</h4>
-      <p>&ldquo;If the student submits a draft, focus on structure before style. If they ask a yes/no question, reframe it as an open one. If they ask you to just give them the answer, ask what they&rsquo;ve tried first.&rdquo;</p>
-    </div>
-    <div class="card">
-      <h4>Conversational Brevity</h4>
-      <p>&ldquo;Respond to one thing at a time. Do not front-load your full analysis. Ask one question, wait for the student&rsquo;s response, then proceed.&rdquo;</p>
-    </div>
-    <div class="card card-navy">
-      <h4>Epistemic Guardrails</h4>
-      <p>&ldquo;If you are not certain about a factual claim, explicitly state your uncertainty. Never fabricate citations or attribute quotes.&rdquo;</p>
-    </div>
-    <div class="card card-cyan">
-      <h4>Multilingual Support</h4>
-      <p>&ldquo;If a student writes in a language other than English, respond in that language. Offer to discuss concepts in both languages.&rdquo; All seven models in the Sandbox support multilingual input and output.</p>
-    </div>
-  </div>
 </div>
-
-<!-- ==========================================
-     SLIDE 28 — COMMON PITFALLS
-     ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 29: Common Pitfalls">
-  <span class="label label-cyan">Watch Out</span>
-  <h2>Common Pitfalls</h2>
-  <div class="grid-2" style="margin-top: 1em;">
-    <div class="card" style="border-left-color: var(--accent-red);">
-      <h4>Too Long &amp; Too Detailed</h4>
-      <p>A 2,000-word system prompt can confuse the model. Aim for clarity over comprehensiveness. If it&rsquo;s getting long, prioritize the most important instructions.</p>
-    </div>
-    <div class="card" style="border-left-color: var(--accent-red);">
-      <h4>Contradictory Instructions</h4>
-      <p>&ldquo;Always give detailed feedback&rdquo; + &ldquo;Keep responses under 50 words&rdquo; = confused AI. Read your prompt for conflicts.</p>
-    </div>
-    <div class="card" style="border-left-color: var(--accent-amber);">
-      <h4>Forgetting the Student&rsquo;s Perspective</h4>
-      <p>Your prompt shapes the student&rsquo;s experience. Test it by asking the kinds of questions your students actually ask.</p>
-    </div>
-    <div class="card" style="border-left-color: var(--accent-amber);">
-      <h4>Set It and Forget It</h4>
-      <p>System prompts need iteration. Use them in real conversations, notice what breaks, and revise. It&rsquo;s a living document.</p>
-    </div>
-  </div>
+</div></div>
+<div aria-label="Slide 39: Advanced Strategies &amp; Tips" aria-roledescription="slide" class="slide layout-divider" data-group="Draft" data-source-slide="27" data-title="Advanced Strategies &amp; Tips" role="group"><div class="slide-inner">
+<span class="section-label">Refine</span>
+<h2>Advanced Strategies &amp; Tips</h2>
+<div class="divider-line"></div>
+</div></div>
+<div aria-label="Slide 40: Going Further" aria-roledescription="slide" class="slide layout-grid" data-group="Draft" data-source-slide="28" data-title="Going Further" role="group"><div class="slide-inner">
+<h2>Going Further</h2>
+<div class="grid-2">
+<div class="card card-cyan">
+<h4>Conditional Behavior</h4>
+<p>“If the student submits a draft, focus on structure before style. If they ask a yes/no question, reframe it as an open one. If they ask you to just give them the answer, ask what they’ve tried first.”</p>
 </div>
-
-<!-- ==========================================
-     SLIDE 29 — ROAD AHEAD
-     ========================================== -->
-<div class="slide layout-full-dark" role="group" aria-roledescription="slide" aria-label="Slide 30: The Road Ahead">
-  <span class="label label-cyan">Coming Up</span>
-  <h2>The Road Ahead</h2>
-  <div class="roadmap">
-    <div class="roadmap-item" style="opacity: 0.5;">
-      <div class="week-label">March 16 &mdash; Today</div>
-      <h4>System Prompts &#10003;</h4>
-      <p>Defining how the AI thinks and teaches</p>
-    </div>
-    <div class="roadmap-item active">
-      <div class="week-label">March 23 &mdash; Next Week</div>
-      <h4>Knowledge Collections</h4>
-      <p>Upload your syllabus, readings, and relevant sources to ground AI models in course materials</p>
-    </div>
-    <div class="roadmap-item">
-      <div class="week-label">March 30</div>
-      <h4>Skills &amp; Tools</h4>
-      <p>Build custom skills, tools, and workflows tailored to your courses</p>
-    </div>
-  </div>
-  <p style="color: var(--light-text-50); margin-top: 1.5em; max-width: 600px;">Each workshop builds on the last. The system prompt you write today becomes the foundation for the knowledge-augmented model you build next week.</p>
+<div class="card">
+<h4>Conversational Brevity</h4>
+<p>“Respond to one thing at a time. Do not front-load your full analysis. Ask one question, wait for the student’s response, then proceed.”</p>
 </div>
-
-</div><!-- /deck -->
-
-<!-- Navigation Bar -->
-<nav id="nav-bar" aria-label="Slide navigation">
-  <button id="arrow-prev" class="arrow-btn" aria-label="Previous slide" title="Previous slide (&#8592;)">&#8592;</button>
-  <span class="nav-info" aria-live="polite"><strong id="nav-current">1</strong> / <span id="nav-total"></span></span>
-  <div id="scrubber-container" class="scrubber-container" role="slider" aria-label="Slide progress" aria-valuemin="1" aria-valuemax="1" aria-valuenow="1" aria-valuetext="Slide 1" tabindex="0">
-    <div class="scrubber-track">
-      <div id="scrubber-progress" class="scrubber-progress"></div>
-      <div class="scrubber-thumb" aria-hidden="true">
-        <div class="scrubber-tooltip" id="scrubber-tooltip">Slide 1</div>
-      </div>
-    </div>
-  </div>
-  <button id="arrow-next" class="arrow-btn" aria-label="Next slide" title="Next slide (&#8594;)">&#8594;</button>
-  <span class="nav-keys" aria-hidden="true"><kbd>Esc</kbd> overview</span>
-</nav>
-
-
-<script>
-function copyTemplate(id) {
-  var el = document.getElementById(id);
-  if (!el) return;
-  navigator.clipboard.writeText(el.innerText).then(function() {
-    var btn = document.querySelector('[onclick="copyTemplate(\'' + id + '\')"]');
-    if (btn) {
-      btn.textContent = 'Copied!';
-      var announcer = document.getElementById('slide-announcer');
-      if (announcer) announcer.textContent = 'Template copied to clipboard';
-      setTimeout(function() { btn.textContent = 'Copy'; }, 1500);
-    }
-  });
-}
-</script>
-<script src="js/tabs.js"></script>
-<script src="js/carousel.js"></script>
-<script src="js/scrubber.js"></script>
-<script src="js/deck-engine.js"></script>
-<script src="js/lightbox.js"></script>
-</body>
+<div class="card card-navy">
+<h4>Epistemic Guardrails</h4>
+<p>“If you are not certain about a factual claim, explicitly state your uncertainty. Never fabricate citations or attribute quotes.”</p>
+</div>
+<div class="card card-cyan">
+<h4>Multilingual Support</h4>
+<p>“If a student writes in a language other than English, respond in that language. Offer to discuss concepts in both languages.” Test language support with the base model and languages your students will use.</p>
+</div>
+</div>
+</div></div>
+<div aria-label="Slide 41: Common Pitfalls" aria-roledescription="slide" class="slide layout-content" data-group="Draft" data-source-slide="29" data-title="Common Pitfalls" role="group"><div class="slide-inner">
+<span class="label label-cyan">Watch Out</span>
+<h2>Common Pitfalls</h2>
+<div class="grid-2">
+<div class="card">
+<h4>Too Long &amp; Too Detailed</h4>
+<p>Keep instructions clear and check for conflicts. If the prompt grows, prioritize its essential procedures and test whether the model follows them.</p>
+</div>
+<div class="card">
+<h4>Contradictory Instructions</h4>
+<p>“Always give detailed feedback” + “Keep responses under 50 words” = confused AI. Read your prompt for conflicts.</p>
+</div>
+<div class="card">
+<h4>Forgetting the Student’s Perspective</h4>
+<p>Your prompt shapes the student’s experience. Test it by asking the kinds of questions your students actually ask.</p>
+</div>
+<div class="card">
+<h4>Set It and Forget It</h4>
+<p>System prompts need iteration. Use them in real conversations, notice what breaks, and revise. It’s a living document.</p>
+</div>
+</div>
+</div></div>
+<section aria-label="Slide 42: Save a private version, then test" aria-roledescription="slide" class="slide layout-content" data-group="Test" data-title="Save a private version, then test" role="group"><div class="slide-inner"><h2>Save a private version, then test</h2><ol class="steps"><li>In <strong>Workspace → Models → Create</strong>, name the card, choose your tested base model, and add your prompt.</li><li>Keep <strong>Access</strong> set to <strong>Private</strong>. Choose <strong>Save &amp; Create</strong>.</li><li>Start a fresh chat from the card. Repeat a normal request, an incomplete request, and a request that crosses a boundary.</li></ol><p class="note">Revise one instruction, use Save &amp; Update, then repeat the test in a fresh chat. Record the result before changing the base model.</p></div></section>
+<section aria-label="Slide 43: Check the student experience" aria-roledescription="slide" class="slide layout-content" data-group="Test" data-title="Check the student experience" role="group"><div class="slide-inner"><h2>Check the student experience</h2><ul class="steps"><li>Use <strong>Access → Add Access</strong> to share with the intended course group when the card is ready.</li><li>Give students read access; reserve write access for the people maintaining the configuration.</li><li>Check that the intended audience can use the card and its base model. Verify with a student account before class.</li></ul><p class="note">A pinned or selected card helps students find it. Access permissions determine whether it works for them.</p><p class="source"><a href="https://ailab.gc.cuny.edu/sandbox-docs/roles-permissions/" rel="noopener" target="_blank">Roles &amp; Permissions</a></p></div></section>
+<section aria-label="Slide 44: Keep a record of your decisions" aria-roledescription="slide" class="slide layout-content" data-group="Test" data-title="Keep a record of your decisions" role="group"><div class="slide-inner"><h2>Keep a record of your decisions</h2><p>Leave with a tested prompt, a base-model choice, and one question to investigate next.</p><table class="rubric"><tbody><tr><th>Configuration</th><td>Card name, base model, system prompt version, date.</td></tr><tr><th>Test</th><td>User request, enabled features, saved response.</td></tr><tr><th>Judgment</th><td>Criterion, passage from the response, reason for revising or retaining the prompt.</td></tr></tbody></table><p class="note">Use public or approved material. The docs describe zero-retention provider requests, while Sandbox chats may be stored and accessible to administrators or their shared audience.</p><p class="source"><a href="https://ailab.gc.cuny.edu/sandbox-docs/getting-started/" rel="noopener" target="_blank">Privacy and chat history</a> · <a href="WORKSHOP.md">Facilitator outline and worksheet</a></p></div></section>
+<section aria-label="Slide 45: Bring this configuration to the next workshop" aria-roledescription="slide" class="slide layout-content" data-group="Next" data-source-slide="30" data-title="Bring this configuration to the next workshop" role="group"><div class="slide-inner"><h2>Bring this configuration<br/>to the next workshop</h2><ol class="roadmap"><li><strong>Composing System Prompts</strong><span>A tested base model and instructions for a learning task.</span></li><li><strong>Curating Knowledge Collections</strong><span>Add the sources the tool needs, then check its use of evidence.</span></li><li><strong>Customizing Skills &amp; Tools</strong><span>Add procedures and capabilities, then test their effects.</span></li></ol><p class="source"><a href="https://ailab.gc.cuny.edu/sandbox-docs//" rel="noopener" target="_blank">Sandbox documentation</a> · <a href="SLIDES.md">Complete slide text</a> · <a href="examples/writing-scaffold.txt">Sample prompt</a></p></div></section>
+</div>
+<nav aria-label="Slide navigation" id="nav-bar"><span class="nav-brand">CUNY AI Lab</span><button aria-label="Previous slide" id="arrow-prev"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m14 6-6 6 6 6"></path></svg></button><span class="nav-info"><span id="nav-current">1</span> / <span id="nav-total"></span></span><button aria-label="Next slide" id="arrow-next"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m10 6 6 6-6 6"></path></svg></button><input aria-label="Slide progress" id="slide-progress" max="1" min="1" type="range" value="1"/><button aria-label="Open slide outline" id="overview-button">Outline</button><button aria-label="Show facilitator notes" aria-pressed="false" id="notes-button">Notes</button></nav>
+<dialog aria-label="Expanded screenshot" id="image-dialog"><button aria-label="Close expanded screenshot" id="close-image">Close</button><img alt=""/><p></p></dialog><dialog aria-label="Workshop outline" id="outline-dialog"><div class="dialog-heading"><h2>Workshop outline</h2><button id="close-outline">Close</button></div><ol id="outline-list"></ol></dialog><aside hidden="" id="facilitator-notes"><h2>Facilitator notes</h2><p id="note-text"></p><a href="WORKSHOP.md">Full facilitation plan</a></aside><script src="js/deck-engine.js"></script><script src="js/lightbox.js"></script></body>
 </html>

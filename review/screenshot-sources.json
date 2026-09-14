@@ -1,0 +1,107 @@
+{
+  "captured_at": "2026-09-14T00:49:30.603084+00:00",
+  "notes": [
+    "Captures show the interface observed on 2026-09-13. Model names and permissions vary by account.",
+    "Native window captures are cropped to the relevant interface controls; browser tabs, personal history, and unrelated models are excluded.",
+    "The editor is blank. No sample card was created or shared in production. The sample text is supplied separately."
+  ],
+  "images": [
+    {
+      "file": "model-selector.png",
+      "source": "https://chat.ailab.gc.cuny.edu/",
+      "capture": "Firefox, signed-in live Sandbox, read-only UI inspection",
+      "source_dimensions": [
+        1366,
+        768
+      ],
+      "crop_xyxy": [
+        680,
+        435,
+        976,
+        757
+      ],
+      "source_sha256": "e6d670a96fcde08c1a0a7729906bcf3c201734cbac94f4a1efbbad8eb2a8522f",
+      "processing": "Rectangular crop only; no retouching, invented content, or reconstructed UI.",
+      "sha256": "8d264183a1cb3c6b208dc8852de81d527ef31aff6941951d54c5b4d91293ab5e"
+    },
+    {
+      "file": "chat-controls.png",
+      "source": "https://chat.ailab.gc.cuny.edu/",
+      "capture": "Firefox native Save visible screenshot of signed-in Sandbox; read-only inspection",
+      "source_dimensions": [
+        4510,
+        2423
+      ],
+      "crop_xyxy": [
+        3599,
+        0,
+        4507,
+        1265
+      ],
+      "source_sha256": "eb4cd78a48debb7a3d3ac5e573609dc3ec387117e7a4863577e77adc8dd2afe9",
+      "processing": "Rectangular crop only; no retouching, invented content, or reconstructed UI.",
+      "sha256": "39d1fac7ab5ac6f25125b216f1c3c06e95602786e95f3ac2a5a83a72c4b0e957"
+    },
+    {
+      "file": "workspace-header.png",
+      "source": "https://chat.ailab.gc.cuny.edu/workspace/models",
+      "capture": "Firefox, signed-in live Sandbox, read-only UI inspection",
+      "source_dimensions": [
+        1366,
+        768
+      ],
+      "crop_xyxy": [
+        70,
+        50,
+        1365,
+        112
+      ],
+      "source_sha256": "623014c54a76b66f5999c9e2f957121f7c329ab5ac7f107f3dbf9370bbe878e6",
+      "processing": "Rectangular crop only; no retouching, invented content, or reconstructed UI.",
+      "sha256": "846cdf4a2679e967287d904200bdf7b120dda332671b4acc99e3f942b63295fd"
+    },
+    {
+      "file": "model-editor.png",
+      "source": "https://chat.ailab.gc.cuny.edu/workspace/models/create",
+      "capture": "Firefox native Save visible screenshot of signed-in Sandbox; read-only inspection",
+      "source_dimensions": [
+        4510,
+        2423
+      ],
+      "crop_xyxy": [
+        135,
+        186,
+        3410,
+        1198
+      ],
+      "source_sha256": "15869f7d579c1e88231136b0c2bc172638af395c42cb792caeb136b9942f8671",
+      "processing": "Rectangular crop only; no retouching, invented content, or reconstructed UI.",
+      "sha256": "fc1aa122425119b89dcf70eabcecb979a62d84c4c8cffe7a8a707fcb899dbdad"
+    },
+    {
+      "file": "chat-page.png",
+      "source": "https://chat.ailab.gc.cuny.edu/",
+      "capture": "Firefox native Save visible page capture",
+      "processing": "No retouching or reconstructed UI.",
+      "sha256": "011e1b0432b0537f1af368b807affc13d42ec3f2233e1f0bf9a5529b148a8ed1"
+    },
+    {
+      "file": "access-application.png",
+      "source": "https://ailab.gc.cuny.edu/request-access/?kind=individual",
+      "capture": "Firefox native Save visible page screenshot",
+      "processing": "Rectangular crop of the access choices only. Personal account fields excluded. No retouching.",
+      "sha256": "148748a503bbc0233fd27125a6a8974b9381d6318e20a5771fc89386c345b71f",
+      "source_dimensions": [
+        4480,
+        2424
+      ],
+      "crop_xyxy": [
+        1526,
+        557,
+        2934,
+        1374
+      ],
+      "source_sha256": "21058ddbbafae251797a8f3777fa66fe6ae56b6ff3690208807f89ef5f01d728"
+    }
+  ]
+}

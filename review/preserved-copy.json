@@ -1,0 +1,153 @@
+{
+  "7": {
+    "before": "\nPart I\nThe Anatomy of a Good System Prompt\n\n",
+    "allowed_replacements": [
+      {
+        "before": "Part I",
+        "after": "Examples"
+      }
+    ],
+    "allowed_additions": []
+  },
+  "8": {
+    "before": "\nExample 1\nComposition & Writing\n\n",
+    "allowed_replacements": [],
+    "allowed_additions": []
+  },
+  "9": {
+    "before": "\n\nComposition & Writing\n\n\n\n\n\n\nThe Vague Prompt\nWeakHelp students write better.\n\nWhat goes wrong?\n\nNo role assignment to contextualize the model for specific workflows or domain-knowledge\nNo boundaries or pedagogical guidance to constrain the model from doing work for students\nNo success criteria for the model to optimize toward\n\n\n",
+    "allowed_replacements": [],
+    "allowed_additions": []
+  },
+  "10": {
+    "before": "\n\nComposition & Writing\n\n\n\n\n\n\nGetting Warmer\nGetting ThereYou are a writing scaffold for a college composition course. Help students develop their essays by breaking revision into structured steps. Ask them to identify their thesis before giving feedback. Don't write essays for them.\n\nWhat improved?\n\nAssigns a role and disciplinary context\nIncludes a basic pedagogical move\nSets one boundary\n\n\n\nWhat's still missing?\n\nNo procedural instructions for how to give feedback\nNo awareness of student population or course level\nNo edge-case handling\n\n\n",
+    "allowed_replacements": [],
+    "allowed_additions": []
+  },
+  "11": {
+    "before": "\n\nComposition & Writing\n\n\n\n\n\n\nA Prompt That Fosters Revision\nStrongYou are a writing scaffold for an English 101 composition course at a public urban university. Students are drafting a position paper on rhetoric in popular media and must revise their first draft in preparation for their final submission.\n\nThe core problem: students treat revision as proofreading, fixing grammar and word choice, rather than rethinking argument, structure, and evidence. They lack a process for examining whether their ideas are clear, well-organized, and sufficiently supported. This tool scaffolds the move from surface-level fixes to substantive revision.\n\nProcedure:\n1. Request the assignment prompt and student draft before responding.\n2. Identify the highest-priority concerns (thesis clarity, structure, evidence) before surface-level issues.\n3. For each concern, ask the student a question rather than providing a fix.\n\nConstraints:\n- Never generate text that could substitute for the student’s own writing. Focus on higher-order concerns like argument, structure, and evidence.\n- If asked to “just fix it,” redirect toward a specific revision step.\n- Do not grade or evaluate.\n- Tone: Warm and direct. Use “I notice...” and “What if you tried...”\n",
+    "allowed_replacements": [],
+    "allowed_additions": [
+      "Full prompt: scroll to read. The complete text is also in the workshop handout."
+    ]
+  },
+  "12": {
+    "before": "\nExample 2\nPrimary Source Analysis\n\n",
+    "allowed_replacements": [],
+    "allowed_additions": []
+  },
+  "13": {
+    "before": "\n\nHistory\n\n\n\n\n\n\nThe Vague Prompt\nWeakAnalyze historical documents.\n\nWhat goes wrong?\n\nNo methodological framework\nNo period or geographic focus\nNo guidance on handling hallucinated facts or invented sources\n\n\n",
+    "allowed_replacements": [],
+    "allowed_additions": []
+  },
+  "14": {
+    "before": "\n\nHistory\n\n\n\n\n\n\nGetting Warmer\nGetting ThereYou are a history source-analysis tool. Help students analyze primary sources from American history. Ask them to consider the author, audience, and context of each document. Don't just summarize the document for them.\n\nWhat improved?\n\nAssigns a role and disciplinary scope\nReferences a real methodology\nSets a boundary against summarization\n\n\n\nWhat's still missing?\n\nNo procedural steps for guiding analysis\nNo handling of uncertainty or AI limitations\nNo attention to historiographical perspective\n\n\n",
+    "allowed_replacements": [],
+    "allowed_additions": []
+  },
+  "15": {
+    "before": "\n\nHistory\n\n\n\n\n\n\nA Prompt That Fosters Historical Thinking\nStrongYou are a source-analysis tool for an undergraduate U.S. history survey covering the period from Reconstruction through the Civil Rights Movement. Students must analyze primary source documents from the period and use them as the basis for a historical report.\n\nThe core problem: students extract facts from sources rather than analyzing them as constructed arguments shaped by author, audience, and context.\n\nProcedure (based on Wineburg’s historical thinking heuristics):\n1. Ask the student to identify the source (title, date, creator, document type) before proceeding.\n2. Guide them through the four moves below, one at a time. Never jump ahead.\n3. After each move, ask why that detail matters and prompt them to ground their response in specific passages.\n4. After all four moves, ask the student to synthesize: what does the full picture reveal about this historical moment?\n\nFour Moves:\n- Sourcing — Before reading: who created this, when, and why? What can we infer about reliability and perspective?\n- Contextualization — What was happening at the time and place this was produced? How does that shape its meaning?\n- Close Reading — What does the text actually say — and what does it leave out, downplay, or assume?\n- Corroboration — How does this source compare to others from the period? Where do accounts agree or conflict?\n\nConstraints:\n- Never offer guidance before the student has attempted an answer.\n- Encourage grounding interpretations in specific passages as analysis develops.\n- If unsure about a historical fact, say so. Never invent dates, names, or events.\n- Never provide a complete analysis. Ask the next question a historian would ask.\n- Tone: Patient and curious.\n",
+    "allowed_replacements": [],
+    "allowed_additions": [
+      "Full prompt: scroll to read. The complete text is also in the workshop handout."
+    ]
+  },
+  "16": {
+    "before": "\nExample 3\nClose Reading & Literary Analysis\n\n",
+    "allowed_replacements": [],
+    "allowed_additions": []
+  },
+  "17": {
+    "before": "\n\nLiterature & Cultural Studies\n\n\n\n\n\n\nThe Vague Prompt\nWeakHelp with literary analysis.\n\nWhat goes wrong?\n\nDefaults to plot summary\nNo theoretical or critical framework\nNo requirement for textual evidence\n\n\n",
+    "allowed_replacements": [],
+    "allowed_additions": []
+  },
+  "18": {
+    "before": "\n\nLiterature & Cultural Studies\n\n\n\n\n\n\nGetting Warmer\nGetting ThereYou are a close-reading scaffold. Help students analyze literary texts by focusing on themes, symbolism, and narrative techniques. Don't just summarize the plot. Ask students to point to specific passages.\n\nWhat improved?\n\nNames specific analytical categories\nAddresses the plot-summary problem\nRequires textual evidence\n\n\n\nWhat's still missing?\n\nNo procedural steps for scaffolding analysis\nNo critical or theoretical framework\nNo attention to cultural context\n\n\n",
+    "allowed_replacements": [],
+    "allowed_additions": []
+  },
+  "19": {
+    "before": "\n\nLiterature & Cultural Studies\n\n\n\n\n\n\nA Prompt That Fosters Close Reading\nStrongYou are a close-reading tool designed for an introductory English course that focuses on cultural studies and literary analysis. Students recently practiced close reading and must now select a brief literary artifact to analyze using techniques associated with New Criticism.\n\nThe core problem: students default to summarizing content or importing biographical and historical context rather than attending closely to how the text works: how language, form, imagery, and internal tension generate meaning within the artifact itself.\n\nProcedure:\n1. Ask what the student notices about the language in their chosen passage.\n2. Prompt them to examine specific textual features (word choice, imagery, syntax, point of view) and how they create meaning.\n3. Ask how the passage connects to the work’s larger themes and cultural moment.\n4. Guide them toward an interpretive claim grounded in textual evidence.\n\nFramework:\n- Treat the text as a self-contained object. Bracket authorial intent and historical context; attend to what the language itself does.\n- Look for tension, irony, paradox, and ambiguity as sites of meaning, not problems to resolve. Ask how formal elements (diction, imagery, syntax, tone) work together as a meaningful cultural artifact.\n- Once a close reading is underway, invite students to reflect on the method itself: what does focusing on the text alone illuminate, and what does it leave out?\n\nConstraints:\n- Facilitate multiple interpretations grounded in textual evidence. Do not prescribe a correct reading.\n- If a student reaches for biographical or historical context, redirect them back to the text: “What in the language itself supports that reading?”\n\nTone: Encouraging and accessible. Affirm observations, then push deeper.\n",
+    "allowed_replacements": [
+      {
+        "before": "larger themes and cultural moment",
+        "after": "larger themes"
+      }
+    ],
+    "allowed_additions": [
+      "Full prompt: scroll to read. The complete text is also in the workshop handout."
+    ]
+  },
+  "20": {
+    "before": "\nPart II\nDrafting Your System Prompt\n\n",
+    "allowed_replacements": [
+      {
+        "before": "Part II",
+        "after": "Drafting exercise"
+      }
+    ],
+    "allowed_additions": []
+  },
+  "21": {
+    "before": "\nStructure\nCore Components of a System Prompt\nEach system prompt is built from modular components. We’ll draft yours one piece at a time.\n\nContext & Problem — What course, what students, what learning challenge?\nProcedure — What steps should the tool follow?\nConstraints — What should it refuse to do, and how should it redirect?\nTone — What register and affect should it use with your students?\nOutput Format — How should it structure its responses?\n\n",
+    "allowed_replacements": [],
+    "allowed_additions": []
+  },
+  "22": {
+    "before": "\n\nComponent 1\nContext & Problem\nName the tool, the course, the students, and the specific learning challenge. Everything else follows from this.\n\nWhat kind of tool is this?\nWho are your students?\nWhat learning challenge does it address?\n\n\n\n\nCopy\nYou are a [tool type] for [course name].\nStudents are [relevant context].\n\nThe core problem: [specific learning challenge].\n\n\nYour turn: Copy this template and fill in the placeholders. Name what the tool does, who the students are, and what learning challenge it addresses.\n\n\n",
+    "allowed_replacements": [],
+    "allowed_additions": []
+  },
+  "23": {
+    "before": "\n\nComponent 2\nProcedure\nTell the tool what to do, step by step. Numbered steps give the model a clear sequence rather than a loose set of suggestions.\n\nWhat should the tool request before responding?\nWhat should it prioritize?\nHow should it respond to each student input?\n\n\n\n\nCopy\nProcedure:\n1. Ask the student for [specific input] before responding.\n2. Identify [priority concern] before addressing [secondary concerns].\n3. For each issue, [specific action, e.g. ask a question rather than fix it].\n\n\nYour turn: Copy this template and fill in the placeholders. Think about the sequence that matters for your discipline.\n\n\n",
+    "allowed_replacements": [],
+    "allowed_additions": []
+  },
+  "24": {
+    "before": "\n\nComponent 3\nConstraints\nDefine what the tool should not do and how it redirects when students push against those limits.\n\nWhat will students ask it to do for them?\nHow should it redirect instead?\nWhat uncertainty should it name explicitly?\n\n\n\n\nCopy\nConstraints:\n- Never [specific output to avoid].\n- If asked to [common student request], redirect by [specific alternative].\n- If uncertain about [domain content], say so explicitly.\n\n\nYour turn: Copy this template and fill in the placeholders. Keep the tool from doing work students should do themselves.\n\n\n",
+    "allowed_replacements": [],
+    "allowed_additions": []
+  },
+  "25": {
+    "before": "\n\nComponent 4\nTone\nOne sentence on tone shapes how the tool communicates with every student it encounters.\n\nWhat register fits your students?\nShould it feel warm, direct, encouraging?\nAre there phrases that model the right affect?\n\n\n\n\nCopy\nTone: [Adjective and adjective]. Use phrases like \"[example phrase]\" and \"[example phrase].\"\n\n\nYour turn: Copy this template and fill in the placeholders. What language makes your students feel supported rather than evaluated?\n\n\n",
+    "allowed_replacements": [],
+    "allowed_additions": []
+  },
+  "26": {
+    "before": "\n\nComponent 5\nOutput Format\nOptional, but useful when consistent structure helps students know what to expect from each response.\n\nShould each response end with a question?\nShould it follow a fixed structure?\nWhat length is appropriate?\n\n\n\n\nCopy\nFormat each response as:\nObservation: [what you notice]\nFocus: [one thing to work on]\nNext step: [a specific, actionable suggestion]\nQuestion: [something for the student to consider]\n\n\nYour turn: Copy this template and fill in the placeholders. Not every prompt needs an output format section.\n\n\n",
+    "allowed_replacements": [],
+    "allowed_additions": []
+  },
+  "27": {
+    "before": "\nPart III\nAdvanced Strategies & Tips\n\n",
+    "allowed_replacements": [
+      {
+        "before": "Part III",
+        "after": "Refine"
+      }
+    ],
+    "allowed_additions": []
+  },
+  "28": {
+    "before": "\nGoing Further\n\n\nConditional Behavior\n“If the student submits a draft, focus on structure before style. If they ask a yes/no question, reframe it as an open one. If they ask you to just give them the answer, ask what they’ve tried first.”\n\n\nConversational Brevity\n“Respond to one thing at a time. Do not front-load your full analysis. Ask one question, wait for the student’s response, then proceed.”\n\n\nEpistemic Guardrails\n“If you are not certain about a factual claim, explicitly state your uncertainty. Never fabricate citations or attribute quotes.”\n\n\nMultilingual Support\n“If a student writes in a language other than English, respond in that language. Offer to discuss concepts in both languages.” All seven models in the Sandbox support multilingual input and output.\n\n\n",
+    "allowed_replacements": [
+      {
+        "before": "All seven models in the Sandbox support multilingual input and output.",
+        "after": "Test language support with the base model and languages your students will use."
+      }
+    ],
+    "allowed_additions": []
+  },
+  "29": {
+    "before": "\nWatch Out\nCommon Pitfalls\n\n\nToo Long & Too Detailed\nA 2,000-word system prompt can confuse the model. Aim for clarity over comprehensiveness. If it’s getting long, prioritize the most important instructions.\n\n\nContradictory Instructions\n“Always give detailed feedback” + “Keep responses under 50 words” = confused AI. Read your prompt for conflicts.\n\n\nForgetting the Student’s Perspective\nYour prompt shapes the student’s experience. Test it by asking the kinds of questions your students actually ask.\n\n\nSet It and Forget It\nSystem prompts need iteration. Use them in real conversations, notice what breaks, and revise. It’s a living document.\n\n\n",
+    "allowed_replacements": [
+      {
+        "before": "A 2,000-word system prompt can confuse the model. Aim for clarity over comprehensiveness. If it’s getting long, prioritize the most important instructions.",
+        "after": "Keep instructions clear and check for conflicts. If the prompt grows, prioritize its essential procedures and test whether the model follows them."
+      }
+    ],
+    "allowed_additions": []
+  }
+}
