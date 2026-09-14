@@ -1,96 +1,161 @@
-# Composing System Prompts
+# Sandbox workshop series
 
-A scaffolded introduction to the CUNY AI Lab Sandbox, followed by the first Workspace configuration exercise. This revision retains the three-workshop sequence: Composing System Prompts → Curating Knowledge Collections → Customizing Skills & Tools.
+Three connected workshops introduce the CUNY AI Lab Sandbox through tasks participants can inspect and revise. Composing System Prompts begins with chat controls and model comparison, then uses an in-chat system prompt to examine how instructions affect a response. Curating Knowledge Collections adds selected source material and checks the evidence behind answers. Customizing Skills & Tools adds reusable procedures and tests whether models carry out the required actions.
 
-The slides remain the presentation source. [Complete slide text](SLIDES.md), [the original HTML copy](review/before.md), and [the direct copy diff](review/copy.diff) accompany this outline.
+Teaching and research provide contexts for the work throughout. Evaluation develops through saved comparisons, source checks, and observed tool results. Participants retain inputs, configuration versions, responses, and judgments so they can explain why they changed something.
 
-## Outcomes
+[Present the series](https://cuny-ai-lab.github.io/sandbox-series/) · [Read all slide copy](SLIDES.md) · [Browse system-prompt examples](examples.html) · [Review copy changes](review/README.md)
 
-Participants will be able to use the main chat controls, compare two available base models using explicit criteria, test a system prompt while keeping the model fixed, inspect a Workspace card, and draft and test a private configuration for a course activity.
+## Roadmap
 
-## Suggested 90-minute facilitation plan
+| Workshop | Activity | Required access | Next steps |
+| --- | --- | --- | --- |
+| Composing System Prompts | Compare models and shape responses through instructions | Individual access approval and Sandbox sign-in | Save tested prompts; request Workspace and Knowledge access |
+| Curating Knowledge Collections | Select sources and check retrieved evidence | Workshop 1 access, Workspace, Knowledge collection access | Save retrieval tests; request Skills and Tools access |
+| Customizing Skills & Tools | Write procedures and inspect model actions | Workshop 1 access, Skills and Tools access; Workspace authoring for creation and editing | Save configurations; verify shared access; retest after changes |
 
-| Time | Slides | Activity and evidence |
+Workshop 3 needs Knowledge access when the selected procedure retrieves from a collection. Its standalone skill and calculation exercises can be completed without a collection.
+
+## Prepare access and materials
+
+For individual access, follow [Getting Started](https://ailab.gc.cuny.edu/sandbox-docs/getting-started/) to the Lab’s [access application](https://ailab.gc.cuny.edu/request-access/?kind=individual). Choose **My own access**, use CUNY Login, complete the application, and check the verified CUNY email for approval. Then enter the [Sandbox](https://chat.ailab.gc.cuny.edu/) through **Continue with CUNY Login**. Participants do not need an API key for these chat exercises.
+
+Workshop 1 requires only individual access and sign-in. The facilitator demonstrates Workspace at the midpoint; participants continue working in chat. Before Workshop 2, arrange Workspace and Knowledge access with the Lab. Before Workshop 3, arrange Skills and Tools access, including authoring permissions for participants who will create or edit resources. Confirm which base models and capabilities are available to the group.
+
+Prepare **Question & Assumption Check** as a demonstration card using [this sample prompt](examples/assumption-check.txt) and a tested base model. The published screenshots show blank editors and do not establish that this live card has been created. Keep a plain-text copy available if the demonstration account cannot open it.
+
+Choose two available small models for the opening demonstration. Record their exact identifiers and settings rather than treating screenshot labels as a current inventory. Check personal defaults, folder instructions, memory, and optional features that may introduce additional context. Keep these consistent during comparisons and document differences you cannot control.
+
+Use public or approved documents for collection and skill exercises. Verify sharing through an ordinary participant account, including access to the card, base model, and attached resources. Course enrollment has a separate invitation route in the documentation; it is not a prerequisite for Workshop 1.
+
+## Workshop 1 — Composing System Prompts
+
+Participants compare model responses, examine assumptions, and test instructions before seeing how a Workspace card can preserve a configuration for reuse. The facilitator models the comparison process on the nurse question, then introduces the car-wash task. Participants take over that task, save a baseline, and compare it with a response shaped by an in-chat system prompt.
+
+### Agenda
+
+- Request individual access and sign in
+- Compare small-model responses
+- Test car-wash assumptions
+- Revise in-chat system prompts
+- Inspect Workspace configuration
+- Save prompts for reuse
+
+### Suggested 90-minute lesson plan
+
+| Minutes | Facilitation and participant activity | Evidence to retain |
 | --- | --- | --- |
-| 0–10 | 1–6 | Access and first chat. Locate the model selector, More, Integrations, and message actions. |
-| 10–25 | 7–10 | Run the same invented task through two base models. Save responses and evaluate them with the rubric. |
-| 25–40 | 11–14 | Add the short sample through chat Controls. Repeat the task with the same model, then test a boundary. |
-| 40–50 | 15–18 | Facilitator enables the arranged Workspace access. Inspect the sample card’s base model, system prompt, name, description, and starter suggestion. |
-| 50–70 | 19–38 | Choose one disciplinary example, then draft through the five component stations. Use the outline to skip the other examples during the session. All remain in the handout. |
-| 70–85 | 39–44 | Review refinements, save a private card, and test normal, incomplete, and boundary-crossing requests. Record one revision and check student access. |
-| 85–90 | 45 | Share one observed success, one failure, and the next change. Bring the configuration to Knowledge Collections. |
+| 0–10 | Introduce the series and agenda. Confirm sign-in. Locate the model selector inside the message box, More, Integrations, message actions, and Controls. | Account readiness and selected model names |
+| 10–18 | Demonstrate two small models answering the nurse question. Ask participants to read both responses and identify assumptions. | Exact inputs, model identifiers, responses |
+| 18–25 | Demonstrate the car-wash prompt. Show the two cropped GCDI showcase excerpts after the initial live comparison. Discuss recommendations in relation to the purpose of the trip. | Assumptions and evidence supporting each judgment |
+| 25–35 | Hand off the car-wash exercise. Participants compare two models in fresh chats and save responses before adding a follow-up that states their purpose. | Baseline and follow-up responses |
+| 35–45 | Keep one model fixed. Add the sample through Controls → System Prompt in a fresh chat, repeat the car-wash task, then revisit the nurse question. | Before-and-after comparison using the same criteria |
+| 45–55 | Demonstrate Workspace with the prepared sample card. Read Base Model and System Prompt together. Explain how a named card gives students or researchers a recognizable starting point. | Prompt text and model choice to carry forward |
+| 55–75 | Discuss one disciplinary progression from the examples page. Participants adapt context, procedure, constraints, tone, and format for one teaching or research task. Keep other examples as reference material. | Draft prompt and intended behavior |
+| 75–85 | Test a normal request, an incomplete request, and a request that conflicts with the intended procedure. Revise one instruction and repeat. | Failure, revision, and retest |
+| 85–90 | Share one supported observation. Save prompt versions and comparison notes. Review access needed for Workshop 2. | Next question and access request |
 
-The three disciplinary progressions are Composition (20–23), History (24–27), and Literature (28–31). These are alternatives within the session, not three mandatory demonstrations. The component stations are 34–38. Full prompts scroll on desktop and expand into the document flow on narrow screens. The Notes button contains facilitation guidance for each section.
+### Opening demonstration
 
-## Before participants arrive
+> The nurse yelled at the doctor because she was late. Who was late?
 
-1. Follow the published [Getting Started guide](https://ailab.gc.cuny.edu/sandbox-docs/getting-started/). Arrange participant approval ahead of time. Individual Lab access and Workspace authoring permissions are separate.
-2. Coordinate with the Lab team so the agreed Workspace permissions can be enabled at the midpoint. Do not promise that clicking a slide changes permissions. Identify who will perform this live action and allow time to refresh and troubleshoot.
-3. Choose two base models that ordinary participants can access. Check them in the Sandbox selector on the workshop day. The website’s Model Registry lists API offerings; it is not a guarantee of the models available in this chat instance.
-4. Prepare a card named **Writing Scaffold: Claim & Evidence** with a tested base model and the exact [sample system prompt](examples/writing-scaffold.txt). Description: “Work through one question about the link between your claim and its evidence.” Suggested starter: “Here is my assignment and draft. Help me examine my evidence.”
-5. Keep the source sample under facilitator control. Give the appropriate workshop group read access to use it. Inspect it through the facilitator’s editor if participants cannot view its configuration; supply the full prompt file to everyone. Participants should create their own private versions. Do not grant write access to the shared sample just to make the exercise possible.
-6. Record the sample’s base-model name in your session notes. Check the card and base-model access from an account with the same permissions as the participants. A visible card can still fail if its dependency is unavailable.
-7. Test the supplied prompts before the session. Check whether personal defaults, folder instructions, Memory, or enabled features introduce extra context. Keep these consistent during comparison; record any differences you cannot control. Review default features on the new card rather than assuming it starts with no tools enabled.
+Send exactly this question to two small models with matching context. Ask which interpretation each response chooses and whether it acknowledges ambiguity. Either person can be the referent of “she”; the sentence does not establish a unique answer. A plausible interpretation is different from information established by the wording. Avoid turning this single item into a claim about model-wide bias or ability.
 
-This PR supplies the materials and sample text. It does not grant production permissions, create the live workshop card, or choose a base model on behalf of the facilitator.
+### Car-wash demonstration and handoff
 
-## Access route
+> The car wash is 50 meters from me. Should I walk or take the car? Explain your reasoning.
 
-The current documentation links to [Request Access](https://ailab.gc.cuny.edu/request-access/?kind=individual), where individuals choose **My own access** and authenticate with CUNY Login. One application covers Lab tools; selecting a specific tool is optional. Approval comes by verified CUNY email. The participant then enters the Sandbox using **Continue with CUNY Login**. An API key is not a prerequisite for this chat exercise.
+This wording comes from the [GCDI showcase source](https://docs.google.com/presentation/d/1dwRGEe7WniZOEeMcgQ8_qygHsKFu_ZnG/edit). The original recommendation excerpts remain as archival examples with the obsolete top selector cropped out. Their Qwen labels are inconsistent, so use them to discuss responses rather than establish exact model identities or benchmark rankings. Recorded timings describe those captures only.
 
-For course use, the instructor applies for **A class I’m teaching or organizing**. After approval, they obtain the invitation from **My classes**. Students join by invitation and CUNY Login, rather than submitting individual applications. Confirm the course’s private group and text channel before class. Follow the live documentation if the application changes.
+Ask participants to write down their interpretation of the trip’s purpose before reading the responses. If the purpose is washing the car, the car needs to get there. The wording leaves that purpose unstated. Participants then add a follow-up such as “I want to wash my car” or “I only want to ask about prices” and inspect whether the recommendation changes appropriately.
 
-## Exercise 1: Compare models
-
-Use the [invented classroom task](examples/comparison-task.txt) with two available base models. Compare can produce parallel responses in one fresh chat. If it is unavailable, use two fresh chats with matching inputs and settings. Do not give the second model the first model’s response as additional context.
-
-Have participants save both responses and complete the following worksheet. Use **met**, **partly met**, or **not met** for each criterion, supported by a short passage from the response. Leave results blank until the models have actually been tested.
-
-| Criterion | Model A: judgment and evidence | Model B: judgment and evidence |
+| Criterion | Model A evidence | Model B evidence |
 | --- | --- | --- |
-| Accuracy and evidence: identifies the unsupported leap from friends to most students | | |
-| Instruction following: focuses on claim and evidence and respects the requested length | | |
-| Learning and usefulness: provides a usable next step and space for the student’s reasoning | | |
-| Uncertainty and limits: avoids invented campus facts or sources | | |
+| Identify stated goal or acknowledge missing purpose | | |
+| Distinguish stated facts from assumptions | | |
+| Give reasons that support recommendation | | |
+| Respond appropriately to clarification | | |
 
-Record model names, date, exact inputs, and enabled features. Describe a bounded conclusion: “For this task, model A was more useful because…” Repeat with a second likely student request before making a base-model choice. One response is not a stable ranking.
+For the in-chat system-prompt exercise, use [Question & Assumption Check](examples/assumption-check.txt). It asks the model to examine facts and assumptions without prescribing either demonstration answer. Check whether the added instructions help, cause unnecessary questions, or fail on the second task. Retain the baseline before changing anything.
 
-## Exercise 2: Test the in-chat system prompt
+## Workshop 2 — Curating Knowledge Collections
 
-Keep one model fixed. In a fresh chat, open **Controls → System Prompt** and paste the [sample](examples/writing-scaffold.txt) before submitting the same task. Compare with the saved baseline. The sample asks for the assignment and draft before feedback, identifies one concern, and asks one question at a time while leaving the writing with the student.
+Participants build a small collection for a known teaching or research task, inspect its documents, attach it to a model card, and check how the model uses retrieved evidence. The disciplinary examples preserve the original course contexts. A research route uses project context, task criteria, and identified source excerpts in the same exercise structure.
 
-Then try “Just rewrite the paragraph for me.” Ask whether the model redirects toward a revision step. A written constraint is a behavior to test, not a guarantee. Use the same criteria and note any new problem, including unnecessary questions when the student has already supplied the required context.
+### Agenda
 
-## Exercise 3: Move into Workspace
+- Confirm Workspace and Knowledge access
+- Select source documents
+- Create knowledge collections
+- Attach collections to model cards
+- Check retrieved evidence
+- Prepare sources for procedural tasks
 
-At minute 40, the facilitator confirms the agreed access change. Participants refresh and locate **Workspace → Models**. Inspect the prepared sample together: distinguish the selected **Base Model (From)** from the **System Prompt** and the name students see. Explain that this is a reusable configuration, not newly trained model weights.
+### Suggested 90-minute lesson plan
 
-Students can use a shared card from their model selector without authoring it in Workspace. The instructor configures the teaching purpose and the starting suggestions; the card gives the course a recognizable place to begin.
+| Minutes | Facilitation and participant activity | Evidence to retain |
+| --- | --- | --- |
+| 0–10 | Confirm individual sign-in, Workspace, Knowledge access, and the card or prompt carried from Workshop 1. Save a response before adding sources. | Baseline configuration and response |
+| 10–20 | Explain extraction, passages, retrieval, and response context. Demonstrate the current Knowledge creation form. | Source-dependent question and expected passage |
+| 20–35 | Discuss one collection progression. Compare what each source contributes to the task. Offer the research collection as an alternative context. | Proposed source list with reasons |
+| 35–55 | Create a private collection. Upload a few documents, wait for processing, and inspect extracted text. | Document versions and extraction problems |
+| 55–65 | Attach the collection under Knowledge in the model editor and use Save & Update. Keep the model and system prompt fixed. | Collection and card configuration |
+| 65–80 | Test a question answered by one source, one requiring two sources, and one absent from the collection. Open cited passages and verify them. | Retrieved passages, responses, and judgments |
+| 80–90 | Diagnose one failure and make one change. Check dependency access with the intended audience. Review Skills and Tools access for the next session. | Retest, access check, and next procedure |
 
-If Workspace is missing, pair participants with the facilitator while the Lab resolves access. Continue testing the in-chat version so the learning activity can proceed.
+Use the [system-prompt examples](examples.html) when a participant needs a starting configuration. Teaching participants can curate an assignment, a methodological framework, and readings. Research participants can curate a research question, codebook or protocol, and a few approved excerpts. Participants should know the sources well enough to judge the model’s claims independently.
 
-## Exercise 4: Draft, save, retest
+A generic or incorrect answer can arise from processing, retrieval, access, instructions, or interpretation. Check the actual evidence before diagnosing the cause. File length alone does not determine retrieval quality. Scanned or multi-column PDFs deserve particular attention during text extraction.
 
-Choose the Composition, History, or Literature example. The original weak-to-strong progressions are retained as models for discussion. Draft one course-specific prompt using context and problem, procedure, constraints, tone, and optional response format.
+### Next steps
 
-Create a private Model, choose the tested base model, enter the prompt, review capabilities and defaults, and use **Save & Create**. Start a fresh chat from the card and test:
+- Save source lists and retrieval tests
+- Request Skills and Tools access
+- Choose recurring teaching or research procedures
+- Review system-prompt examples
+- Continue to Customizing Skills & Tools
 
-- a normal request with enough context;
-- an incomplete or ambiguous request;
-- a request that asks the tool to do work the student should do;
-- a claim or source the model cannot verify.
+## Workshop 3 — Customizing Skills & Tools
 
-Record failures. Change one instruction, **Save & Update**, and rerun the test in a fresh chat. Test a different base model only after documenting the prompt change. Before course sharing, use **Access → Add Access** for the intended group and verify both card and base-model access with a student account. Reserve write access for maintainers. Recheck dependent Knowledge, Skills, and Tools when those are added in later workshops.
+Participants turn a recurring procedure into skill instructions, connect it to a model, and test both procedure-following and actual tool use. The session distinguishes written instructions from operations that retrieve or compute information. Comparison continues through a baseline, a skill-enabled response, and inspection of tool calls and results.
 
-## Documentation and capture authority
+### Agenda
 
-- [Getting Started](https://ailab.gc.cuny.edu/sandbox-docs/getting-started/): individual and course access, CUNY Login, Workspace request, privacy and history.
-- [Sandbox Basics](https://ailab.gc.cuny.edu/sandbox-docs/sandbox-basics/) and [Quick Tour](https://ailab.gc.cuny.edu/sandbox-docs/quick-tour/): message-box selector, More, Integrations, message actions, and the shared Create button.
-- [Custom Models](https://ailab.gc.cuny.edu/sandbox-docs/models/): base model, System Prompt, Access, Save & Create, Save & Update, prompt suggestions.
-- [System Prompts as Instructional Design](https://ailab.gc.cuny.edu/sandbox-docs/system-prompts/): role, actions, instructional boundaries, and testing.
-- [Roles & Permissions](https://ailab.gc.cuny.edu/sandbox-docs/roles-permissions/): account permissions and sharing.
-- [Knowledge Bases](https://ailab.gc.cuny.edu/sandbox-docs/knowledge-bases/) and [Tools & Skills](https://ailab.gc.cuny.edu/sandbox-docs/tools-skills/): the later workshops.
+- Confirm Skills and Tools access
+- Choose recurring procedures
+- Write skill instructions
+- Attach skills and enable native calling
+- Inspect tool calls and results
+- Retest complete configurations
 
-Published pages were fetched on September 13, 2026. Current selector, Compare, Controls, Workspace, and model-editor labels were also read directly from the signed-in Sandbox. [Screenshot provenance](review/screenshot-sources.json) records their origin and any rectangular crops. The empty editor is a read-only capture. It is not evidence that the workshop sample has been saved.
+### Suggested 90-minute lesson plan
 
-The docs describe provider requests as configured for zero retention and prohibit training use. Sandbox history can still be stored, accessible to administrators, and visible to people with whom it is shared. Use public or approved materials. Temporary Chat changes ordinary history behavior and should not be described as preventing provider processing.
+| Minutes | Facilitation and participant activity | Evidence to retain |
+| --- | --- | --- |
+| 0–10 | Confirm sign-in, Skills and Tools access, authoring permissions, and a usable card. Confirm Knowledge access only when the chosen task requires a collection. | Available dependencies and baseline |
+| 10–25 | Explain skills and tools. Demonstrate the Skill editor, model attachment, native function calling, and chat Integrations. | Trigger and capability requirements |
+| 25–40 | Discuss one retained disciplinary procedure. Use the research claim-checking example when relevant. | Procedure and success criteria |
+| 40–60 | Draft trigger, procedure, and format. Create the skill, attach it, set Function Calling → Native, and save the model. | Skill version and model settings |
+| 60–72 | Test a matching request, a follow-up, and an unrelated request. Inspect skill loading and whether the model pauses or continues as instructed. | Procedure-following evidence and failures |
+| 72–82 | Demonstrate an available search or code tool. For the included median task, inspect execution and check the expected answer, 8. | Tool call, result, and final response |
+| 82–90 | Revise one component, repeat its test, and verify dependency access before sharing. | Retest and unresolved case |
+
+The small calculation uses invented values `[3, 8, 8, 12, 19]`. It introduces a result participants can verify independently. It does not establish general numerical reliability. If Code Interpreter is unavailable, use an approved search capability and verify a returned page, or follow the facilitator’s demonstration.
+
+The cinematic-image skill includes a necessary correction to the older instructions. A vision-capable model needs the actual image. Text retrieval from a knowledge collection should not be assumed to deliver an original visual for inspection.
+
+### Next steps
+
+- Save prompts, sources, skills, and tool settings
+- Compare expected and observed behavior
+- Revise instructions from recorded failures
+- Verify shared access with intended users
+- Retest after model or tool updates
+
+## Documentation and evidence
+
+Interface instructions draw on the published [Sandbox documentation](https://ailab.gc.cuny.edu/sandbox-docs/), especially [Getting Started](https://ailab.gc.cuny.edu/sandbox-docs/getting-started/), [Quick Tour](https://ailab.gc.cuny.edu/sandbox-docs/quick-tour/), [Models](https://ailab.gc.cuny.edu/sandbox-docs/models/), [Knowledge Bases](https://ailab.gc.cuny.edu/sandbox-docs/knowledge-bases/), [Tools & Skills](https://ailab.gc.cuny.edu/sandbox-docs/tools-skills/), and [Roles & Permissions](https://ailab.gc.cuny.edu/sandbox-docs/roles-permissions/).
+
+The live interface was inspected in Firefox on September 13, 2026. [Screenshot provenance](review/screenshot-sources.json) records source hashes and crop coordinates. [Showcase provenance](review/showcase-sources.json) distinguishes archival comparison excerpts from current interface instructions. The unrelated fourth screenshot is excluded.
+
+Provider requests are described in the docs as configured for zero retention with training use prohibited. Sandbox history can still be stored and visible to administrators or its shared audience. Retrieved passages enter the model request and may appear in its response. Use materials appropriate for those conditions.

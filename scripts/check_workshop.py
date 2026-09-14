@@ -42,7 +42,7 @@ def render(node):
     tag=node.tag
     if tag in {'button','svg','script','style'} or node.has_class('progression-dots'):return ''
     if node.has_class('prompt-block'):
-        return '\n\n'+chr(96)*3+'text\n'+node.text().strip()+'\n'+chr(96)*3+'\n\n'
+        return '\n\n'+chr(96)*3+'text\n'+''.join(c.text() if isinstance(c,Node) else c for c in node.children if not (isinstance(c,Node) and c.has_class('prompt-label'))).strip()+'\n'+chr(96)*3+'\n\n'
     inside=''.join(render(c) for c in node.children)
     if tag=='img':return '\n\n!['+node.attrs.get('alt','')+']('+node.attrs['src']+')\n\n'
     if tag=='a':return '['+inside.strip()+']('+node.attrs.get('href','')+')'
@@ -50,6 +50,7 @@ def render(node):
     if tag in {'em','i'}:return '*'+inside.strip()+'*'
     if tag in {'h1','h2','h3','h4'}:return '\n\n### '+inside.strip()+'\n\n'
     if tag=='br':return '\n'
+    if tag=='span':return ' '+inside+' '
     if tag=='li':return '\n- '+inside.strip()+'\n'
     if tag=='table':
         rows=[]
@@ -100,14 +101,14 @@ def main():
     text=' '.join(s.text() for s in slides)
     for obsolete in ['March 16','March 23','March 30','All seven models','No data retained on external servers','student never sees above','settings gear','2,000-word']:
         if obsolete in text:issues.append('Obsolete copy: '+obsolete)
-    for sample,id in [('writing-scaffold.txt','sample-system'),('comparison-task.txt','comparison-task')]:
+    for sample,id in [('assumption-check.txt','sample-system'),('comparison-task.txt','comparison-task')]:
         node=tree.all(lambda n:n.attrs.get('id')==id)[0]
         if node.text().strip()!=(ROOT/'examples'/sample).read_text().strip():issues.append('Sample file drift: '+sample)
     for n in tree.all(lambda n:n.tag in {'img','script','link','a'}):
         target=n.attrs.get('src') or n.attrs.get('href','')
         if target and not re.match(r'^(https?:|mailto:|#)',target):
             path=target.split('#')[0].split('?')[0]
-            if path and not (ROOT/path).is_file():issues.append('Missing local resource: '+path)
+            if path and not (ROOT/path).exists():issues.append('Missing local resource: '+path)
     header='# Composing System Prompts\n\nCUNY AI Lab Sandbox workshop. Generated from index.html; do not edit this mirror directly.\n\n'
     mirror=header+'\n\n---\n\n'.join(f'## Slide {i}: '+s.attrs['data-title']+'\n\n'+re.sub(r'\n{3,}','\n\n',render(s)).strip() for i,s in enumerate(slides,1))+'\n'
     mirror=re.sub(r'\n{3,}','\n\n','\n'.join(line.rstrip() for line in mirror.splitlines()))+'\n'

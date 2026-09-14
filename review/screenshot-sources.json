@@ -1,107 +1,172 @@
 {
-  "captured_at": "2026-09-14T00:49:30.603084+00:00",
+  "observed_date": "2026-09-13",
   "notes": [
-    "Captures show the interface observed on 2026-09-13. Model names and permissions vary by account.",
-    "Native window captures are cropped to the relevant interface controls; browser tabs, personal history, and unrelated models are excluded.",
-    "The editor is blank. No sample card was created or shared in production. The sample text is supplied separately."
+    "New screenshots captured in Firefox from the live signed-in interface. No production objects were created.",
+    "Crops exclude browser tabs and unrelated account content.",
+    "Showcase excerpts are archival; obsolete top selectors removed by cropping. The unrelated fourth screenshot is excluded."
   ],
   "images": [
     {
-      "file": "model-selector.png",
+      "file": "chat-page.png",
       "source": "https://chat.ailab.gc.cuny.edu/",
-      "capture": "Firefox, signed-in live Sandbox, read-only UI inspection",
+      "capture": "Native Firefox window, 100% zoom",
       "source_dimensions": [
-        1366,
-        768
+        768,
+        798
       ],
       "crop_xyxy": [
-        680,
-        435,
-        976,
-        757
+        65,
+        60,
+        757,
+        635
       ],
-      "source_sha256": "e6d670a96fcde08c1a0a7729906bcf3c201734cbac94f4a1efbbad8eb2a8522f",
-      "processing": "Rectangular crop only; no retouching, invented content, or reconstructed UI.",
-      "sha256": "8d264183a1cb3c6b208dc8852de81d527ef31aff6941951d54c5b4d91293ab5e"
+      "source_sha256": "d1336d9945c3af55532cb4054aa5d4d34bb4b8391cb71b3c82d4542e830a1632",
+      "processing": "Rectangular crop only",
+      "sha256": "8e06797704c07399d863b7bb8fa822739fcb421098cc1bf22a4c35807a06cd88"
     },
     {
       "file": "chat-controls.png",
       "source": "https://chat.ailab.gc.cuny.edu/",
-      "capture": "Firefox native Save visible screenshot of signed-in Sandbox; read-only inspection",
+      "capture": "Native Firefox window, 100% zoom",
       "source_dimensions": [
-        4510,
-        2423
+        768,
+        798
       ],
       "crop_xyxy": [
-        3599,
-        0,
-        4507,
-        1265
+        535,
+        58,
+        768,
+        230
       ],
-      "source_sha256": "eb4cd78a48debb7a3d3ac5e573609dc3ec387117e7a4863577e77adc8dd2afe9",
-      "processing": "Rectangular crop only; no retouching, invented content, or reconstructed UI.",
-      "sha256": "39d1fac7ab5ac6f25125b216f1c3c06e95602786e95f3ac2a5a83a72c4b0e957"
+      "source_sha256": "04f30d84fe59c0d510dd184f73a7704d890707b3ecb3b4270457a4cfac6f2699",
+      "processing": "Rectangular crop only",
+      "sha256": "a6c8172d96743c040b78280f0b55fd1b5884c38e1cb20850225d0a742d38617c"
+    },
+    {
+      "file": "model-selector.png",
+      "source": "https://chat.ailab.gc.cuny.edu/",
+      "capture": "Native Firefox window, 100% zoom",
+      "source_dimensions": [
+        768,
+        798
+      ],
+      "crop_xyxy": [
+        140,
+        370,
+        705,
+        748
+      ],
+      "source_sha256": "16e221d8e49bd125439f84b08fbfdfd700370d9ac8586afe3cad6c833bea535c",
+      "processing": "Rectangular crop only",
+      "sha256": "bfa17147b7318eff236df033cfb2cbd963d485d5bfdbe8cb0533263377a6eb80"
     },
     {
       "file": "workspace-header.png",
-      "source": "https://chat.ailab.gc.cuny.edu/workspace/models",
-      "capture": "Firefox, signed-in live Sandbox, read-only UI inspection",
+      "source": "https://chat.ailab.gc.cuny.edu/",
+      "capture": "Native Firefox window, 100% zoom",
       "source_dimensions": [
-        1366,
-        768
+        768,
+        798
       ],
       "crop_xyxy": [
-        70,
-        50,
-        1365,
-        112
+        65,
+        60,
+        757,
+        220
       ],
-      "source_sha256": "623014c54a76b66f5999c9e2f957121f7c329ab5ac7f107f3dbf9370bbe878e6",
-      "processing": "Rectangular crop only; no retouching, invented content, or reconstructed UI.",
-      "sha256": "846cdf4a2679e967287d904200bdf7b120dda332671b4acc99e3f942b63295fd"
+      "source_sha256": "490811cd4d5672a5893f248ce12fac983476f4513cb504d02964fc005009ff65",
+      "processing": "Rectangular crop only",
+      "sha256": "cd076c6135733faa1e3796022af85e07290b2e053e34513157a0f736bd7d1a31"
     },
     {
       "file": "model-editor.png",
-      "source": "https://chat.ailab.gc.cuny.edu/workspace/models/create",
-      "capture": "Firefox native Save visible screenshot of signed-in Sandbox; read-only inspection",
+      "source": "https://chat.ailab.gc.cuny.edu/",
+      "capture": "Native Firefox window, 100% zoom",
       "source_dimensions": [
-        4510,
-        2423
+        768,
+        798
       ],
       "crop_xyxy": [
-        135,
-        186,
-        3410,
-        1198
+        65,
+        60,
+        757,
+        535
       ],
-      "source_sha256": "15869f7d579c1e88231136b0c2bc172638af395c42cb792caeb136b9942f8671",
-      "processing": "Rectangular crop only; no retouching, invented content, or reconstructed UI.",
-      "sha256": "fc1aa122425119b89dcf70eabcecb979a62d84c4c8cffe7a8a707fcb899dbdad"
-    },
-    {
-      "file": "chat-page.png",
-      "source": "https://chat.ailab.gc.cuny.edu/",
-      "capture": "Firefox native Save visible page capture",
-      "processing": "No retouching or reconstructed UI.",
-      "sha256": "011e1b0432b0537f1af368b807affc13d42ec3f2233e1f0bf9a5529b148a8ed1"
+      "source_sha256": "7a32961f41da2b619d43b9118f16a608a67a069bfdbafc00d1c11697e118b96b",
+      "processing": "Rectangular crop only",
+      "sha256": "e14d7db1cdf85b227a0e8c984f6a4d6700f6acd3305b04acf7eb316d69cbc575"
     },
     {
       "file": "access-application.png",
       "source": "https://ailab.gc.cuny.edu/request-access/?kind=individual",
-      "capture": "Firefox native Save visible page screenshot",
-      "processing": "Rectangular crop of the access choices only. Personal account fields excluded. No retouching.",
-      "sha256": "148748a503bbc0233fd27125a6a8974b9381d6318e20a5771fc89386c345b71f",
+      "capture": "Native Firefox window, 100% zoom",
       "source_dimensions": [
-        4480,
-        2424
+        768,
+        798
       ],
       "crop_xyxy": [
-        1526,
-        557,
-        2934,
-        1374
+        160,
+        236,
+        630,
+        520
       ],
-      "source_sha256": "21058ddbbafae251797a8f3777fa66fe6ae56b6ff3690208807f89ef5f01d728"
+      "source_sha256": "4fde527a067e3fc81f9b5bdb07dfcae8e31a09aa2afacc715b66d9f0d3f4c8c4",
+      "processing": "Rectangular crop only",
+      "sha256": "79c5113de32c9850db1f93e41ebef61ff5a246f0cfac033bb80d2bbf32160834"
+    },
+    {
+      "file": "knowledge-create.png",
+      "source": "https://chat.ailab.gc.cuny.edu/",
+      "capture": "Native Firefox window, 100% zoom",
+      "source_dimensions": [
+        768,
+        798
+      ],
+      "crop_xyxy": [
+        157,
+        270,
+        637,
+        586
+      ],
+      "source_sha256": "fca2948e5ec44931d1617b1421ec668edaf23acdaa8e501dc02fd89dac784f77",
+      "processing": "Rectangular crop only",
+      "sha256": "ac7d21678fd6f5794799da12f7b186ffea8d6f8855b83a8c253bebc0f0b36be3"
+    },
+    {
+      "file": "skill-editor.png",
+      "source": "https://chat.ailab.gc.cuny.edu/",
+      "capture": "Native Firefox window, 100% zoom",
+      "source_dimensions": [
+        768,
+        798
+      ],
+      "crop_xyxy": [
+        65,
+        60,
+        760,
+        340
+      ],
+      "source_sha256": "7474513db0c4a0b0adb520e61cce1bd2454269c324ad1e54a782fa0fe09e7811",
+      "processing": "Rectangular crop only",
+      "sha256": "87d152a20c36836a481bdceb303d3210496afdaf8b25c7fcd97ad4cd6cbae3df"
+    },
+    {
+      "file": "integrations.png",
+      "source": "https://chat.ailab.gc.cuny.edu/",
+      "capture": "Native Firefox window, 100% zoom",
+      "source_dimensions": [
+        768,
+        798
+      ],
+      "crop_xyxy": [
+        142,
+        405,
+        695,
+        565
+      ],
+      "source_sha256": "7be8624a7a7046b0ffcd1a097e66f1f41fa690bb8592e8cfb0c0644a5fbeac50",
+      "processing": "Rectangular crop only",
+      "sha256": "0d542f95a7072538f0a25cec88cdc49511a2b5880a7acb368647bd28d4eb90ff"
     }
   ]
 }

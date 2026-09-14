@@ -1,28 +1,13 @@
 # Composing System Prompts
 
-Workshop 1 of the CUNY AI Lab Sandbox series. A scaffolded introduction to chat, model comparison, system prompting, and Workspace models.
+[Open the complete Sandbox workshop series](https://cuny-ai-lab.github.io/sandbox-series/)
 
-- [Facilitator outline and exercises](WORKSHOP.md)
-- [Complete slide text](SLIDES.md)
-- [Sample system prompt](examples/writing-scaffold.txt)
-- [Comparison task](examples/comparison-task.txt)
-- [Revision record](review/README.md)
+This repository preserves the first workshop. The consolidated series now lives in [CUNY-AI-Lab/sandbox-series](https://github.com/CUNY-AI-Lab/sandbox-series), alongside Curating Knowledge Collections and Customizing Skills & Tools.
 
-Open `index.html` directly, or run `python3 -m http.server 8765 --bind 127.0.0.1` and visit `http://127.0.0.1:8765/`. No build step or runtime dependencies.
+The first session requires only individual access and Sandbox sign-in. It opens with a live comparison of two small models on the nurse question, followed by the car-wash demonstration and handoff, in-chat system prompting, and a facilitator preview of Workspace.
 
-Use the arrows, Left/Right keys, or progress slider to navigate. **Outline** (or Escape) jumps to any slide. **Notes** shows facilitator guidance. Select a screenshot to expand it. Copy buttons copy the exact prompt text; if clipboard access is unavailable, the text is selected for manual copying. On small screens, content scrolls vertically. Print includes all slides and full prompt text.
+[Standalone presentation](https://cuny-ai-lab.github.io/system-prompting/) · [Full slide copy](SLIDES.md) · [Lesson plans](WORKSHOP.md) · [Prompt examples](https://cuny-ai-lab.github.io/system-prompting/examples.html) · [Copy review](review/README.md)
 
-## Editing and verification
+Static HTML with no build step. Preview using `python3 -m http.server 8765`. Verify with `python3 scripts/check_workshop.py`; add `--write` to regenerate slide copy and the direct diff after edits.
 
-`index.html` is the source of truth. After editing:
-
-```sh
-python3 scripts/check_workshop.py --write
-python3 scripts/check_workshop.py
-node --check js/deck-engine.js
-node --check js/lightbox.js
-```
-
-The content check verifies preservation of all 23 retained sections and their 14 prompt blocks, the one documented Literature correction, sample files, slide labels, local links, the generated Markdown mirror, and the direct copy diff. It uses only the Python standard library.
-
-The live workshop requires a facilitator to arrange access, prepare the sample card, and verify the selected base models as described in [WORKSHOP.md](WORKSHOP.md). The repository does not automate production account or Workspace changes.
+Developed by Stefano Morello and Zach Muhlbauer. Platform instructions follow the [Sandbox documentation](https://ailab.gc.cuny.edu/sandbox-docs/).

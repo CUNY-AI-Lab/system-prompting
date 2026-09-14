@@ -12,14 +12,14 @@
   document.getElementById('nav-total').textContent = total;
   progress.max = total;
   const guidance = {
-    Explore: 'Minutes 0–10. Confirm approved access before the workshop. Walk through the message box using an ordinary participant account. Keep Workspace for the midpoint exercise. Follow the published Getting Started guide; no API key is needed for this chat exercise.',
-    Compare: 'Minutes 10–25. Choose two base models available to the whole group. Use the identical supplied task with matching context and optional features. Participants save responses, apply each criterion, and support judgments with a passage. Names and availability in screenshots are examples, not a current model inventory.',
-    Prompt: 'Minutes 25–40. Keep one base model fixed. Use fresh chats to compare the original response with the same task plus the sample system prompt. Check personal or folder defaults that could carry additional instructions. Ask participants to test the request to rewrite the paragraph.',
-    Workspace: 'Minutes 40–50. Coordinate Workspace permissions with the Lab in advance, then have the facilitator enable the agreed access at this point. Refresh after confirmation. Open the prepared Writing Scaffold: Claim & Evidence card. Inspect its tested base model and exact sample prompt. If access is delayed, pair with the facilitator and continue in-chat testing.',
-    Draft: 'Minutes 50–70. Choose one disciplinary example; the other examples remain available in the outline. Keep the full prompts available as reading material. Participants draft one course-specific prompt through the five component stations and configure a private card. Do not edit the shared workshop sample.',
-    Test: 'Minutes 70–85. Test normal, incomplete, and boundary-crossing requests. Save evidence before revising one instruction. Use a fresh chat after changing the configuration. Check the intended audience’s access to the card and base model before sharing with a course.',
-    Next: 'Minutes 85–90. Ask each participant to name one successful behavior, one failure, and one next revision. Bring the prompt and base-model choice to Knowledge Collections. Point to the handout for all original examples and the evaluation worksheet.'
-  };
+    "Explore": "Confirm approved access. Locate the message-box selector, More, Integrations, and Controls. The first workshop keeps Workspace for the midpoint. In later sessions, reopen the tested card and retain a baseline response.",
+    "Compare": "Demonstrate the nurse question with two small models, then the car-wash question. Show the cropped GCDI comparison excerpts after the live introduction. Hand the car-wash task to participants. Ask them to save responses and identify assumptions before adding a follow-up. These are demonstrations, not a model ranking.",
+    "Prompt": "Hold one base model fixed. Add the Assumption Check system prompt in chat and repeat the car-wash task. Revisit the nurse question to test a different form of ambiguity. Compare evidence and usefulness with the baseline.",
+    "Workspace": "At the midpoint of workshop one, demonstrate Workspace and inspect the prepared Question & Assumption Check card. Participants need only individual access and Sandbox sign-in. Request Workspace and Knowledge access before workshop two. The screenshots show empty editors.",
+    "Draft": "Choose one disciplinary progression to discuss; the other examples remain in the outline and full copy. Offer the research route alongside the teaching templates. Participants draft for one task and retain the source material needed to test it.",
+    "Test": "Use the session lesson plan to compare baseline and revised responses. Check source passages, skill loading, and actual tool results as appropriate. Save failures as well as successes. Verify access through an ordinary participant account before sharing.",
+    "Next": "Ask participants to support one conclusion with a saved test and identify an unresolved case. Carry the configuration and evidence to the next workshop. Use Series to move between the three sessions."
+};
   slides.forEach((slide, index) => {
     const item = document.createElement('li');
     const button = document.createElement('button');
@@ -56,7 +56,7 @@
       if (i === current) button.setAttribute('aria-current', 'step');
       else button.removeAttribute('aria-current');
     });
-    document.getElementById('note-text').textContent = guidance[slides[current].dataset.group] || '';
+    document.getElementById('note-text').textContent = [slides[current].querySelector('.slide-notes')?.innerText || slides[current].querySelector('.slide-notes')?.textContent || '', guidance[slides[current].dataset.group] || ''].filter(Boolean).join('\n\n');
     history.replaceState(null, '', '#' + (current + 1));
     announcer.textContent = slides[current].getAttribute('aria-label');
   }
@@ -105,6 +105,9 @@
   window.addEventListener('hashchange', () => {
     if (location.hash !== '#deck') goTo(readHash());
   });
+  const series = document.getElementById('series-dialog');
+  document.getElementById('series-button')?.addEventListener('click', () => series.showModal());
+  document.getElementById('close-series')?.addEventListener('click', () => series.close());
   window.deckEngine = {goTo, currentSlide:()=>current, totalSlides:()=>total};
   goTo(readHash());
 })();

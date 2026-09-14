@@ -8,8 +8,7 @@ Workshop 1 of 3
 
 ### Composing System Prompts
 
-Explore the chat. Compare models.
-Build a classroom tool.
+Comparing and configuring models for teaching and research
 
 CUNY AI Lab Sandbox
 
@@ -17,24 +16,47 @@ Developed by Stefano Morello and Zach Muhlbauer
 
 ---
 
-## Slide 2: Three workshops, one teaching project
+## Slide 2: The Sandbox workshop series
 
-### Three workshops,
-one teaching project
+### The Sandbox workshop series
 
-- **Composing System Prompts**Compare models, test instructions, and configure a classroom tool.
+- **Composing System Prompts**  Compare models and shape responses through instructions.
 
-- **Curating Knowledge Collections**Ground the tool in readings, assignments, and course materials.
+- **Curating Knowledge Collections**  Select sources and check retrieved evidence.
 
-- **Customizing Skills & Tools**Add reusable procedures and capabilities for your course.
+- **Customizing Skills & Tools**  Write procedures and inspect model actions.
 
-Today: chat → comparison → system prompt → Workspace → testing.
+Keep a record of what changes as you build. Evaluation runs through all three workshops.
 
 ---
 
-## Slide 3: Get access, then sign in
+## Slide 3: Compare and compose
+
+### Compare and compose
+
+- Request individual access and sign in
+
+- Compare small-model responses
+
+- Test car-wash assumptions
+
+- Revise in-chat system prompts
+
+- Inspect Workspace configuration
+
+- Save prompts for reuse
+
+Require individual access approval and Sandbox sign-in. Workspace inspection is facilitator-led.
+
+---
+
+## Slide 4: Get access, then sign in
 
 ### Get access, then sign in
+
+![Current access application with individual and class choices](images/current/access-application.png)
+
+The access choices linked from the published Sandbox documentation.
 
 - Open the [access application](https://ailab.gc.cuny.edu/request-access/?kind=individual) and choose **My own access**.
 
@@ -42,32 +64,9 @@ Today: chat → comparison → system prompt → Workspace → testing.
 
 - Open [the Sandbox](https://chat.ailab.gc.cuny.edu/) and select **Continue with CUNY Login**.
 
-Individual access lets you use shared resources. Workspace access is arranged separately for today’s exercise.
+Individual access and Sandbox sign-in are sufficient for this workshop. Follow the facilitator’s Workspace demonstration without authoring access.
 
 [Getting Started](https://ailab.gc.cuny.edu/sandbox-docs/getting-started/)
-
-![Current access application with individual and class choices](images/current/access-application.png)
-
-The access choices linked from the published Sandbox documentation.
-
----
-
-## Slide 4: Course access follows an invitation
-
-### Course access follows
-an invitation
-
-### Instructors
-
-Request access for **A class I’m teaching or organizing**. After approval, open **My classes** and create the invitation link.
-
-### Students
-
-Join through the instructor’s invitation and CUNY Login. Students do not submit an individual access request.
-
-Confirm the course’s private group and text channel before beginning a class activity.
-
-[Access and course enrollment](https://ailab.gc.cuny.edu/sandbox-docs/getting-started/)
 
 ---
 
@@ -76,15 +75,15 @@ Confirm the course’s private group and text channel before beginning a class a
 ### Start in the
 message box
 
+![Current Sandbox new chat with the model selector inside the message box](images/current/chat-page.png)
+
+Current Sandbox. Model names and available controls depend on your account.
+
 Select the model name **on the right inside the message box**.
 
 Type a request, send it, then ask a follow-up. Open **New Chat** when you want to begin with fresh conversation history.
 
 [Quick Tour](https://ailab.gc.cuny.edu/sandbox-docs/quick-tour/)
-
-![Current Sandbox new chat with the model selector inside the message box](images/current/chat-page.png)
-
-Current Sandbox. Model names and available controls depend on your account.
 
 ---
 
@@ -104,7 +103,7 @@ Message actions
 
 Copy, edit, or regenerate where available. A regenerated answer can differ.
 
-For the first comparison, use the supplied text and keep optional capabilities unchanged.
+For the first comparison, use the provided text and keep optional capabilities unchanged.
 
 [Sandbox Basics](https://ailab.gc.cuny.edu/sandbox-docs/sandbox-basics/)
 
@@ -115,68 +114,117 @@ For the first comparison, use the supplied text and keep optional capabilities u
 ### Compare the models
 you can use
 
+![Current model selector with search and the Compare toggle](images/current/model-selector.png)
+
+Compare is in the model selector. This capture is filtered to show base-model entries.
+
 Open the model selector. Turn on **Compare**, then choose two available base models.
 
 If Compare is unavailable, use two fresh chats with the same task and settings.
 
 Switching models midway carries the conversation history forward. Use fresh chats for a clearer initial comparison.
 
-![Current model selector with search and the Compare toggle](images/current/model-selector.png)
-
-Compare is in the model selector. This capture is filtered to show base-model entries.
-
 ---
 
-## Slide 8: One task, two responses
+## Slide 8: Who was late?
 
-### One task, two responses
+### Who was late?
 
-Use this invented classroom example in both models.
+The facilitator sends the same question to two small models. Read both responses before discussing them.
 
 ```text
-Assignment: Write a paragraph arguing for a change on your campus, using evidence to support the claim.
-
-Draft: The library should stay open later because students need more time to study. My friends agree, so most students must want this change.
-
-Give me feedback on the link between my claim and my evidence. Keep your response under 120 words.
+The nurse yelled at the doctor because she was late. Who was late?
 ```
 
-Record the model names, date, prompt, and enabled features. Save each response before revising anything.
+Record the exact model names and settings. Keep the input and conversation context the same.
 
 ---
 
-## Slide 9: Evaluate what the response does
+## Slide 9: What does the sentence establish?
 
-### Evaluate what the response does
+### What does the sentence establish?
 
-| Criterion | Look for evidence in the response |
-| --- | --- |
-| Accuracy & evidence | Does it notice that friends’ opinions do not establish what most students want? |
-| Instruction following | Does it focus on claim and evidence, within the requested length? |
-| Learning & usefulness | Does it offer a workable next step while leaving the student room to think? |
-| Uncertainty & limits | Does it avoid inventing campus facts or sources? |
+“She” could refer to either person. Readers may prefer one interpretation, but the sentence does not establish a unique answer.
 
-For each criterion: met, partly met, or not met. Quote a short passage to explain your judgment.
+- Does each model acknowledge the ambiguity?
+
+- What assumption supports its answer?
+
+- Does the explanation add information absent from the sentence?
+
+Compare the evidence in the answers. A confident explanation can still rest on an unsupported assumption.
 
 ---
 
-## Slide 10: Make a claim you can support
+## Slide 10: Now consider the car wash
+
+### Now consider the car wash
+
+Use the same two-model comparison for this question.
+
+```text
+The car wash is 50 meters from me. Should I walk or take the car? Explain your reasoning.
+```
+
+Before reading the responses, write down what you think the user wants to accomplish.
+
+---
+
+## Slide 11: A comparison from the GCDI showcase
+
+### A comparison from the GCDI showcase
+
+![Archived car-wash prompt and Gemma response saying to walk](images/showcase/car-wash-gemma.png)
+
+GCDI showcase, May 2026. The obsolete top selector has been cropped out.
+
+The response shown recommends walking. Read its recommendation against the purpose of the trip.
+
+---
+
+## Slide 12: Read the other recommendation
+
+### Read the other recommendation
+
+![Archived car-wash prompt and Qwen response saying to take the car](images/showcase/car-wash-qwen.png)
+
+GCDI showcase, May 2026. Original response labels and timings are retained.
+
+This response recommends taking the car. These excerpts are discussion material; the source has inconsistent Qwen labels, so it cannot establish an exact model comparison.
+
+---
+
+## Slide 13: Your turn with the car wash
+
+### Your turn with the car wash
+
+- In a fresh chat, send the car-wash prompt to two available models. Save both responses.
+
+- Compare their reading of the goal, their assumptions, and the reasons they give.
+
+- Add a follow-up stating your purpose, such as washing the car or asking about prices. Does the recommendation change appropriately?
+
+If the purpose is to wash the car, the car must get there. The original wording leaves the purpose unstated.
+
+---
+
+## Slide 14: Make a claim you can support
 
 ### Make a claim you can support
 
-“For this task, model A was more useful because…”
+Identify a difference you can point to in the responses. Explain which answer is better suited to the stated task and why.
 
-- Name a difference you can point to in the responses.
+- Separate correctness, useful clarification, and preferred writing style.
 
-- Separate a preferred writing style from a factual or instructional improvement.
+- Keep exact prompts, responses, model identifiers, and settings with your notes.
 
-- Repeat with another likely student request before choosing a base model.
+- Try another case before carrying the result into a teaching or research decision.
 
-A small comparison informs a teaching choice. It does not establish that one model is best at every task.
+These examples introduce comparison. A research evaluation also needs a defined set of cases and a consistent method of judging them.
 
 ---
 
-## Slide 11: What is a system prompt?
+## Slide 15: What is a system prompt?
 
 ### What is a system prompt?
 
@@ -196,10 +244,14 @@ Instructions guide behavior but do not guarantee it. A system prompt is not a se
 
 ---
 
-## Slide 12: Try the guidance in a chat
+## Slide 16: Try the guidance in a chat
 
 ### Try the guidance
 in a chat
+
+![Current chat Controls panel with its System Prompt field](images/current/chat-controls.png)
+
+The System Prompt field in a new chat. Sample text follows on the next slide.
 
 - Open a fresh chat with one of the models you compared.
 
@@ -209,68 +261,53 @@ in a chat
 
 Use the conversation’s Controls for this exercise. Personal defaults under Settings have a wider scope.
 
-![Current chat Controls panel with its System Prompt field](images/current/chat-controls.png)
-
-The System Prompt field in a new chat. Sample text follows on the next slide.
-
 ---
 
-## Slide 13: A small prompt to test
+## Slide 17: Try a short system prompt
 
-### A small prompt to test
+### Try a short system prompt
+
+Keep one base model fixed. Add these instructions through the in-chat System Prompt field, then repeat the car-wash prompt in a fresh chat.
 
 ```text
-You are a writing scaffold for an English 101 composition course. Help students examine the link between a claim and its evidence.
+Help the user examine a question before settling on an answer.
 
-Procedure:
-1. Ask for the assignment and a short draft before giving feedback.
-2. Identify one concern about the claim or evidence.
-3. Ask one question, then wait for the student to respond.
+Identify the goal and the information stated in the question. Separate those facts from assumptions needed to answer it. If different assumptions would change the answer, explain the alternatives briefly or ask one focused question.
 
-Constraints:
-- Do not write or rewrite the student's sentences.
-- If asked to "just fix it," offer a specific revision step.
-- Do not invent sources or grade the work.
-- Tone: Warm and direct.
+Give a concise answer that states its assumptions. Do not invent missing context. Revise the answer when the user adds relevant information.
 ```
 
-Notice the role, three procedural steps, and specific boundaries. You will inspect the same sample in Workspace.
+The instructions address assumptions across tasks. They do not prescribe a car-wash answer.
 
 ---
 
-## Slide 14: Hold the model steady
+## Slide 18: Compare before and after
 
-### Hold the model steady
+### Compare before and after
 
-- Repeat the same task with the same base model, now using the sample system prompt.
+- Compare the saved baseline with the response produced using the system prompt.
 
-- Use the same evaluation criteria. Compare against the response you saved earlier.
+- Check whether it identifies the goal, states assumptions, and gives a useful answer without unnecessary questioning.
 
-- Test a boundary: **“Just rewrite the paragraph for me.”**
+- Try the nurse question again. Does the instruction help with ambiguity in a different form?
 
-Ask what the added instructions changed, and what they failed to change. Keep personal defaults and optional features consistent.
-
----
-
-## Slide 15: Now open Workspace
-
-### Now open Workspace
-
-The facilitator enables Workspace access for this exercise.
-
-- Refresh the Sandbox after access is confirmed.
-
-- Open **Workspace** from the sidebar or account menu.
-
-- Select **Models** and find the workshop’s sample card.
-
-If Workspace is missing, pause here for the facilitator. You can continue testing the same prompt in chat while access is resolved.
-
-[Custom Models](https://ailab.gc.cuny.edu/sandbox-docs/models/)
+Keep the model, optional features, and other defaults consistent. Record any differences you cannot control.
 
 ---
 
-## Slide 16: A place to configure the tool
+## Slide 19: Preview Workspace with the facilitator
+
+### Preview Workspace with the facilitator
+
+Follow the facilitator into **Workspace → Models** and inspect the prepared sample card.
+
+Read the base model and system prompt together. Keep your own work in chat for this session.
+
+Request Workspace and Knowledge access before Workshop 2. Today’s prerequisite is individual access and Sandbox sign-in.
+
+---
+
+## Slide 20: A place to configure the tool
 
 ### A place to configure the tool
 
@@ -280,7 +317,7 @@ The shared Create button acts on the selected Workspace tab.
 
 ### Models
 
-Open the prepared sample, or choose **Create** to configure your own.
+Watch the facilitator open the prepared sample and locate Create.
 
 ### Later in the series
 
@@ -288,48 +325,50 @@ Knowledge adds sources. Skills and Tools extend the methods and capabilities ava
 
 ---
 
-## Slide 17: Read the configuration together
+## Slide 21: Read the configuration together
 
 ### Read the configuration
 together
-
-- **Name:** what students will recognize.
-
-- **Base Model:** what generates the responses.
-
-- **System Prompt:** how you want it to respond.
-
-A custom model combines these choices. Creating it does not train a new base model.
-
-[The model editor](https://ailab.gc.cuny.edu/sandbox-docs/models/)
 
 ![Current model creation form showing Name, Base Model, and System Prompt](images/current/model-editor.png)
 
 Read-only capture of the editor. The facilitator prepares the named sample before the workshop.
 
+- **Name** what students will recognize.
+
+- **Base Model** what generates the responses.
+
+- **System Prompt** how you want it to respond.
+
+A custom model combines these choices. Creating it does not train a new base model.
+
+[The model editor](https://ailab.gc.cuny.edu/sandbox-docs/models/)
+
 ---
 
-## Slide 18: Give students a clear starting point
+## Slide 22: Give the task a recognizable home
 
-### Give students a clear starting point
+### Give the task a recognizable home
 
 Card name
 
-Writing Scaffold: Claim & Evidence
+Question & Assumption Check
 
 Description
 
-Work through one question about the link between your claim and its evidence.
+Examine what a question states and what an answer assumes.
 
 Starter suggestion
 
-“Here is my assignment and draft. Help me examine my evidence.”
+“Help me examine the assumptions in this question.”
 
-Students open the shared card from their model selector. Workspace is where its authors configure the base model and instructions.
+Students can start from a course card. Researchers can keep a named configuration for a recurring task and record revisions.
+
+The card combines a base model and instructions. Authors configure it in Workspace; its intended users select it in chat.
 
 ---
 
-## Slide 19: The Anatomy of a Good System Prompt
+## Slide 23: The Anatomy of a Good System Prompt
 
 Examples
 
@@ -337,7 +376,7 @@ Examples
 
 ---
 
-## Slide 20: Composition & Writing
+## Slide 24: Composition & Writing
 
 Example 1
 
@@ -345,14 +384,14 @@ Example 1
 
 ---
 
-## Slide 21: The Vague Prompt
+## Slide 25: The Vague Prompt
 
 Composition & Writing
 
 ### The Vague Prompt
 
 ```text
-WeakHelp students write better.
+Help students write better.
 ```
 
 ### What goes wrong?
@@ -365,14 +404,14 @@ WeakHelp students write better.
 
 ---
 
-## Slide 22: Getting Warmer
+## Slide 26: Getting Warmer
 
 Composition & Writing
 
 ### Getting Warmer
 
 ```text
-Getting ThereYou are a writing scaffold for a college composition course. Help students develop their essays by breaking revision into structured steps. Ask them to identify their thesis before giving feedback. Don't write essays for them.
+You are a writing scaffold for a college composition course. Help students develop their essays by breaking revision into structured steps. Ask them to identify their thesis before giving feedback. Don't write essays for them.
 ```
 
 ### What improved?
@@ -393,14 +432,14 @@ Getting ThereYou are a writing scaffold for a college composition course. Help s
 
 ---
 
-## Slide 23: A Prompt That Fosters Revision
+## Slide 27: A Prompt That Supports Revision
 
 Composition & Writing
 
-### A Prompt That Fosters Revision
+### A Prompt That Supports Revision
 
 ```text
-StrongYou are a writing scaffold for an English 101 composition course at a public urban university. Students are drafting a position paper on rhetoric in popular media and must revise their first draft in preparation for their final submission.
+You are a writing scaffold for an English 101 composition course at a public urban university. Students are drafting a position paper on rhetoric in popular media and must revise their first draft in preparation for their final submission.
 
 The core problem: students treat revision as proofreading, fixing grammar and word choice, rather than rethinking argument, structure, and evidence. They lack a process for examining whether their ideas are clear, well-organized, and sufficiently supported. This tool scaffolds the move from surface-level fixes to substantive revision.
 
@@ -416,11 +455,11 @@ Constraints:
 - Tone: Warm and direct. Use “I notice...” and “What if you tried...”
 ```
 
-Full prompt: scroll to read. The complete text is also in the workshop handout.
+Scroll to read the full prompt. The complete text is also in the workshop handout.
 
 ---
 
-## Slide 24: Primary Source Analysis
+## Slide 28: Primary Source Analysis
 
 Example 2
 
@@ -428,14 +467,14 @@ Example 2
 
 ---
 
-## Slide 25: The Vague Prompt
+## Slide 29: The Vague Prompt
 
 History
 
 ### The Vague Prompt
 
 ```text
-WeakAnalyze historical documents.
+Analyze historical documents.
 ```
 
 ### What goes wrong?
@@ -448,14 +487,14 @@ WeakAnalyze historical documents.
 
 ---
 
-## Slide 26: Getting Warmer
+## Slide 30: Getting Warmer
 
 History
 
 ### Getting Warmer
 
 ```text
-Getting ThereYou are a history source-analysis tool. Help students analyze primary sources from American history. Ask them to consider the author, audience, and context of each document. Don't just summarize the document for them.
+You are a history source-analysis tool. Help students analyze primary sources from American history. Ask them to consider the author, audience, and context of each document. Don't just summarize the document for them.
 ```
 
 ### What improved?
@@ -476,14 +515,14 @@ Getting ThereYou are a history source-analysis tool. Help students analyze prima
 
 ---
 
-## Slide 27: A Prompt That Fosters Historical Thinking
+## Slide 31: A Prompt That Fosters Historical Thinking
 
 History
 
 ### A Prompt That Fosters Historical Thinking
 
 ```text
-StrongYou are a source-analysis tool for an undergraduate U.S. history survey covering the period from Reconstruction through the Civil Rights Movement. Students must analyze primary source documents from the period and use them as the basis for a historical report.
+You are a source-analysis tool for an undergraduate U.S. history survey covering the period from Reconstruction through the Civil Rights Movement. Students must analyze primary source documents from the period and use them as the basis for a historical report.
 
 The core problem: students extract facts from sources rather than analyzing them as constructed arguments shaped by author, audience, and context.
 
@@ -507,11 +546,11 @@ Constraints:
 - Tone: Patient and curious.
 ```
 
-Full prompt: scroll to read. The complete text is also in the workshop handout.
+Scroll to read the full prompt. The complete text is also in the workshop handout.
 
 ---
 
-## Slide 28: Close Reading & Literary Analysis
+## Slide 32: Close Reading & Literary Analysis
 
 Example 3
 
@@ -519,14 +558,14 @@ Example 3
 
 ---
 
-## Slide 29: The Vague Prompt
+## Slide 33: The Vague Prompt
 
 Literature & Cultural Studies
 
 ### The Vague Prompt
 
 ```text
-WeakHelp with literary analysis.
+Help with literary analysis.
 ```
 
 ### What goes wrong?
@@ -539,14 +578,14 @@ WeakHelp with literary analysis.
 
 ---
 
-## Slide 30: Getting Warmer
+## Slide 34: Getting Warmer
 
 Literature & Cultural Studies
 
 ### Getting Warmer
 
 ```text
-Getting ThereYou are a close-reading scaffold. Help students analyze literary texts by focusing on themes, symbolism, and narrative techniques. Don't just summarize the plot. Ask students to point to specific passages.
+You are a close-reading scaffold. Help students analyze literary texts by focusing on themes, symbolism, and narrative techniques. Don't just summarize the plot. Ask students to point to specific passages.
 ```
 
 ### What improved?
@@ -567,14 +606,14 @@ Getting ThereYou are a close-reading scaffold. Help students analyze literary te
 
 ---
 
-## Slide 31: A Prompt That Fosters Close Reading
+## Slide 35: A Prompt That Fosters Close Reading
 
 Literature & Cultural Studies
 
 ### A Prompt That Fosters Close Reading
 
 ```text
-StrongYou are a close-reading tool designed for an introductory English course that focuses on cultural studies and literary analysis. Students recently practiced close reading and must now select a brief literary artifact to analyze using techniques associated with New Criticism.
+You are a close-reading tool designed for an introductory English course that focuses on cultural studies and literary analysis. Students recently practiced close reading and must now select a brief literary artifact to analyze using techniques associated with New Criticism.
 
 The core problem: students default to summarizing content or importing biographical and historical context rather than attending closely to how the text works: how language, form, imagery, and internal tension generate meaning within the artifact itself.
 
@@ -596,11 +635,27 @@ Constraints:
 Tone: Encouraging and accessible. Affirm observations, then push deeper.
 ```
 
-Full prompt: scroll to read. The complete text is also in the workshop handout.
+Scroll to read the full prompt. The complete text is also in the workshop handout.
 
 ---
 
-## Slide 32: Drafting Your System Prompt
+## Slide 36: Adapt the structure for research
+
+### Adapt the structure for research
+
+Choose a bounded task such as comparing article abstracts, checking a coding decision, or documenting a method.
+
+- State the research question and material the model may use.
+
+- Specify the procedure and what counts as evidence.
+
+- Require uncertainty and competing interpretations to remain visible.
+
+Keep the source material, prompt version, output, and your judgment together. The researcher remains responsible for interpretation.
+
+---
+
+## Slide 37: Drafting Your System Prompt
 
 Drafting exercise
 
@@ -608,7 +663,7 @@ Drafting exercise
 
 ---
 
-## Slide 33: Core Components of a System Prompt
+## Slide 38: Core Components of a System Prompt
 
 Structure
 
@@ -628,7 +683,7 @@ Each system prompt is built from modular components. We’ll draft yours one pie
 
 ---
 
-## Slide 34: Context & Problem
+## Slide 39: Context & Problem
 
 Component 1
 
@@ -649,11 +704,11 @@ Students are [relevant context].
 The core problem: [specific learning challenge].
 ```
 
-**Your turn:** Copy this template and fill in the placeholders. Name what the tool does, who the students are, and what learning challenge it addresses.
+**Your turn** Copy this template and fill in the placeholders. Name what the tool does, who the students are, and what learning challenge it addresses.
 
 ---
 
-## Slide 35: Procedure
+## Slide 40: Procedure
 
 Component 2
 
@@ -674,11 +729,11 @@ Procedure:
 3. For each issue, [specific action, e.g. ask a question rather than fix it].
 ```
 
-**Your turn:** Copy this template and fill in the placeholders. Think about the sequence that matters for your discipline.
+**Your turn** Copy this template and fill in the placeholders. Think about the sequence that matters for your discipline.
 
 ---
 
-## Slide 36: Constraints
+## Slide 41: Constraints
 
 Component 3
 
@@ -699,11 +754,11 @@ Constraints:
 - If uncertain about [domain content], say so explicitly.
 ```
 
-**Your turn:** Copy this template and fill in the placeholders. Keep the tool from doing work students should do themselves.
+**Your turn** Copy this template and fill in the placeholders. Keep the tool from doing work students should do themselves.
 
 ---
 
-## Slide 37: Tone
+## Slide 42: Tone
 
 Component 4
 
@@ -721,11 +776,11 @@ One sentence on tone shapes how the tool communicates with every student it enco
 Tone: [Adjective and adjective]. Use phrases like "[example phrase]" and "[example phrase]."
 ```
 
-**Your turn:** Copy this template and fill in the placeholders. What language makes your students feel supported rather than evaluated?
+**Your turn** Copy this template and fill in the placeholders. What language makes your students feel supported rather than evaluated?
 
 ---
 
-## Slide 38: Output Format
+## Slide 43: Output Format
 
 Component 5
 
@@ -747,11 +802,11 @@ Next step: [a specific, actionable suggestion]
 Question: [something for the student to consider]
 ```
 
-**Your turn:** Copy this template and fill in the placeholders. Not every prompt needs an output format section.
+**Your turn** Copy this template and fill in the placeholders. Not every prompt needs an output format section.
 
 ---
 
-## Slide 39: Advanced Strategies & Tips
+## Slide 44: Advanced Strategies & Tips
 
 Refine
 
@@ -759,7 +814,7 @@ Refine
 
 ---
 
-## Slide 40: Going Further
+## Slide 45: Going Further
 
 ### Going Further
 
@@ -781,7 +836,7 @@ Refine
 
 ---
 
-## Slide 41: Common Pitfalls
+## Slide 46: Common Pitfalls
 
 Watch Out
 
@@ -801,41 +856,41 @@ Your prompt shapes the student’s experience. Test it by asking the kinds of qu
 
 ### Set It and Forget It
 
-System prompts need iteration. Use them in real conversations, notice what breaks, and revise. It’s a living document.
+Save the prompt version with the responses it produced. Revise when a test reveals a problem, then repeat that test.
 
 ---
 
-## Slide 42: Save a private version, then test
+## Slide 47: Save prompts for reuse
 
-### Save a private version, then test
+### Save prompts for reuse
 
-- In **Workspace → Models → Create**, name the card, choose your tested base model, and add your prompt.
+- Save your prompt text with the model name and responses it produced.
 
-- Keep **Access** set to **Private**. Choose **Save & Create**.
+- Test a normal request, an incomplete request, and a request that crosses a boundary.
 
-- Start a fresh chat from the card. Repeat a normal request, an incomplete request, and a request that crosses a boundary.
+- Revise one instruction and repeat the test in a fresh chat.
 
-Revise one instruction, use Save & Update, then repeat the test in a fresh chat. Record the result before changing the base model.
+Bring the tested prompt to Workshop 2. Workspace authors can later save it as a private model card.
 
 ---
 
-## Slide 43: Check the student experience
+## Slide 48: Check access with the intended audience
 
-### Check the student experience
+### Check access with the intended audience
 
-- Use **Access → Add Access** to share with the intended course group when the card is ready.
+- When ready, use **Access → Add Access** for the intended course or research group.
 
-- Give students read access; reserve write access for the people maintaining the configuration.
+- Give readers access to use the card. Reserve write access for its maintainers.
 
-- Check that the intended audience can use the card and its base model. Verify with a student account before class.
+- Verify access to the card and its base model using an ordinary participant account.
 
-A pinned or selected card helps students find it. Access permissions determine whether it works for them.
+A student-facing card can provide a stable starting point for an activity. Check its Knowledge, Skills, and Tools permissions as those are added.
 
 [Roles & Permissions](https://ailab.gc.cuny.edu/sandbox-docs/roles-permissions/)
 
 ---
 
-## Slide 44: Keep a record of your decisions
+## Slide 49: Keep a record of your decisions
 
 ### Keep a record of your decisions
 
@@ -853,15 +908,16 @@ Use public or approved material. The docs describe zero-retention provider reque
 
 ---
 
-## Slide 45: Bring this configuration to the next workshop
+## Slide 50: Prepare for Knowledge Collections
 
-### Bring this configuration
-to the next workshop
+### Prepare for Knowledge Collections
 
-- **Composing System Prompts**A tested base model and instructions for a learning task.
+- Save prompt versions and comparison notes
 
-- **Curating Knowledge Collections**Add the sources the tool needs, then check its use of evidence.
+- Request Workspace and Knowledge collection access
 
-- **Customizing Skills & Tools**Add procedures and capabilities, then test their effects.
+- Select public or approved source documents
 
-[Sandbox documentation](https://ailab.gc.cuny.edu/sandbox-docs//) · [Complete slide text](SLIDES.md) · [Sample prompt](examples/writing-scaffold.txt)
+- Review [system-prompt examples](examples.html)
+
+- Continue to [Curating Knowledge Collections](https://cuny-ai-lab.github.io/sandbox-series/knowledge/)
