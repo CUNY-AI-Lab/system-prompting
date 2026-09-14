@@ -41,8 +41,12 @@ def render(node):
     if isinstance(node,str): return re.sub(r'\s+',' ',node)
     tag=node.tag
     if tag in {'button','svg','script','style'} or node.has_class('progression-dots'):return ''
+    if node.has_class('slide-notes'):
+        return '\n\n#### Supporting notes\n\n'+''.join(render(c) for c in node.children)+'\n\n'
     if node.has_class('prompt-block'):
-        return '\n\n'+chr(96)*3+'text\n'+''.join(c.text() if isinstance(c,Node) else c for c in node.children if not (isinstance(c,Node) and c.has_class('prompt-label'))).strip()+'\n'+chr(96)*3+'\n\n'
+        labels=node.all(lambda n:n.has_class('prompt-label'))
+        label=' '.join('**'+n.text().strip()+'**' for n in labels)
+        return '\n\n'+(label+'\n\n' if label else '')+chr(96)*3+'text\n'+''.join(c.text() if isinstance(c,Node) else c for c in node.children if not (isinstance(c,Node) and c.has_class('prompt-label'))).strip()+'\n'+chr(96)*3+'\n\n'
     inside=''.join(render(c) for c in node.children)
     if tag=='img':return '\n\n!['+node.attrs.get('alt','')+']('+node.attrs['src']+')\n\n'
     if tag=='a':return '['+inside.strip()+']('+node.attrs.get('href','')+')'

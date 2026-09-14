@@ -46,7 +46,7 @@ Keep a record of what changes as you build. Evaluation runs through all three wo
 
 - Save prompts for reuse
 
-Require individual access approval and Sandbox sign-in. Workspace inspection is facilitator-led.
+Require individual access approval and Sandbox sign-in before attending. Workspace access is enabled during guided practice.
 
 ---
 
@@ -58,13 +58,15 @@ Require individual access approval and Sandbox sign-in. Workspace inspection is 
 
 The access choices linked from the published Sandbox documentation.
 
+#### Supporting notes
+
 - Open the [access application](https://ailab.gc.cuny.edu/request-access/?kind=individual) and choose **My own access**.
 
 - Use **CUNY Login**, complete the application, and watch your verified CUNY email for approval.
 
 - Open [the Sandbox](https://chat.ailab.gc.cuny.edu/) and select **Continue with CUNY Login**.
 
-Individual access and Sandbox sign-in are sufficient for this workshop. Follow the facilitator’s Workspace demonstration without authoring access.
+Begin with individual access and Sandbox sign-in. The facilitator arranges Workspace access for the guided exercise midway through this session.
 
 [Getting Started](https://ailab.gc.cuny.edu/sandbox-docs/getting-started/)
 
@@ -78,6 +80,8 @@ message box
 ![Current Sandbox new chat with the model selector inside the message box](images/current/chat-page.png)
 
 Current Sandbox. Model names and available controls depend on your account.
+
+#### Supporting notes
 
 Select the model name **on the right inside the message box**.
 
@@ -117,6 +121,8 @@ you can use
 ![Current model selector with search and the Compare toggle](images/current/model-selector.png)
 
 Compare is in the model selector. This capture is filtered to show base-model entries.
+
+#### Supporting notes
 
 Open the model selector. Turn on **Compare**, then choose two available base models.
 
@@ -178,6 +184,8 @@ Before reading the responses, write down what you think the user wants to accomp
 
 GCDI showcase, May 2026. The obsolete top selector has been cropped out.
 
+#### Supporting notes
+
 The response shown recommends walking. Read its recommendation against the purpose of the trip.
 
 ---
@@ -189,6 +197,8 @@ The response shown recommends walking. Read its recommendation against the purpo
 ![Archived car-wash prompt and Qwen response saying to take the car](images/showcase/car-wash-qwen.png)
 
 GCDI showcase, May 2026. Original response labels and timings are retained.
+
+#### Supporting notes
 
 This response recommends taking the car. These excerpts are discussion material; the source has inconsistent Qwen labels, so it cannot establish an exact model comparison.
 
@@ -253,6 +263,8 @@ in a chat
 
 The System Prompt field in a new chat. Sample text follows on the next slide.
 
+#### Supporting notes
+
 - Open a fresh chat with one of the models you compared.
 
 - Select **Controls** at the top right.
@@ -295,15 +307,15 @@ Keep the model, optional features, and other defaults consistent. Record any dif
 
 ---
 
-## Slide 19: Preview Workspace with the facilitator
+## Slide 19: Open Workspace during guided practice
 
-### Preview Workspace with the facilitator
+### Open Workspace during guided practice
 
-Follow the facilitator into **Workspace → Models** and inspect the prepared sample card.
+After the facilitator confirms Workspace access, refresh the Sandbox and open **Workspace → Models** and inspect the prepared sample card.
 
-Read the base model and system prompt together. Keep your own work in chat for this session.
+Read the base model and system prompt together. Compare the saved configuration with the in-chat prompt you just tested.
 
-Request Workspace and Knowledge access before Workshop 2. Today’s prerequisite is individual access and Sandbox sign-in.
+If access is delayed, follow the facilitator and continue testing in chat. Confirm Workspace and Knowledge access before Workshop 2.
 
 ---
 
@@ -314,6 +326,8 @@ Request Workspace and Knowledge access before Workshop 2. Today’s prerequisite
 ![Current Workspace header with Models, Knowledge, Prompts, Skills, Tools, and Create](images/current/workspace-header.png)
 
 The shared Create button acts on the selected Workspace tab.
+
+#### Supporting notes
 
 ### Models
 
@@ -333,6 +347,8 @@ together
 ![Current model creation form showing Name, Base Model, and System Prompt](images/current/model-editor.png)
 
 Read-only capture of the editor. The facilitator prepares the named sample before the workshop.
+
+#### Supporting notes
 
 - **Name** what students will recognize.
 
@@ -390,6 +406,8 @@ Composition & Writing
 
 ### The Vague Prompt
 
+**Weak**
+
 ```text
 Help students write better.
 ```
@@ -409,6 +427,8 @@ Help students write better.
 Composition & Writing
 
 ### Getting Warmer
+
+**Getting There**
 
 ```text
 You are a writing scaffold for a college composition course. Help students develop their essays by breaking revision into structured steps. Ask them to identify their thesis before giving feedback. Don't write essays for them.
@@ -437,6 +457,8 @@ You are a writing scaffold for a college composition course. Help students devel
 Composition & Writing
 
 ### A Prompt That Supports Revision
+
+**Strong**
 
 ```text
 You are a writing scaffold for an English 101 composition course at a public urban university. Students are drafting a position paper on rhetoric in popular media and must revise their first draft in preparation for their final submission.
@@ -473,6 +495,8 @@ History
 
 ### The Vague Prompt
 
+**Weak**
+
 ```text
 Analyze historical documents.
 ```
@@ -492,6 +516,8 @@ Analyze historical documents.
 History
 
 ### Getting Warmer
+
+**Getting There**
 
 ```text
 You are a history source-analysis tool. Help students analyze primary sources from American history. Ask them to consider the author, audience, and context of each document. Don't just summarize the document for them.
@@ -520,6 +546,8 @@ You are a history source-analysis tool. Help students analyze primary sources fr
 History
 
 ### A Prompt That Fosters Historical Thinking
+
+**Strong**
 
 ```text
 You are a source-analysis tool for an undergraduate U.S. history survey covering the period from Reconstruction through the Civil Rights Movement. Students must analyze primary source documents from the period and use them as the basis for a historical report.
@@ -564,6 +592,8 @@ Literature & Cultural Studies
 
 ### The Vague Prompt
 
+**Weak**
+
 ```text
 Help with literary analysis.
 ```
@@ -583,6 +613,8 @@ Help with literary analysis.
 Literature & Cultural Studies
 
 ### Getting Warmer
+
+**Getting There**
 
 ```text
 You are a close-reading scaffold. Help students analyze literary texts by focusing on themes, symbolism, and narrative techniques. Don't just summarize the plot. Ask students to point to specific passages.
@@ -611,6 +643,8 @@ You are a close-reading scaffold. Help students analyze literary texts by focusi
 Literature & Cultural Studies
 
 ### A Prompt That Fosters Close Reading
+
+**Strong**
 
 ```text
 You are a close-reading tool designed for an introductory English course that focuses on cultural studies and literary analysis. Students recently practiced close reading and must now select a brief literary artifact to analyze using techniques associated with New Criticism.
@@ -870,7 +904,7 @@ Save the prompt version with the responses it produced. Revise when a test revea
 
 - Revise one instruction and repeat the test in a fresh chat.
 
-Bring the tested prompt to Workshop 2. Workspace authors can later save it as a private model card.
+With Workspace access confirmed, save the tested prompt in a private model card. Choose the base model, review Access, and use Save & Create. Bring that configuration to Workshop 2.
 
 ---
 
