@@ -1,0 +1,33 @@
+{
+  "source": "https://docs.google.com/presentation/d/1dwRGEe7WniZOEeMcgQ8_qygHsKFu_ZnG/edit",
+  "file": "gcdi-cail.pptx",
+  "slide": 5,
+  "context": "GCDI showcase, May 2026",
+  "caveat": "Original top selector says Qwen3-235b while response tab says Qwen3.5-27B. Treat as discussion excerpts, not verified exact-model benchmark. Timings describe these captures only.",
+  "images": [
+    {
+      "file": "car-wash-gemma.png",
+      "source_asset": "image6.png",
+      "source_sha256": "9710d13ee2a3fef2e81058a40c865a374faabe09dac4dfb9f16ade057234729e",
+      "crop_xyxy": [
+        0,
+        125,
+        900,
+        566
+      ],
+      "sha256": "bb564541e4660b886ca01a57274a460fb17086cc83a0e54726bd33c549584586"
+    },
+    {
+      "file": "car-wash-qwen.png",
+      "source_asset": "image7.png",
+      "source_sha256": "a37b01ed4fe6a5405390849de0cb46f153982ddee8034ad782d549881425142d",
+      "crop_xyxy": [
+        0,
+        125,
+        894,
+        620
+      ],
+      "sha256": "a65a719c5e54cebf0ab4e8d3edfbd69cdc295ba45b1689203d347af87985ba24"
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "observed_date": "2026-09-13",
+  "notes": [
+    "New screenshots captured in Firefox from the live signed-in interface. No production objects were created.",
+    "Crops exclude browser tabs and unrelated account content.",
+    "Showcase excerpts are archival; obsolete top selectors removed by cropping. The unrelated fourth screenshot is excluded."
+  ],
+  "images": [
+    {
+      "file": "chat-page.png",
+      "source": "https://chat.ailab.gc.cuny.edu/",
+      "capture": "Native Firefox window, 100% zoom",
+      "source_dimensions": [
+        768,
+        798
+      ],
+      "crop_xyxy": [
+        65,
+        60,
+        757,
+        635
+      ],
+      "source_sha256": "d1336d9945c3af55532cb4054aa5d4d34bb4b8391cb71b3c82d4542e830a1632",
+      "processing": "Rectangular crop only",
+      "sha256": "8e06797704c07399d863b7bb8fa822739fcb421098cc1bf22a4c35807a06cd88"
+    },
+    {
+      "file": "chat-controls.png",
+      "source": "https://chat.ailab.gc.cuny.edu/",
+      "capture": "Native Firefox window, 100% zoom",
+      "source_dimensions": [
+        768,
+        798
+      ],
+      "crop_xyxy": [
+        535,
+        58,
+        768,
+        230
+      ],
+      "source_sha256": "04f30d84fe59c0d510dd184f73a7704d890707b3ecb3b4270457a4cfac6f2699",
+      "processing": "Rectangular crop only",
+      "sha256": "a6c8172d96743c040b78280f0b55fd1b5884c38e1cb20850225d0a742d38617c"
+    },
+    {
+      "file": "model-selector.png",
+      "source": "https://chat.ailab.gc.cuny.edu/",
+      "capture": "Native Firefox window, 100% zoom",
+      "source_dimensions": [
+        768,
+        798
+      ],
+      "crop_xyxy": [
+        140,
+        370,
+        705,
+        748
+      ],
+      "source_sha256": "16e221d8e49bd125439f84b08fbfdfd700370d9ac8586afe3cad6c833bea535c",
+      "processing": "Rectangular crop only",
+      "sha256": "bfa17147b7318eff236df033cfb2cbd963d485d5bfdbe8cb0533263377a6eb80"
+    },
+    {
+      "file": "workspace-header.png",
+      "source": "https://chat.ailab.gc.cuny.edu/",
+      "capture": "Native Firefox window, 100% zoom",
+      "source_dimensions": [
+        768,
+        798
+      ],
+      "crop_xyxy": [
+        65,
+        60,
+        757,
+        220
+      ],
+      "source_sha256": "490811cd4d5672a5893f248ce12fac983476f4513cb504d02964fc005009ff65",
+      "processing": "Rectangular crop only",
+      "sha256": "cd076c6135733faa1e3796022af85e07290b2e053e34513157a0f736bd7d1a31"
+    },
+    {
+      "file": "model-editor.png",
+      "source": "https://chat.ailab.gc.cuny.edu/",
+      "capture": "Native Firefox window, 100% zoom",
+      "source_dimensions": [
+        768,
+        798
+      ],
+      "crop_xyxy": [
+        65,
+        60,
+        757,
+        535
+      ],
+      "source_sha256": "7a32961f41da2b619d43b9118f16a608a67a069bfdbafc00d1c11697e118b96b",
+      "processing": "Rectangular crop only",
+      "sha256": "e14d7db1cdf85b227a0e8c984f6a4d6700f6acd3305b04acf7eb316d69cbc575"
+    },
+    {
+      "file": "access-application.png",
+      "source": "https://ailab.gc.cuny.edu/request-access/?kind=individual",
+      "capture": "Native Firefox window, 100% zoom",
+      "source_dimensions": [
+        768,
+        798
+      ],
+      "crop_xyxy": [
+        160,
+        236,
+        630,
+        520
+      ],
+      "source_sha256": "4fde527a067e3fc81f9b5bdb07dfcae8e31a09aa2afacc715b66d9f0d3f4c8c4",
+      "processing": "Rectangular crop only",
+      "sha256": "79c5113de32c9850db1f93e41ebef61ff5a246f0cfac033bb80d2bbf32160834"
+    },
+    {
+      "file": "knowledge-create.png",
+      "source": "https://chat.ailab.gc.cuny.edu/",
+      "capture": "Native Firefox window, 100% zoom",
+      "source_dimensions": [
+        768,
+        798
+      ],
+      "crop_xyxy": [
+        157,
+        270,
+        637,
+        586
+      ],
+      "source_sha256": "fca2948e5ec44931d1617b1421ec668edaf23acdaa8e501dc02fd89dac784f77",
+      "processing": "Rectangular crop only",
+      "sha256": "ac7d21678fd6f5794799da12f7b186ffea8d6f8855b83a8c253bebc0f0b36be3"
+    },
+    {
+      "file": "skill-editor.png",
+      "source": "https://chat.ailab.gc.cuny.edu/",
+      "capture": "Native Firefox window, 100% zoom",
+      "source_dimensions": [
+        768,
+        798
+      ],
+      "crop_xyxy": [
+        65,
+        60,
+        760,
+        340
+      ],
+      "source_sha256": "7474513db0c4a0b0adb520e61cce1bd2454269c324ad1e54a782fa0fe09e7811",
+      "processing": "Rectangular crop only",
+      "sha256": "87d152a20c36836a481bdceb303d3210496afdaf8b25c7fcd97ad4cd6cbae3df"
+    },
+    {
+      "file": "integrations.png",
+      "source": "https://chat.ailab.gc.cuny.edu/",
+      "capture": "Native Firefox window, 100% zoom",
+      "source_dimensions": [
+        768,
+        798
+      ],
+      "crop_xyxy": [
+        142,
+        405,
+        695,
+        565
+      ],
+      "source_sha256": "7be8624a7a7046b0ffcd1a097e66f1f41fa690bb8592e8cfb0c0644a5fbeac50",
+      "processing": "Rectangular crop only",
+      "sha256": "0d542f95a7072538f0a25cec88cdc49511a2b5880a7acb368647bd28d4eb90ff"
+    }
+  ]
+}

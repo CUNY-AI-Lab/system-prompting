@@ -1,281 +1,113 @@
-(function() {
+(() => {
   'use strict';
-
-  var slides = Array.from(document.querySelectorAll('.slide'));
-  var total = slides.length;
-  var current = 0;
-  var overviewMode = false;
-  var announcer = document.getElementById('slide-announcer');
-  var scrubber = document.getElementById('scrubber-container');
-
+  const slides = [...document.querySelectorAll('.slide')];
+  const total = slides.length;
+  const progress = document.getElementById('slide-progress');
+  const announcer = document.getElementById('slide-announcer');
+  const outline = document.getElementById('outline-dialog');
+  const notes = document.getElementById('facilitator-notes');
+  const notesButton = document.getElementById('notes-button');
+  const outlineList = document.getElementById('outline-list');
+  let current = 0;
   document.getElementById('nav-total').textContent = total;
-
-  // Set scrubber max value
-  if (scrubber) scrubber.setAttribute('aria-valuemax', total);
-
-  // --- Slide label helper ---
-  function getSlideLabel(index) {
-    var slide = slides[index];
-    var label = slide.getAttribute('aria-label');
-    if (label) return label;
-    return 'Slide ' + (index + 1) + ' of ' + total;
-  }
-
-  // --- Navigation ---
-  function goTo(index, instant) {
-    if (index < 0 || index >= total) return;
-    current = index;
-
-    slides.forEach(function(s, i) {
-      if (i === current) {
-        s.classList.add('active');
-        s.setAttribute('aria-current', 'step');
-        if (instant) { s.style.transition = 'none'; requestAnimationFrame(function() { s.style.transition = ''; }); }
-      } else {
-        s.classList.remove('active');
-        s.removeAttribute('aria-current');
-        resetSteps(s);
-        resetStream(s);
-      }
-    });
-
-    // Stream in bullets on active slide
-    streamBullets(slides[current]);
-
-    // Update nav
-    document.getElementById('nav-current').textContent = current + 1;
-
-    // Update hash
-    history.replaceState(null, '', '#' + (current + 1));
-
-    // Hide watermark on title (first) and closing (last) slides
-    var logo = document.getElementById('logoWatermark');
-    if (current === 0 || current === total - 1) {
-      logo.classList.add('hidden');
-    } else {
-      logo.classList.remove('hidden');
-    }
-
-    // Carousel management
-    if (window.pauseCarousel) window.pauseCarousel(current === 0 ? 0 : current - 1);
-    if (window.startCarousel) window.startCarousel(current);
-
-    // Update scrubber (visual + ARIA)
-    if (window.updateScrubber) window.updateScrubber(current, total);
-    if (scrubber) {
-      scrubber.setAttribute('aria-valuenow', current + 1);
-      scrubber.setAttribute('aria-valuetext', getSlideLabel(current));
-    }
-
-    // Announce slide change to screen readers
-    if (announcer && !instant) {
-      announcer.textContent = '';
-      requestAnimationFrame(function() {
-        announcer.textContent = getSlideLabel(current);
-      });
-    }
-
-    // Show nav briefly
-    var nav = document.getElementById('nav-bar');
-    nav.classList.add('visible');
-    clearTimeout(nav._hideTimeout);
-    nav._hideTimeout = setTimeout(function() { nav.classList.remove('visible'); }, 2000);
-  }
-
-  // --- Step Reveal ---
-  function revealNextStep() {
-    var slide = slides[current];
-    var hidden = slide.querySelector('.step-hidden:not(.step-visible)');
-    if (hidden) {
-      hidden.classList.add('step-visible');
-      return true; // consumed the advance
-    }
-    return false;
-  }
-
-  function resetSteps(slideEl) {
-    var steps = slideEl.querySelectorAll('[data-step]');
-    steps.forEach(function(el) { el.classList.remove('step-visible'); });
-  }
-
-  // --- Stream-in for bullet lists ---
-  function streamBullets(slideEl) {
-    var items = slideEl.querySelectorAll('.stream-list li');
-    items.forEach(function(li, i) {
-      li.classList.remove('streamed');
-      setTimeout(function() { li.classList.add('streamed'); }, 200 + i * 250);
-    });
-  }
-
-  function resetStream(slideEl) {
-    var items = slideEl.querySelectorAll('.stream-list li');
-    items.forEach(function(li) { li.classList.remove('streamed'); });
-  }
-
-  function next() {
-    if (!revealNextStep()) goTo(current + 1);
-  }
-  function prev() { goTo(current - 1); }
-
-  // --- Overview Mode ---
-  function toggleOverview() {
-    overviewMode = !overviewMode;
-    document.body.classList.toggle('overview-mode', overviewMode);
-
-    if (overviewMode) {
-      // Make slides focusable in overview
-      slides.forEach(function(slide, i) {
-        slide.setAttribute('tabindex', '0');
-        slide.setAttribute('role', 'button');
-        slide.setAttribute('aria-label', 'Go to ' + getSlideLabel(i));
-      });
-      if (announcer) announcer.textContent = 'Overview mode. Use arrow keys to browse slides, Enter to select.';
-      requestAnimationFrame(function() {
-        slides[current].scrollIntoView({ block: 'center', behavior: 'instant' });
-        slides[current].focus();
-      });
-    } else {
-      // Restore slide semantics
-      slides.forEach(function(slide) {
-        slide.removeAttribute('tabindex');
-        slide.setAttribute('role', 'group');
-        slide.removeAttribute('aria-label');
-      });
-      // Re-set aria-labels from original attributes
-      slides.forEach(function(slide) {
-        var origLabel = slide.getAttribute('aria-roledescription') ? slide.dataset.ariaLabel : null;
-      });
-    }
-  }
-
-  // Store original aria-labels so we can restore after overview
-  slides.forEach(function(slide) {
-    slide.dataset.origAriaLabel = slide.getAttribute('aria-label') || '';
+  progress.max = total;
+  const guidance = {
+    "Explore": "Confirm approved access. Locate the message-box selector, More, Integrations, and Controls. The first workshop keeps Workspace for the midpoint. In later sessions, reopen the tested card and retain a baseline response.",
+    "Compare": "Demonstrate the nurse question with two small models, then the car-wash question. Show the cropped GCDI comparison excerpts after the live introduction. Hand the car-wash task to participants. Ask them to save responses and identify assumptions before adding a follow-up. These are demonstrations, not a model ranking.",
+    "Prompt": "Hold one base model fixed. Add the Assumption Check system prompt in chat and repeat the car-wash task. Revisit the nurse question to test a different form of ambiguity. Compare evidence and usefulness with the baseline.",
+    "Workspace": "At the midpoint of workshop one, demonstrate Workspace and inspect the prepared Question & Assumption Check card. Participants need only individual access and Sandbox sign-in. Request Workspace and Knowledge access before workshop two. The screenshots show empty editors.",
+    "Draft": "Choose one disciplinary progression to discuss; the other examples remain in the outline and full copy. Offer the research route alongside the teaching templates. Participants draft for one task and retain the source material needed to test it.",
+    "Test": "Use the session lesson plan to compare baseline and revised responses. Check source passages, skill loading, and actual tool results as appropriate. Save failures as well as successes. Verify access through an ordinary participant account before sharing.",
+    "Next": "Ask participants to support one conclusion with a saved test and identify an unresolved case. Carry the configuration and evidence to the next workshop. Use Series to move between the three sessions."
+};
+  slides.forEach((slide, index) => {
+    const item = document.createElement('li');
+    const button = document.createElement('button');
+    const number = document.createElement('span');
+    number.className = 'outline-number'; number.textContent = String(index + 1);
+    const title = document.createElement('span'); title.textContent = slide.dataset.title;
+    button.append(number, title);
+    button.addEventListener('click', () => { goTo(index); outline.close(); document.getElementById('overview-button').focus(); });
+    item.append(button); outlineList.append(item);
   });
-
-  // Patched toggleOverview to properly restore labels
-  var _toggleOverview = toggleOverview;
-  toggleOverview = function() {
-    _toggleOverview();
-    if (!overviewMode) {
-      slides.forEach(function(slide) {
-        slide.setAttribute('aria-label', slide.dataset.origAriaLabel);
-        slide.setAttribute('role', 'group');
-      });
-    }
-  };
-
-  // --- Keyboard ---
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') { e.preventDefault(); toggleOverview(); return; }
-    if (overviewMode) {
-      // Arrow key navigation in overview
-      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-        e.preventDefault();
-        var nextIdx = Math.min(current + 1, total - 1);
-        current = nextIdx;
-        slides[current].scrollIntoView({ block: 'center', behavior: 'smooth' });
-        slides[current].focus();
-      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-        e.preventDefault();
-        var prevIdx = Math.max(current - 1, 0);
-        current = prevIdx;
-        slides[current].scrollIntoView({ block: 'center', behavior: 'smooth' });
-        slides[current].focus();
-      } else if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        goTo(current, true);
-        toggleOverview();
-      }
-      return;
-    }
-
-    // Scrubber keyboard support
-    if (document.activeElement === scrubber) {
-      if (e.key === 'ArrowRight' || e.key === 'ArrowUp') { e.preventDefault(); next(); return; }
-      if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') { e.preventDefault(); prev(); return; }
-      if (e.key === 'Home') { e.preventDefault(); goTo(0); return; }
-      if (e.key === 'End') { e.preventDefault(); goTo(total - 1); return; }
-    }
-
-    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'ArrowDown') { e.preventDefault(); next(); }
-    else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); prev(); }
-    else if (e.key === 'Home') { e.preventDefault(); goTo(0); }
-    else if (e.key === 'End') { e.preventDefault(); goTo(total - 1); }
-  });
-
-  // --- Touch/Swipe ---
-  var touchStartX = 0;
-  var touchStartY = 0;
-  document.addEventListener('touchstart', function(e) {
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
-  }, { passive: true });
-
-  document.addEventListener('touchend', function(e) {
-    var dx = e.changedTouches[0].clientX - touchStartX;
-    var dy = e.changedTouches[0].clientY - touchStartY;
-    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
-      if (dx < 0) next(); else prev();
-    }
-  }, { passive: true });
-
-  // --- Hash routing ---
   function readHash() {
-    var h = parseInt(location.hash.replace('#', ''), 10);
-    if (h >= 1 && h <= total) return h - 1;
-    return 0;
+    const match = location.hash.match(/^#(\d+)$/);
+    return match ? Math.min(total - 1, Math.max(0, Number(match[1]) - 1)) : 0;
   }
-
-  // --- Arrow button double-click protection (300ms debounce) ---
-  var lastClickTime = 0;
-  var leftArrow = document.getElementById('arrow-prev');
-  var rightArrow = document.getElementById('arrow-next');
-  if (leftArrow) {
-    leftArrow.addEventListener('click', function(e) {
-      e.preventDefault();
-      var now = Date.now();
-      if (now - lastClickTime < 300) return;
-      lastClickTime = now;
-      prev();
+  function goTo(index) {
+    if (!Number.isInteger(index) || index < 0 || index >= total) return;
+    const old = slides[current];
+    if (old.contains(document.activeElement)) document.getElementById('arrow-next').focus();
+    current = index;
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === current);
+      slide.inert = i !== current;
+      slide.setAttribute('aria-hidden', String(i !== current));
+      if (i === current) slide.setAttribute('aria-current', 'step');
+      else slide.removeAttribute('aria-current');
     });
-  }
-  if (rightArrow) {
-    rightArrow.addEventListener('click', function(e) {
-      e.preventDefault();
-      var now = Date.now();
-      if (now - lastClickTime < 300) return;
-      lastClickTime = now;
-      next();
+    slides[current].scrollTop = 0;
+    document.getElementById('nav-current').textContent = current + 1;
+    progress.value = current + 1;
+    progress.setAttribute('aria-valuetext', slides[current].getAttribute('aria-label'));
+    document.getElementById('arrow-prev').disabled = current === 0;
+    document.getElementById('arrow-next').disabled = current === total - 1;
+    [...outlineList.querySelectorAll('button')].forEach((button, i) => {
+      if (i === current) button.setAttribute('aria-current', 'step');
+      else button.removeAttribute('aria-current');
     });
+    document.getElementById('note-text').textContent = [slides[current].querySelector('.slide-notes')?.innerText || slides[current].querySelector('.slide-notes')?.textContent || '', guidance[slides[current].dataset.group] || ''].filter(Boolean).join('\n\n');
+    history.replaceState(null, '', '#' + (current + 1));
+    announcer.textContent = slides[current].getAttribute('aria-label');
   }
-
-  // --- Overview click-to-jump ---
-  slides.forEach(function(slide, i) {
-    slide.addEventListener('click', function(e) {
-      if (!overviewMode) return;
-      e.stopPropagation();
-      goTo(i, true);
-      toggleOverview();
+  function openOutline() { outline.showModal(); outlineList.querySelector('[aria-current]').focus(); }
+  document.getElementById('overview-button').addEventListener('click', openOutline);
+  document.getElementById('close-outline').addEventListener('click', () => outline.close());
+  document.getElementById('arrow-prev').addEventListener('click', () => goTo(current - 1));
+  document.getElementById('arrow-next').addEventListener('click', () => goTo(current + 1));
+  progress.addEventListener('input', () => goTo(Number(progress.value) - 1));
+  notesButton.addEventListener('click', () => { notes.hidden = !notes.hidden; notesButton.setAttribute('aria-pressed', String(!notes.hidden)); });
+  document.addEventListener('keydown', (event) => {
+    if (event.altKey || event.ctrlKey || event.metaKey || document.querySelector('dialog[open]')) return;
+    if (event.target.closest('input,textarea,select,[contenteditable="true"]')) return;
+    if (event.key === 'Escape') { event.preventDefault(); if (!notes.hidden) notesButton.click(); else openOutline(); return; }
+    if (event.target.closest('.prompt-block') && ['ArrowUp','ArrowDown',' ','Home','End'].includes(event.key)) return;
+    if (event.target.closest('button,a') && [' ','Enter'].includes(event.key)) return;
+    if (['ArrowRight','PageDown',' '].includes(event.key)) { event.preventDefault(); goTo(current + 1); }
+    else if (['ArrowLeft','PageUp'].includes(event.key)) { event.preventDefault(); goTo(current - 1); }
+    else if (event.key === 'Home') { event.preventDefault(); goTo(0); }
+    else if (event.key === 'End') { event.preventDefault(); goTo(total - 1); }
+  });
+  document.querySelectorAll('[data-copy]').forEach(button => {
+    button.addEventListener('click', async () => {
+      const source = document.getElementById(button.dataset.copy);
+      const label = button.textContent;
+      try {
+        if (!navigator.clipboard) throw new Error('Clipboard unavailable');
+        await navigator.clipboard.writeText(source.textContent);
+        button.textContent = 'Copied'; announcer.textContent = 'Prompt copied';
+      } catch {
+        const selection = window.getSelection(); const range = document.createRange();
+        range.selectNodeContents(source); selection.removeAllRanges(); selection.addRange(range);
+        button.textContent = 'Text selected'; announcer.textContent = 'Clipboard unavailable. Prompt selected; use your copy shortcut.';
+      }
+      setTimeout(() => { button.textContent = label; }, 2200);
     });
   });
-
-  // --- Expose on window ---
-  window.goTo = goTo;
-  window.next = next;
-  window.prev = prev;
-  window.toggleOverview = toggleOverview;
-  window.deckEngine = {
-    goTo: goTo,
-    next: next,
-    prev: prev,
-    currentSlide: function() { return current; },
-    totalSlides: function() { return total; }
-  };
-
-  // --- Init ---
-  var startSlide = readHash();
-  goTo(startSlide, true);
-
-  window.addEventListener('hashchange', function() { goTo(readHash()); });
+  let start;
+  document.getElementById('deck').addEventListener('touchstart', e => { start = e.touches.length === 1 ? [e.touches[0].clientX,e.touches[0].clientY] : null; }, {passive:true});
+  document.getElementById('deck').addEventListener('touchend', e => {
+    if (!start || document.querySelector('dialog[open]') || e.target.closest('.prompt-block,input,button,a')) return;
+    const dx=e.changedTouches[0].clientX-start[0], dy=e.changedTouches[0].clientY-start[1];
+    if (Math.abs(dx)>70 && Math.abs(dx)>Math.abs(dy)*2) goTo(current + (dx<0 ? 1 : -1));
+    start=null;
+  }, {passive:true});
+  window.addEventListener('hashchange', () => {
+    if (location.hash !== '#deck') goTo(readHash());
+  });
+  const series = document.getElementById('series-dialog');
+  document.getElementById('series-button')?.addEventListener('click', () => series.showModal());
+  document.getElementById('close-series')?.addEventListener('click', () => series.close());
+  window.deckEngine = {goTo, currentSlide:()=>current, totalSlides:()=>total};
+  goTo(readHash());
 })();
