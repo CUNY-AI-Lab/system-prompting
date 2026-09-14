@@ -183,7 +183,7 @@
 +
 +- Save prompts for reuse
 +
-+Require individual access approval and Sandbox sign-in. Workspace inspection is facilitator-led.
++Require individual access approval and Sandbox sign-in before attending. Workspace access is enabled during guided practice.
 +
 +---
 +
@@ -201,7 +201,7 @@
 +
 +- Open [the Sandbox](https://chat.ailab.gc.cuny.edu/) and select **Continue with CUNY Login**.
 +
-+Individual access and Sandbox sign-in are sufficient for this workshop. Follow the facilitator’s Workspace demonstration without authoring access.
++Begin with individual access and Sandbox sign-in. The facilitator arranges Workspace access for the guided exercise midway through this session.
 +
 +[Getting Started](https://ailab.gc.cuny.edu/sandbox-docs/getting-started/)
 +
@@ -432,15 +432,15 @@
 +
 +---
 +
-+## Slide 19: Preview Workspace with the facilitator
++## Slide 19: Open Workspace during guided practice
 +
-+### Preview Workspace with the facilitator
++### Open Workspace during guided practice
 +
-+Follow the facilitator into **Workspace → Models** and inspect the prepared sample card.
++After the facilitator confirms Workspace access, refresh the Sandbox and open **Workspace → Models** and inspect the prepared sample card.
 +
-+Read the base model and system prompt together. Keep your own work in chat for this session.
++Read the base model and system prompt together. Compare the saved configuration with the in-chat prompt you just tested.
 +
-+Request Workspace and Knowledge access before Workshop 2. Today’s prerequisite is individual access and Sandbox sign-in.
++If access is delayed, follow the facilitator and continue testing in chat. Confirm Workspace and Knowledge access before Workshop 2.
 +
 +---
 +
@@ -1240,7 +1240,7 @@
 +
 +- Revise one instruction and repeat the test in a fresh chat.
 +
-+Bring the tested prompt to Workshop 2. Workspace authors can later save it as a private model card.
++With Workspace access confirmed, save the tested prompt in a private model card. Choose the base model, review Access, and use Save & Create. Bring that configuration to Workshop 2.
 +
 +---
 +
