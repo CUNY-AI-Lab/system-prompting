@@ -1,7 +1,7 @@
 @media(max-width:900px){
   :root{
     --body:22px;
-    --heading:36px}
+    --heading:28px}
     .slide-inner{
       padding:35px 32px}
       .layout-split .slide-inner{
@@ -28,7 +28,7 @@
                       @media(max-width:600px){
                         :root{
                           --body:21px;
-                          --heading:32px}
+                          --heading:26px}
                           #deck{
                             height:calc(100dvh - 62px)}
                             .slide-inner{
@@ -36,7 +36,7 @@
                               justify-content:flex-start;
                               gap:22px}
                               h1{
-                                font-size:38px;
+                                font-size:28px;
                                 max-width:340px}
                                 h2{
                                   margin-bottom:22px}
@@ -47,7 +47,7 @@
                                       right:24px;
                                       font-size:16px}
                                       .subtitle{
-                                        font-size:25px}
+                                        font-size:22px}
                                         .title-credit{
                                           margin-top:55px}
                                           .title-credit>p:first-child{
@@ -129,7 +129,7 @@
                                                                                                   gap:17px}
                                                                                                   :root{
                                                                                                     --body:22px;
-                                                                                                    --heading:38px}
+                                                                                                    --heading:30px}
                                                                                                     .title-credit{
                                                                                                       margin-top:45px}
                                                                                                       .long-prompt-slide .prompt-good{

@@ -8,7 +8,7 @@ no remote fonts or presentation dependencies. */
   --muted:#b9b9b9;
   --border:#454545;
   --body:clamp(21px,1.85vw,27px);
-  --heading:clamp(32px,3.2vw,46px);
+  --heading:32px;
   --accent-cyan:var(--text);
   --accent-blue:var(--text);
   --accent-red:var(--text);
@@ -62,7 +62,7 @@ no remote fonts or presentation dependencies. */
                             line-height:1.13;
                             text-wrap:balance}
                             h1{
-                              font-size:clamp(38px,4.6vw,64px);
+                              font-size:32px;
                               max-width:1050px}
                               h2{
                                 font-size:var(--heading);
@@ -123,7 +123,7 @@ no remote fonts or presentation dependencies. */
                                                               .title-copy{
                                                                 margin-top:10px}
                                                                 .subtitle{
-                                                                  font-size:clamp(24px,2.65vw,36px);
+                                                                  font-size:24px;
                                                                   line-height:1.45;
                                                                   margin-top:28px;
                                                                   color:#bbb}
@@ -286,7 +286,7 @@ no remote fonts or presentation dependencies. */
                                                                                                                                                     .long-prompt-slide .slide-inner{
                                                                                                                                                       gap:12px}
                                                                                                                                                       .long-prompt-slide h2{
-                                                                                                                                                        font-size:clamp(29px,2.8vw,42px)}
+                                                                                                                                                        font-size:var(--heading)}
                                                                                                                                                         .label,.section-label{
                                                                                                                                                           font-size:17px;
                                                                                                                                                           color:var(--muted);
@@ -301,7 +301,7 @@ no remote fonts or presentation dependencies. */
                                                                                                                                                               .progression-dots,.divider-line{
                                                                                                                                                                 display:none}
                                                                                                                                                                 .layout-divider h2{
-                                                                                                                                                                  font-size:clamp(34px,3.4vw,50px);
+                                                                                                                                                                  font-size:var(--heading);
                                                                                                                                                                   max-width:900px}
                                                                                                                                                                   .layout-divider .slide-inner{
                                                                                                                                                                     gap:5px}
