@@ -1,5 +1,7 @@
 # Composing System Prompts — CUNY AI Lab
 
+> **Archival note.** This repository preserves the workshop as delivered in Spring 2026 as part of the series *Using the CAIL Sandbox in the Classroom*. A revised version, [*Composing System Prompts*](https://cuny-ai-lab.github.io/sandbox-series/basics/), forms part of the CUNY AI Lab's Fall 2026 [Sandbox Workshop Series](https://cuny-ai-lab.github.io/sandbox-series/). Readers seeking current materials should consult that version; the tools, models, and procedures described here may no longer reflect the Lab's practice.
+
 Workshop slides: Composing System Prompts for Open WebUI (CUNY AI Lab)
 
 Live: <https://cuny-ai-lab.github.io/system-prompting/>
